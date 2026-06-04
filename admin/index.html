@@ -10460,7 +10460,7 @@ vless://7b102311-43fd-4e8f-977e-8090623c101d@edt-pages.github.io:443?security=tl
                                                 <div class="shade-line"></div>
                                             </div>
                                             <textarea id="ipInput" spellcheck="false"
-                                                placeholder="1.0.0.0:443&#10;[2606:4700::0]:443&#10;103.22.200.0/22&#10;2606:4700::/32"></textarea>
+                                                placeholder="IP格式:&#10;1.0.0.0:443&#10;[2606:4700::0]:443&#10;&#10;CIDR格式:&#10;103.22.200.0/22&#10;2606:4700::/32&#10;&#10;IP区间:&#10;162.159.152.0-162.159.153.255&#10;2606:4700::1-2606:4700::9999"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -12101,10 +12101,16 @@ vless://7b102311-43fd-4e8f-977e-8090623c101d@edt-pages.github.io:443?security=tl
 
                     const fixed = [];
                     const cidrs = [];
+                    const ranges = [];
                     for (const line of lines) {
                         if (line.includes("/")) {
                             const cidr = parseCidr(line);
                             if (cidr) cidrs.push(cidr);
+                            continue;
+                        }
+                        const range = parseIpRange(line);
+                        if (range) {
+                            ranges.push(range);
                             continue;
                         }
                         const normalized = normalizeAddress(line, preferredPort);
@@ -12128,6 +12134,16 @@ vless://7b102311-43fd-4e8f-977e-8090623c101d@edt-pages.github.io:443?security=tl
                         while (candidates.length < limit && attempts < maxAttempts) {
                             const cidr = cidrs[attempts % cidrs.length];
                             addCandidate(randomAddressFromCidr(cidr, preferredPort));
+                            attempts += 1;
+                        }
+                    }
+
+                    if (ranges.length && candidates.length < limit) {
+                        let attempts = 0;
+                        const maxAttempts = Math.max(limit * 12, ranges.length * 8);
+                        while (candidates.length < limit && attempts < maxAttempts) {
+                            const range = ranges[attempts % ranges.length];
+                            addCandidate(randomAddressFromRange(range, preferredPort));
                             attempts += 1;
                         }
                     }
@@ -12176,6 +12192,35 @@ vless://7b102311-43fd-4e8f-977e-8090623c101d@edt-pages.github.io:443?security=tl
                     return null;
                 }
 
+                function parseIpRange(line) {
+                    const separator = line.indexOf("-");
+                    if (separator <= 0 || separator !== line.lastIndexOf("-")) return null;
+
+                    const startText = unwrapRangeIp(line.slice(0, separator));
+                    const endText = unwrapRangeIp(line.slice(separator + 1));
+
+                    const startIpv4 = ipv4ToBigInt(startText);
+                    const endIpv4 = ipv4ToBigInt(endText);
+                    if (startIpv4 !== null && endIpv4 !== null) {
+                        if (startIpv4 > endIpv4) return null;
+                        return { family: "ipv4", start: startIpv4, size: endIpv4 - startIpv4 + 1n };
+                    }
+
+                    const startIpv6 = ipv6ToBigInt(startText);
+                    const endIpv6 = ipv6ToBigInt(endText);
+                    if (startIpv6 !== null && endIpv6 !== null) {
+                        if (startIpv6 > endIpv6) return null;
+                        return { family: "ipv6", start: startIpv6, size: endIpv6 - startIpv6 + 1n };
+                    }
+
+                    return null;
+                }
+
+                function unwrapRangeIp(value) {
+                    const bracketed = value.match(/^\[([0-9a-fA-F:.]+)]$/);
+                    return bracketed ? bracketed[1] : value;
+                }
+
                 function parseCidr(line) {
                     const parts = line.split("/");
                     if (parts.length !== 2) return null;
@@ -12201,6 +12246,13 @@ vless://7b102311-43fd-4e8f-977e-8090623c101d@edt-pages.github.io:443?security=tl
                     const value = cidr.network + randomBigIntBelow(cidr.size);
                     const port = choosePort(preferredPort);
                     if (cidr.family === "ipv4") return `${bigIntToIpv4(value)}:${port}`;
+                    return `[${bigIntToIpv6(value)}]:${port}`;
+                }
+
+                function randomAddressFromRange(range, preferredPort) {
+                    const value = range.start + randomBigIntBelow(range.size);
+                    const port = choosePort(preferredPort);
+                    if (range.family === "ipv4") return `${bigIntToIpv4(value)}:${port}`;
                     return `[${bigIntToIpv6(value)}]:${port}`;
                 }
 
