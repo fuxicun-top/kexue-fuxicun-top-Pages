@@ -8,7 +8,7 @@
 
 ## 访问地址
 
-- **GitHub Pages**: https://fuxicun-top.github.io/cf-pages
+- **GitHub Pages**: https://fuxicun-top.github.io/kexue-fuxicun-top-Pages/
 
 ## 功能特性
 
@@ -23,4 +23,4 @@
 
 ## 相关项目
 
-- **Cloudflare Worker 后端**: 需单独部署 `worker.js` 到 Cloudflare Workers
+- **Cloudflare Worker 后端**: [kexue-fuxicun-top](https://github.com/fuxicun-top/kexue-fuxicun-top) 需单独部署到 Cloudflare Workers
