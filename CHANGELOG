@@ -1,0 +1,28 @@
+## v2.1.20260710070000
+- 新增: 后台可配置 TCP 并发拨号数和反代并发拨号数
+- 优化: Set-Cookie SameSite 策略改为 Lax 增强安全性
+- 优化: 运营商识别逻辑优化
+- 优化: 管理页面小屏幕适配和滚动事件
+- 优化: 代理IP列表地址更新
+- 优化: 客户端鉴权和登录流程
+- 优化: TelegramBot 验证改为仅验证 Bot Token
+- 新增: "获取我的Chat ID"按钮
+- 品牌: SUBNAME 更新为"小周CF科学"
+- 地址: 静态页面地址指向 https://fuxicun-top.github.io/kexue-fuxicun-top-Pages
+
+## v2.1.20260709120000
+- 新增: 反代并发拨号数功能（TCP并发拨号数 + 反代并发拨号数分离）
+- 新增: DoH 查询缓存优化
+- 新增: 订阅转换配置功能（UDP、XUDP、TLS 1.3、节点排序）
+- 新增: Trojan fallback 对接
+- 新增: 动态获取反代IP生成逻辑
+- 优化: TelegramBot 验证改为仅验证 Bot Token，新增"获取我的Chat ID"按钮
+- 品牌: SUBNAME 更新为"小周CF科学"
+- 地址: 静态页面地址指向 https://fuxicun-top.github.io/kexue-fuxicun-top-Pages
+
+## v2.1.20260627223057
+- 品牌更新为小周CF科学
+- 静态页面地址指向 GitHub Pages
+
+## v2.1.20260410060317
+- 初始版本
