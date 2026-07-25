@@ -8739,7 +8739,7 @@
 					</div>
 					<div class="form-group">
 						<label for="grzy_defaultDescription">默认一言文案（HTML）</label>
-						<input type="text" id="grzy_defaultDescription" placeholder="默认显示的文字，支持 HTML 标签" onchange="markGrzyModified('defaultDescription')" oninput="previewGrzy()">
+						<textarea id="grzy_defaultDescription" placeholder="默认显示的文字，支持 HTML 标签" style="font-size:13px; resize:none;" rows="2" onchange="markGrzyModified('defaultDescription')" oninput="previewGrzy(); autoResizeTextarea(this)"></textarea>
 					</div>
 					<div class="form-group">
 						<label for="grzy_hitokotoApi">一言 API 地址</label>
@@ -26052,6 +26052,11 @@
 				socialLinks: [{"icon":"fa-envelope","title":"邮箱","href":"mailto:kexue@fuxicun.top"},{"icon":"fa-github","title":"GitHub","href":"https://github.com/fuxicun-top/kexue-fuxicun-top-Pages","target":"_blank"}]
 			};
 
+			function autoResizeTextarea(el) {
+				el.style.height = 'auto';
+				el.style.height = el.scrollHeight + 'px';
+			}
+
 			async function loadGrzyConfig() {
 				try {
 					const res = await fetch(api('/admin/grzy.json?_t=' + Date.now()));
@@ -26083,6 +26088,9 @@
 				});
 				renderGrzyArrayEditor('grzy_navButtons_editor', Array.isArray(grzyConfig.navButtons) ? grzyConfig.navButtons : null, 'navButtons');
 				renderGrzyArrayEditor('grzy_socialLinks_editor', Array.isArray(grzyConfig.socialLinks) ? grzyConfig.socialLinks : null, 'socialLinks');
+				// 自动调整 textarea 高度
+				const descEl = document.getElementById('grzy_defaultDescription');
+				if (descEl) autoResizeTextarea(descEl);
 			}
 
 			// ---- Visual array editors for navButtons / socialLinks ----
