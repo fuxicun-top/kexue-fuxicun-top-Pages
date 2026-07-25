@@ -32,3 +32,4 @@ _worker_upstream.js
 
 # 备份文件
 worker_backup_*.js
+每次同步上游更新必须按照这个标准执行要求.md
