@@ -140,8 +140,9 @@ function addRandomHighlights(text) {
 
 $(document).ready(function () {
 
-	// 获取一言数据
-	fetch('https://v1.hitokoto.cn').then(function (res) {
+	// 获取一言数据（优先使用 KV 配置的 API 地址）
+	var hitokotoUrl = window._grzyHitokotoApi || 'https://v1.hitokoto.cn';
+	fetch(hitokotoUrl).then(function (res) {
 		return res.json();
 	}).then(function (e) {
 		yiyan = e.hitokoto;
