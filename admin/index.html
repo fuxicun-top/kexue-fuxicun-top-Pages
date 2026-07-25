@@ -26088,7 +26088,7 @@
 			// ---- Visual array editors for navButtons / socialLinks ----
 			function renderGrzyArrayEditor(containerId, items, type) {
 				const container = document.getElementById(containerId);
-				if (!container) return;
+				if (!container) { console.warn('[renderGrzyArrayEditor] container not found:', containerId); return; }
 				container.innerHTML = '';
 				if (!items || !Array.isArray(items)) items = [];
 				items.forEach((item, idx) => {
@@ -26121,6 +26121,7 @@
 					}
 					container.appendChild(card);
 				});
+				console.log('[renderGrzyArrayEditor]', type, '-> rendered', container.children.length, 'cards');
 			}
 
 			function makeGrzyField(labelText, fieldKey, value, idx) {
