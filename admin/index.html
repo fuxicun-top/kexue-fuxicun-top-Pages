@@ -8724,18 +8724,18 @@
 						<input type="text" id="grzy_subtitle" placeholder="be your true self" onchange="markGrzyModified('subtitle')" oninput="previewGrzy()">
 					</div>
 					<div class="form-group">
-						<div class="label-with-hint">
-							<label for="grzy_navButtons">导航按钮</label>
-							<button type="button" class="inline-hint-btn" title="JSON 格式：[{text, href, target}]" onclick="showGrzyHint('navButtons')" aria-label="导航按钮说明">!</button>
+						<label>🔘 导航按钮 (navButtons)</label>
+						<div id="grzy_navButtons_editor" style="display:flex; flex-direction:column; gap:8px;">
+							<!-- items injected here by JS -->
 						</div>
-						<textarea id="grzy_navButtons" rows="4" style="font-family: 'Fira Code', monospace; font-size: 13px;" placeholder='[{"text":"后台管理","href":"/admin","target":"_blank"}]' onchange="markGrzyModified('navButtons')" oninput="previewGrzy()"></textarea>
+						<button type="button" class="btn" onclick="addGrzyNavItem('navButtons')" style="margin-top:8px; background:#3b82f6; color:white; border:none; padding:6px 14px; border-radius:6px; cursor:pointer;">+ 添加按钮</button>
 					</div>
 					<div class="form-group">
-						<div class="label-with-hint">
-							<label for="grzy_socialLinks">社交链接</label>
-							<button type="button" class="inline-hint-btn" title="JSON 格式：[{icon, href, title, target}]" onclick="showGrzyHint('socialLinks')" aria-label="社交链接说明">!</button>
+						<label>🔗 社交链接 (socialLinks)</label>
+						<div id="grzy_socialLinks_editor" style="display:flex; flex-direction:column; gap:8px;">
+							<!-- items injected here by JS -->
 						</div>
-						<textarea id="grzy_socialLinks" rows="4" style="font-family: 'Fira Code', monospace; font-size: 13px;" placeholder='[{"icon":"fas fa-envelope","href":"mailto:test@test.com","title":"邮箱"}]' onchange="markGrzyModified('socialLinks')" oninput="previewGrzy()"></textarea>
+						<button type="button" class="btn" onclick="addGrzyNavItem('socialLinks')" style="margin-top:8px; background:#3b82f6; color:white; border:none; padding:6px 14px; border-radius:6px; cursor:pointer;">+ 添加链接</button>
 					</div>
 					<div class="form-group">
 						<label for="grzy_defaultDescription">默认一言文案（HTML）</label>
@@ -26077,10 +26077,133 @@
 					const el = document.getElementById('grzy_' + f);
 					if (el) el.value = grzyConfig[f] || '';
 				});
-				const navEl = document.getElementById('grzy_navButtons');
-				if (navEl) navEl.value = grzyConfig.navButtons ? JSON.stringify(grzyConfig.navButtons, null, 2) : '';
-				const socialEl = document.getElementById('grzy_socialLinks');
-				if (socialEl) socialEl.value = grzyConfig.socialLinks ? JSON.stringify(grzyConfig.socialLinks, null, 2) : '';
+				renderGrzyArrayEditor('grzy_navButtons_editor', grzyConfig.navButtons, 'navButtons');
+				renderGrzyArrayEditor('grzy_socialLinks_editor', grzyConfig.socialLinks, 'socialLinks');
+			}
+
+			// ---- Visual array editors for navButtons / socialLinks ----
+			function renderGrzyArrayEditor(containerId, items, type) {
+				const container = document.getElementById(containerId);
+				if (!container) return;
+				container.innerHTML = '';
+				if (!items || !Array.isArray(items)) items = [];
+				items.forEach((item, idx) => {
+					const card = document.createElement('div');
+					card.style.cssText = 'background:#f3f4f6; border:1px solid #e5e7eb; border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px; position:relative;';
+					const removeBtn = document.createElement('button');
+					removeBtn.type = 'button';
+					removeBtn.textContent = '✕';
+					removeBtn.style.cssText = 'position:absolute; top:6px; right:8px; background:none; border:none; font-size:16px; cursor:pointer; color:#9ca3af;';
+					removeBtn.onclick = () => {
+						const arr = type === 'navButtons' ? grzyConfig.navButtons : grzyConfig.socialLinks;
+						if (arr && idx < arr.length) arr.splice(idx, 1);
+						renderGrzyArrayEditor(containerId, arr, type);
+						markGrzyModified(type);
+					};
+					card.appendChild(removeBtn);
+					if (type === 'navButtons') {
+						card.appendChild(makeGrzyField('文本', 'text', item.text || '', idx));
+						card.appendChild(makeGrzyField('链接', 'href', item.href || '', idx));
+						const targetSelect = makeGrzySelect('target', item.target || '', ['_blank', '_self', ''], idx, 'navButtons');
+						targetSelect.querySelector('label').textContent = '新窗口';
+						card.appendChild(targetSelect);
+					} else {
+						card.appendChild(makeGrzyField('图标类名', 'icon', item.icon || '', idx));
+						card.appendChild(makeGrzyField('标题', 'title', item.title || '', idx));
+						card.appendChild(makeGrzyField('链接', 'href', item.href || '', idx));
+						const targetSelect = makeGrzySelect('target', item.target || '', ['_blank', '_self', ''], idx, type);
+						targetSelect.querySelector('label').textContent = '新窗口';
+						card.appendChild(targetSelect);
+					}
+					container.appendChild(card);
+				});
+			}
+
+			function makeGrzyField(labelText, fieldKey, value, idx) {
+				const wrapper = document.createElement('div');
+				wrapper.style.display = 'flex';
+				wrapper.style.alignItems = 'center';
+				wrapper.style.gap = '6px';
+				const lbl = document.createElement('span');
+				lbl.style.cssText = 'font-size:12px; color:#6b7280; min-width:50px;';
+				lbl.textContent = labelText;
+				const inp = document.createElement('input');
+				inp.type = 'text';
+				inp.value = value;
+				inp.style.cssText = 'flex:1; padding:4px 8px; border:1px solid #d1d5db; border-radius:4px; font-size:13px;';
+				inp.onchange = () => markGrzyModified(fieldKey === 'text' ? 'navButtons' : 'socialLinks');
+				wrapper.appendChild(lbl);
+				wrapper.appendChild(inp);
+				return { wrapper, input: inp, key: fieldKey, index: idx };
+			}
+
+			function makeGrzySelect(fieldKey, value, options, idx, modifiedType) {
+				const wrapper = document.createElement('div');
+				wrapper.style.display = 'flex';
+				wrapper.style.alignItems = 'center';
+				wrapper.style.gap = '6px';
+				const lbl = document.createElement('span');
+				lbl.style.cssText = 'font-size:12px; color:#6b7280; min-width:50px;';
+				lbl.textContent = '选择:';
+				const sel = document.createElement('select');
+				sel.style.cssText = 'flex:1; padding:4px 8px; border:1px solid #d1d5db; border-radius:4px; font-size:13px;';
+				options.forEach(o => {
+					const opt = document.createElement('option');
+					opt.value = o;
+					opt.textContent = o || '(当前页面)';
+					if (o === value) opt.selected = true;
+					sel.appendChild(opt);
+				});
+				sel.onchange = () => markGrzyModified(modifiedType || 'socialLinks');
+				wrapper.appendChild(lbl);
+				wrapper.appendChild(sel);
+				return { wrapper, select: sel, key: fieldKey, index: idx };
+			}
+
+			function getGrzyArrayValues(containerId) {
+				const container = document.getElementById(containerId);
+				if (!container) return [];
+				const cards = container.querySelectorAll(':scope > div');
+				const items = [];
+				cards.forEach(card => {
+					const inputs = card.querySelectorAll('input[type="text"]');
+					const selects = card.querySelectorAll('select');
+					const item = {};
+					inputs.forEach(inp => {
+						const lbl = inp.parentElement.previousElementSibling;
+						if (lbl && lbl.textContent) item[lbl.textContent.trim()] = inp.value;
+					});
+					selects.forEach(sel => {
+						item['target'] = sel.value;
+					});
+					if (inputs.length >= 2) {
+						const firstLabel = inputs[0].parentElement.previousElementSibling?.textContent?.trim();
+						if (firstLabel === '文本') {
+							item.text = inputs[0].value;
+							item.href = inputs[1].value;
+						} else if (firstLabel === '图标类名') {
+							item.icon = inputs[0].value;
+							item.title = inputs[1].value;
+							item.href = inputs[2].value;
+						}
+					}
+					if (selects.length > 0) item.target = selects[0].value;
+					items.push(item);
+				});
+				return items;
+			}
+
+			function addGrzyNavItem(type) {
+				const containerId = type === 'navButtons' ? 'grzy_navButtons_editor' : 'grzy_socialLinks_editor';
+				const container = document.getElementById(containerId);
+				if (!container) return;
+				const items = getGrzyArrayValues(containerId);
+				const defaults = type === 'navButtons'
+					? { text: '新按钮', href: '#', target: '' }
+					: { icon: 'fa-link', title: '新链接', href: '#', target: '' };
+				items.push(defaults);
+				renderGrzyArrayEditor(containerId, items, type);
+				markGrzyModified(type);
 			}
 
 			function readGrzyForm() {
@@ -26091,17 +26214,15 @@
 					if (el) data[f] = el.value;
 				});
 				try {
-					const navEl = document.getElementById('grzy_navButtons');
-					data.navButtons = navEl.value ? JSON.parse(navEl.value) : [];
-				} catch {
-					showToast('😢 导航按钮 JSON 格式错误', 'error');
+					data.navButtons = getGrzyArrayValues('grzy_navButtons_editor');
+				} catch(e) {
+					showToast('😢 导航按钮解析失败', 'error');
 					return null;
 				}
 				try {
-					const socialEl = document.getElementById('grzy_socialLinks');
-					data.socialLinks = socialEl.value ? JSON.parse(socialEl.value) : [];
-				} catch {
-					showToast('😢 社交链接 JSON 格式错误', 'error');
+					data.socialLinks = getGrzyArrayValues('grzy_socialLinks_editor');
+				} catch(e) {
+					showToast('😢 社交链接解析失败', 'error');
 					return null;
 				}
 				return data;
@@ -26143,14 +26264,6 @@
 				fillGrzyForm();
 				previewGrzy();
 				showToast('🗑️ 已重置为默认值', 'info');
-			}
-
-			function showGrzyHint(field) {
-				const hints = {
-					navButtons: '格式：\n[\n  {"text": "按钮名", "url": "链接", "target": "_blank"},\n  ...\n]\ntarget 留空表示当前页面打开。',
-					socialLinks: '格式：\n[\n  {"icon": "fa-envelope", "url": "mailto:test@test.com", "title": "邮箱", "target": ""},\n  ...\n]\nicon 使用 FontAwesome 类名（不带 fas/fa- 前缀也可自动补全）'
-				};
-				alert(hints[field] || '');
 			}
 
 			window.addEventListener('DOMContentLoaded', () => {
