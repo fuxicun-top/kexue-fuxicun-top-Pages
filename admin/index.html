@@ -26053,8 +26053,12 @@
 			};
 
 			function autoResizeTextarea(el) {
+				const minRows = 2;
+				const rowHeight = parseFloat(getComputedStyle(el).lineHeight) || 18;
 				el.style.height = 'auto';
-				el.style.height = el.scrollHeight + 'px';
+				const h = el.scrollHeight;
+				// 至少保持 minRows 的高度，不超过 6 行
+				el.style.height = Math.max(minRows * rowHeight, Math.min(h, 6 * rowHeight)) + 'px';
 			}
 
 			async function loadGrzyConfig() {
