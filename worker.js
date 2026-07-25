@@ -80,10 +80,9 @@ export default {
 			return await 处理XHTTP请求(request, userID, 反代上下文);
 		} else {
 			if (url.protocol === 'http:') return Response.redirect(url.href.replace(`http://${url.hostname}`, `https://${url.hostname}`), 301);
-			// 静态资源直接代理到 GitHub Pages（login/admin 需要特殊处理，不在此处代理）
+			// 仅代理首页相关静态资源到 GitHub Pages（login/admin/sub 等由 Worker 内部处理）
 			if (!访问路径 || 访问路径.startsWith('asset/') ||
-				访问路径 === 'sub' || 访问路径 === 'locations' ||
-				访问路径 === 'version' || 访问路径 === 'robots.txt' || 访问路径 === 'favicon.ico') {
+				访问路径 === 'favicon.ico' || 访问路径 === 'robots.txt') {
 				return fetch(Pages静态页面 + (访问路径 ? '/' + 访问路径 : '') + url.search);
 			}
 			if (!管理员密码) return fetch(Pages静态页面 + '/noADMIN').then(r => { const headers = new Headers(r.headers); headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate'); headers.set('Pragma', 'no-cache'); headers.set('Expires', '0'); return new Response(r.body, { status: 404, statusText: r.statusText, headers }) });
