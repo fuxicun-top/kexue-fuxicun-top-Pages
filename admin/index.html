@@ -26090,6 +26090,7 @@
 				if (!container) return;
 				container.innerHTML = '';
 				if (!items || !Array.isArray(items)) items = [];
+				console.log('[renderGrzyArrayEditor]', type, 'items:', items.length, items);
 				items.forEach((item, idx) => {
 					const card = document.createElement('div');
 					card.style.cssText = 'background:#f3f4f6; border:1px solid #e5e7eb; border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px; position:relative;';
