@@ -1,31 +1,124 @@
+
+<!--
+	HTML Starter Template
+	Original Source: https://github.com/AsisYu/html-starter-qwpicu.git
+	License: Open Source
+	Author: AsisYu
+	Description: A beautiful personal homepage template with modern design
+	请尊重劳动成果，保留该注释信息
+-->
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh-CN">
 <head>
+	<title>小周の主页</title>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Welcome to nginx!</title>
-	<style>
-		body {
-			width: 35em;
-			margin: 0 auto;
-			font-family: Tahoma, Verdana, Arial, sans-serif;
-		}
-	</style>
+	<link rel="icon" href="./favicon.ico">
+	<meta http-equiv="Expires" content="0" />
+	<meta name='robots' content='index,follow'>
+	<meta name='keywords' content='小周，xiaozhou,个人主页,xiaozhou-小周个人主页'>
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta name='description' content='小周，xiaozhou,个人主页,xiaozhou-小周个人主页'>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" href="asset/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="asset/css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="asset/css/style.css">
+	<link rel="stylesheet" type="text/css" href="asset/css/fonts.css">
+	<!-- FontAwesome CDN removed - using local fontawesome-all.min.css from main.css -->
+	<!-- Local fonts - no external CDN needed -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+	<script data-cfasync="false" src="asset/js/feature.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="asset/css/noscript.css" />
+	</noscript>
 </head>
-
-<body>
-	<h1>Welcome to nginx!</h1>
-	<p>If you see this page, the nginx web server is successfully installed and
-		working. Further configuration is required.</p>
-
-	<p>For online documentation and support please refer to
-		<a href="http://nginx.org/">nginx.org</a>.<br />
-		Commercial support is available at
-		<a href="http://nginx.com/">nginx.com</a>.
-	</p>
-
-	<p><em>Thank you for using nginx.</em></p>
+<body class="is-preload font-milky-coffee">
+	<div id="wrapper">
+		<div id="bg"></div>
+		<div id="overlay"></div>
+		<div id="main">
+			<!-- Header -->
+			<header id="header">
+				<div class="panel-main__content">
+					<div class="ih-item circle effect right_to_left">
+						<a class="blog-button">
+							<div class="img"> <img src="https://q1.qlogo.cn/g?b=qq&nk=2933206679&s=640&img_type=jpg" alt="img"
+									class="js-avatar iUp profilepic header-logo" data-grzy="avatarUrl">
+							</div>
+							<div class="info iUp">
+								<div class="info-back">
+									<img alt="img" src="https://zdd-wjgx.fuxicun.top/api/preview/1784982407008_a7noifwj" class="js-avatar profilepic" data-grzy="avatarFallback">
+								</div>
+							</div>
+						</a>
+					</div>
+					<h1 class="panel-cover__title panel-title iUp" data-grzy="name">XiaoZhou</h1>
+					<p class="panel-cover__subtitle panel-subtitle iUp" data-grzy="subtitle">be your true self</p>
+					<canvas class="navigation-wrapper iUp" id="canvas" style="width:50%;padding-top: 15px;padding-right: 20px;" width="920"
+						height="350"></canvas>
+					<script src="asset/js/clock.js"></script>
+					
+					<!-- 药丸形状按钮组 -->
+					<div id="grzy-navButtons" data-grzy="navButtons" class="pill-buttons-container iUp">
+						<a href="/admin" class="pill-button" target="_blank">
+							<div class="pill-button-decor pill-left"></div>
+							<div class="pill-button-decor pill-right"></div>
+							<span class="pill-button-text">后台管理</span>
+						</a>
+						<a href="https://github.com/fuxicun-top/kexue-fuxicun-top-Pages" class="pill-button" target="_blank">
+							<div class="pill-button-decor pill-left"></div>
+							<div class="pill-button-decor pill-right"></div>
+							<span class="pill-button-text">项目</span>
+						</a>
+						<a href="mailto:kexue@fuxicun.top" class="pill-button">
+							<div class="pill-button-decor pill-left"></div>
+							<div class="pill-button-decor pill-right"></div>
+							<span class="pill-button-text">联系</span>
+						</a>
+						<a href="#about" class="pill-button">
+							<div class="pill-button-decor pill-left"></div>
+							<div class="pill-button-decor pill-right"></div>
+							<span class="pill-button-text">关于</span>
+						</a>
+					</div>
+					
+					<!-- 联系方式图标 -->
+					<div id="grzy-socialLinks" data-grzy="socialLinks" class="contact-icons-container iUp">
+						<a href="mailto:kexue@fuxicun.top" class="contact-icon" title="邮箱">
+							<i class="fas fa-envelope"></i>
+						</a>
+						<a href="https://github.com/fuxicun-top/kexue-fuxicun-top-Pages" class="contact-icon" target="_blank" title="GitHub">
+							<i class="fab fa-github"></i>
+						</a>
+					</div>
+					
+					<hr class="iUp" />
+					<!--一言无法显示时的文字-->
+					<p id="description" class="panel-cover__description iUp">每一个人都应该<span class="highlight-red">明确</span>自己的方向<span class="highlight-green">和</span>位置
+						<strong>-「Xiao周」</strong>
+					</p>
+				</div>
+			</header>
+			<!-- Footer -->
+			<footer id="footer">
+				<p>
+					<b>&copy; 2022 - <script>document.write(new Date().getFullYear());</script><a href="https://qwp.icu" class="active" data-grzy="copyrightName">XiaoZhou</a>
+					</b>
+					<b>
+						<a href="https://beian.miit.gov.cn/" data-grzy="beianText">桂ICP备2021000123号-2</a>
+					</b>
+				</p>
+			</footer>
+		</div>
+	</div>
+    <script src="https://fastly.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="asset/js/jquery.min.js"></script>
+    <script type="text/javascript" src="asset/js/fetch.min.js"></script>
+    <script type="text/javascript" src="asset/js/main.js"></script>
 </body>
-
 </html>
+
+
+
+
+

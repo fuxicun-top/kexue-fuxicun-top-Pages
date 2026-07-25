@@ -83,7 +83,30 @@ export default {
 			if (!管理员密码) return fetch(Pages静态页面 + '/noADMIN').then(r => { const headers = new Headers(r.headers); headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate'); headers.set('Pragma', 'no-cache'); headers.set('Expires', '0'); return new Response(r.body, { status: 404, statusText: r.statusText, headers }) });
 			if (env.KV && typeof env.KV.get === 'function') {
 				const 区分大小写访问路径 = url.pathname.slice(1);
-				if (区分大小写访问路径 === 加密秘钥 && 加密秘钥 !== '勿动此默认密钥，有需求请自行通过添加变量KEY进行修改') {//快速订阅
+				// 公开接口：获取首页配置（grzy.json）
+				if (访问路径 === 'admin/grzy.json' && request.method === 'GET') {
+					let grzyJSON = await env.KV.get('grzy.json');
+					if (!grzyJSON) {
+						grzyJSON = JSON.stringify({
+							pageTitle: '小周の主页',
+							keywords: '小周，xiaozhou,个人主页,xiaozhou-小周个人主页',
+							description: '小周，xiaozhou,个人主页,xiaozhou-小周个人主页',
+							avatarUrl: 'https://q1.qlogo.cn/g?b=qq&nk=2933206679&s=640&img_type=jpg',
+							avatarFallback: 'https://zdd-wjgx.fuxicun.top/api/preview/1784982407008_a7noifwj',
+							name: 'XiaoZhou',
+							subtitle: 'be your true self',
+							defaultDescription: '每一个人都应该<span class="highlight-red">明确</span>自己的方向<span class="highlight-green">和</span>位置 -「Xiao周」',
+							hitokotoApi: 'https://v1.hitokoto.cn/',
+							copyrightName: 'XiaoZhou',
+							beianText: '桂ICP备2021000123号-2',
+							beianUrl: 'https://beian.miit.gov.cn/',
+							navButtons: [{ text: '后台管理', url: '/admin', target: '_blank' }, { text: '项目', url: 'https://github.com/fuxicun-top/kexue-fuxicun-top-Pages', target: '_blank' }, { text: '联系', url: 'mailto:kexue@fuxicun.top' }, { text: '关于', url: '#about' }],
+							socialLinks: [{ icon: 'fa-envelope', title: '邮箱', url: 'mailto:kexue@fuxicun.top' }, { icon: 'fa-github', title: 'GitHub', url: 'https://github.com/fuxicun-top/kexue-fuxicun-top-Pages', target: '_blank' }]
+						}, null, 2);
+						await env.KV.put('grzy.json', grzyJSON);
+					}
+					return new Response(grzyJSON, { status: 200, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
+				} else if (区分大小写访问路径 === 加密秘钥 && 加密秘钥 !== '勿动此默认密钥，有需求请自行通过添加变量KEY进行修改') {//快速订阅
 					const params = new URLSearchParams(url.search);
 					params.set('token', await MD5MD5(host + userID));
 					return new Response('重定向中...', { status: 302, headers: { 'Location': `/sub?${params.toString()}` } });
@@ -283,7 +306,17 @@ export default {
 								console.error('保存自定义IP失败:', error);
 								return new Response(JSON.stringify({ error: '保存自定义IP失败: ' + error.message }), { status: 500, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
 							}
-						} else return new Response(JSON.stringify({ error: '不支持的POST请求路径' }), { status: 404, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
+						} else if (访问路径 === 'admin/grzy.json') { // 保存首页配置
+				try {
+					const newGrzy = await request.json();
+					await env.KV.put('grzy.json', JSON.stringify(newGrzy, null, 2));
+					ctx.waitUntil(请求日志记录(env, request, 访问IP, 'Save_Grzy', config_JSON));
+					return new Response(JSON.stringify({ success: true, message: '首页配置已保存' }), { status: 200, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
+				} catch (error) {
+					console.error('保存首页配置失败:', error);
+					return new Response(JSON.stringify({ error: '保存首页配置失败: ' + error.message }), { status: 500, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
+				}
+			} else return new Response(JSON.stringify({ error: '不支持的POST请求路径' }), { status: 404, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
 					} else if (访问路径 === 'admin/config.json') {// 处理 admin/config.json 请求，返回JSON
 						return new Response(JSON.stringify(config_JSON, null, 2), { status: 200, headers: { 'Content-Type': 'application/json' } });
 					} else if (区分大小写访问路径 === 'admin/ADD.txt') {// 处理 admin/ADD.txt 请求，返回本地优选IP

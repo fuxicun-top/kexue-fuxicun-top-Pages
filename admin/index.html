@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 
 <head>
@@ -8683,6 +8683,92 @@
 						</small>
 					</div>
 
+				</div>
+			</div>
+
+			<!-- 首页信息管理模块 -->
+			<div class="module">
+				<div class="module-title" onclick="toggleModule(this)">
+					🏠 首页信息管理
+					<svg class="collapse-icon" viewBox="0 0 24 24">
+						<path d="M7 10l5 5 5-5z" />
+					</svg>
+				</div>
+				<div class="module-content">
+					<div class="form-group">
+						<label for="grzy_pageTitle">页面标题 (title)</label>
+						<input type="text" id="grzy_pageTitle" placeholder="小周の主页" onchange="markGrzyModified('pageTitle')" oninput="previewGrzy()">
+					</div>
+					<div class="form-group">
+						<label for="grzy_keywords">SEO 关键词</label>
+						<input type="text" id="grzy_keywords" placeholder="小周，xiaozhou,个人主页" onchange="markGrzyModified('keywords')" oninput="previewGrzy()">
+					</div>
+					<div class="form-group">
+						<label for="grzy_description">SEO 描述</label>
+						<input type="text" id="grzy_description" placeholder="小周的个人主页" onchange="markGrzyModified('description')" oninput="previewGrzy()">
+					</div>
+					<div class="form-group">
+						<label for="grzy_avatarUrl">头像主图 URL</label>
+						<input type="text" id="grzy_avatarUrl" placeholder="https://q1.qlogo.cn/..." onchange="markGrzyModified('avatarUrl')" oninput="previewGrzy()">
+					</div>
+					<div class="form-group">
+						<label for="grzy_avatarFallback">头像 Fallback URL</label>
+						<input type="text" id="grzy_avatarFallback" placeholder="https://..." onchange="markGrzyModified('avatarFallback')" oninput="previewGrzy()">
+					</div>
+					<div class="form-group">
+						<label for="grzy_name">昵称</label>
+						<input type="text" id="grzy_name" placeholder="XiaoZhou" onchange="markGrzyModified('name')" oninput="previewGrzy()">
+					</div>
+					<div class="form-group">
+						<label for="grzy_subtitle">个性签名</label>
+						<input type="text" id="grzy_subtitle" placeholder="be your true self" onchange="markGrzyModified('subtitle')" oninput="previewGrzy()">
+					</div>
+					<div class="form-group">
+						<div class="label-with-hint">
+							<label for="grzy_navButtons">导航按钮</label>
+							<button type="button" class="inline-hint-btn" title="JSON 格式：[{text, href, target}]" onclick="showGrzyHint('navButtons')" aria-label="导航按钮说明">!</button>
+						</div>
+						<textarea id="grzy_navButtons" rows="4" style="font-family: 'Fira Code', monospace; font-size: 13px;" placeholder='[{"text":"后台管理","href":"/admin","target":"_blank"}]' onchange="markGrzyModified('navButtons')" oninput="previewGrzy()"></textarea>
+					</div>
+					<div class="form-group">
+						<div class="label-with-hint">
+							<label for="grzy_socialLinks">社交链接</label>
+							<button type="button" class="inline-hint-btn" title="JSON 格式：[{icon, href, title, target}]" onclick="showGrzyHint('socialLinks')" aria-label="社交链接说明">!</button>
+						</div>
+						<textarea id="grzy_socialLinks" rows="4" style="font-family: 'Fira Code', monospace; font-size: 13px;" placeholder='[{"icon":"fas fa-envelope","href":"mailto:test@test.com","title":"邮箱"}]' onchange="markGrzyModified('socialLinks')" oninput="previewGrzy()"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="grzy_defaultDescription">默认一言文案（HTML）</label>
+						<textarea id="grzy_defaultDescription" rows="3" style="font-family: 'Fira Code', monospace; font-size: 13px;" placeholder="默认显示的文字，支持 HTML 标签" onchange="markGrzyModified('defaultDescription')" oninput="previewGrzy()"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="grzy_hitokotoApi">一言 API 地址</label>
+						<input type="text" id="grzy_hitokotoApi" placeholder="https://v1.hitokoto.cn" onchange="markGrzyModified('hitokotoApi')" oninput="previewGrzy()">
+					</div>
+					<div class="form-group">
+						<label for="grzy_copyrightName">版权名称</label>
+						<input type="text" id="grzy_copyrightName" placeholder="XiaoZhou" onchange="markGrzyModified('copyrightName')" oninput="previewGrzy()">
+					</div>
+					<div class="form-group">
+						<label for="grzy_beianText">备案号</label>
+						<input type="text" id="grzy_beianText" placeholder="桂ICP备2021000123号-2" onchange="markGrzyModified('beianText')" oninput="previewGrzy()">
+					</div>
+					<div class="form-group">
+						<label for="grzy_beianUrl">备案链接</label>
+						<input type="text" id="grzy_beianUrl" placeholder="https://beian.miit.gov.cn/" onchange="markGrzyModified('beianUrl')" oninput="previewGrzy()">
+					</div>
+
+					<div style="display: flex; gap: 12px; margin-top: 20px;">
+						<button type="button" class="btn btn-primary" id="saveGrzyBtn" onclick="saveGrzyConfig()" disabled>💾 保存首页配置</button>
+						<button type="button" class="btn" onclick="loadGrzyConfig()" style="background: #6b7280; color: white;">🔄 重新加载</button>
+						<button type="button" class="btn" onclick="resetGrzyConfig()" style="background: #ef4444; color: white;">🗑️ 重置默认</button>
+					</div>
+
+					<!-- 预览区域 -->
+					<div style="margin-top: 20px; padding: 16px; background: #f9fafb; border-radius: 12px; border: 1px solid #e5e7eb;">
+						<h4 style="margin-bottom: 12px; color: #374151;">📊 数据预览</h4>
+						<pre id="grzyPreview" style="background: #1f2937; color: #e5e7eb; padding: 12px; border-radius: 8px; font-family: 'Fira Code', monospace; font-size: 13px; overflow-x: auto; max-height: 300px; overflow-y: auto; white-space: pre-wrap; word-break: break-all;"></pre>
+					</div>
 				</div>
 			</div>
 
@@ -25945,7 +26031,131 @@
 			showToast('🎉 24小时内不会再提示', 'info');
 		}
 
-	</script>
+
+			// ==================== 首页信息管理 (grzy.json) ====================
+			let grzyConfig = {};
+			let grzyModifiedFields = new Set();
+			const GRZY_DEFAULTS = {
+				pageTitle: '小周の主页',
+				keywords: '小周，xiaozhou,个人主页,xiaozhou-小周个人主页',
+				description: '小周，xiaozhou,个人主页,xiaozhou-小周个人主页',
+				avatarUrl: '',
+				avatarFallback: '',
+				name: 'XiaoZhou',
+				subtitle: 'be your true self',
+				navButtons: '[{"text":"后台管理","href":"/admin","target":"_blank"},{"text":"项目","href":"https://github.com/fuxicun-top/kexue-fuxicun-top-Pages","target":"_blank"},{"text":"联系","href":"mailto:kexue@fuxicun.top","target":""},{"text":"关于","href":"#about","target":""}]',
+				socialLinks: '[{"icon":"fas fa-envelope","href":"mailto:kexue@fuxicun.top","title":"邮箱"},{"icon":"fab fa-github","href":"https://github.com/fuxicun-top/kexue-fuxicun-top-Pages","title":"GitHub","target":"_blank"}]',
+				defaultDescription: '每一个都应该<span class="highlight-red">明确</span>自己的方向<span class="highlight-green">和</span>位置\n\t\t\t\t\t<strong>-「Xiao周」</strong>',
+				hitokotoApi: 'https://v1.hitokoto.cn',
+				copyrightName: 'XiaoZhou',
+				beianText: '桂ICP备2021000123号-2',
+				beianUrl: 'https://beian.miit.gov.cn/'
+			};
+
+			async function loadGrzyConfig() {
+				try {
+					const res = await fetch(api('/admin/grzy.json?_t=' + Date.now()));
+					if (res.ok) {
+						grzyConfig = await res.json();
+					} else {
+						grzyConfig = { ...GRZY_DEFAULTS };
+					}
+					fillGrzyForm();
+					previewGrzy();
+					showToast('✅ 首页配置已加载', 'success');
+				} catch (e) {
+					grzyConfig = { ...GRZY_DEFAULTS };
+					fillGrzyForm();
+					previewGrzy();
+					showToast('😢 加载失败: ' + e.message, 'error');
+				}
+			}
+
+			function fillGrzyForm() {
+				const fields = ['pageTitle', 'keywords', 'description', 'avatarUrl', 'avatarFallback', 'name', 'subtitle', 'defaultDescription', 'hitokotoApi', 'copyrightName', 'beianText', 'beianUrl'];
+				fields.forEach(f => {
+					const el = document.getElementById('grzy_' + f);
+					if (el) el.value = grzyConfig[f] || '';
+				});
+				const navEl = document.getElementById('grzy_navButtons');
+				if (navEl) navEl.value = grzyConfig.navButtons ? JSON.stringify(grzyConfig.navButtons, null, 2) : '';
+				const socialEl = document.getElementById('grzy_socialLinks');
+				if (socialEl) socialEl.value = grzyConfig.socialLinks ? JSON.stringify(grzyConfig.socialLinks, null, 2) : '';
+			}
+
+			function readGrzyForm() {
+				const data = {};
+				const textFields = ['pageTitle', 'keywords', 'description', 'avatarUrl', 'avatarFallback', 'name', 'subtitle', 'defaultDescription', 'hitokotoApi', 'copyrightName', 'beianText', 'beianUrl'];
+				textFields.forEach(f => {
+					const el = document.getElementById('grzy_' + f);
+					if (el) data[f] = el.value;
+				});
+				try {
+					const navEl = document.getElementById('grzy_navButtons');
+					data.navButtons = navEl.value ? JSON.parse(navEl.value) : [];
+				} catch {
+					showToast('😢 导航按钮 JSON 格式错误', 'error');
+					return null;
+				}
+				try {
+					const socialEl = document.getElementById('grzy_socialLinks');
+					data.socialLinks = socialEl.value ? JSON.parse(socialEl.value) : [];
+				} catch {
+					showToast('😢 社交链接 JSON 格式错误', 'error');
+					return null;
+				}
+				return data;
+			}
+
+			function markGrzyModified(field) {
+				grzyModifiedFields.add(field);
+				document.getElementById('saveGrzyBtn').disabled = grzyModifiedFields.size === 0;
+			}
+
+			function previewGrzy() {
+				const data = readGrzyForm();
+				if (!data) return;
+				const el = document.getElementById('grzyPreview');
+				if (el) el.textContent = JSON.stringify(data, null, 2);
+			}
+
+			async function saveGrzyConfig() {
+				const data = readGrzyForm();
+				if (!data) return;
+				try {
+					const res = await fetch(api('/admin/grzy.json'), {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify(data)
+					});
+					if (!res.ok) throw new Error('保存失败');
+					grzyModifiedFields.clear();
+					document.getElementById('saveGrzyBtn').disabled = true;
+					showToast('✅ 首页配置已保存！', 'success');
+				} catch (e) {
+					showToast('😢 保存失败: ' + e.message, 'error');
+				}
+			}
+
+			function resetGrzyConfig() {
+				if (!confirm('确定要重置为默认数据吗？')) return;
+				grzyConfig = { ...GRZY_DEFAULTS };
+				fillGrzyForm();
+				previewGrzy();
+				showToast('🗑️ 已重置为默认值', 'info');
+			}
+
+			function showGrzyHint(field) {
+				const hints = {
+					navButtons: '格式：\n[\n  {"text": "按钮名", "href": "链接", "target": "_blank"},\n  ...\n]\ntarget 留空表示当前页面打开。',
+					socialLinks: '格式：\n[\n  {"icon": "fas fa-envelope", "href": "mailto:test@test.com", "title": "邮箱", "target": ""},\n  ...\n]\nicon 使用 FontAwesome 类名，如 fas fa-weixin'
+				};
+				alert(hints[field] || '');
+			}
+
+			window.addEventListener('DOMContentLoaded', () => {
+				setTimeout(loadGrzyConfig, 1000);
+			});	</script>
 </body>
 
 </html>
