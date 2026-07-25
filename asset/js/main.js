@@ -140,18 +140,33 @@ function addRandomHighlights(text) {
 
 $(document).ready(function () {
 
-	// 获取一言数据（优先使用 KV 配置的 API 地址）
-	var hitokotoUrl = window._grzyHitokotoApi || 'https://v1.hitokoto.cn';
-	fetch(hitokotoUrl).then(function (res) {
+	// 获取一言数据——等 KV 加载完成后执行，确保使用正确的 API 地址
+	if (_kvReady) {
+	  _kvReady.then(function (data) {
+		var hitokotoUrl = window._grzyHitokotoApi || 'https://v1.hitokoto.cn';
+		fetch(hitokotoUrl).then(function (res) {
+			return res.json();
+		}).then(function (e) {
+			yiyan = e.hitokoto;
+			// 处理一言文字，添加高亮效果
+			var processedHitokoto = processTextWithHighlights(e.hitokoto);
+			$('#description').html(processedHitokoto + "<br/> -「<strong>" + e.from + "</strong>」")
+		}).catch(function (err) {
+			console.error(err);
+		});
+	  });
+	} else {
+	  // KV 不可用，fallback 到默认地址
+	  fetch('https://v1.hitokoto.cn').then(function (res) {
 		return res.json();
-	}).then(function (e) {
+	  }).then(function (e) {
 		yiyan = e.hitokoto;
-		// 处理一言文字，添加高亮效果
 		var processedHitokoto = processTextWithHighlights(e.hitokoto);
 		$('#description').html(processedHitokoto + "<br/> -「<strong>" + e.from + "</strong>」")
-	}).catch(function (err) {
+	  }).catch(function (err) {
 		console.error(err);
-	})
+	  });
+	}
 // var url = 'https://query.yahooapis.com/v1/public/yql' + 
 	// '?q=' + encodeURIComponent('select * from json where url=@url') +
 	// '&url=' + encodeURIComponent('https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=8') +
@@ -336,17 +351,7 @@ setInterval(updateTimeTitle, 1000);
         originalTitle = data.pageTitle;
       }
 
-      // 重新触发一言请求（使用新的 API 地址）
-      var hitokotoApi = window._grzyHitokotoApi || 'https://v1.hitokoto.cn';
-      fetch(hitokotoApi).then(function (res) {
-        return res.json();
-      }).then(function (e) {
-        yiyan = e.hitokoto;
-        var processedHitokoto = processTextWithHighlights(e.hitokoto);
-        $('#description').html(processedHitokoto + "<br/> -「<strong>" + e.from + "</strong>」");
-      }).catch(function () {
-        // 一言失败，保留页面硬编码的默认文案
-      });
+      return data;
     })
     .catch(function () {
       // KV 不可用或无数据，保持页面硬编码的默认值不动
