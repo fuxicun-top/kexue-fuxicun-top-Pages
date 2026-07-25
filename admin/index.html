@@ -26077,8 +26077,8 @@
 					const el = document.getElementById('grzy_' + f);
 					if (el) el.value = grzyConfig[f] || '';
 				});
-				renderGrzyArrayEditor('grzy_navButtons_editor', grzyConfig.navButtons, 'navButtons');
-				renderGrzyArrayEditor('grzy_socialLinks_editor', grzyConfig.socialLinks, 'socialLinks');
+				renderGrzyArrayEditor('grzy_navButtons_editor', Array.isArray(grzyConfig.navButtons) ? grzyConfig.navButtons : null, 'navButtons');
+				renderGrzyArrayEditor('grzy_socialLinks_editor', Array.isArray(grzyConfig.socialLinks) ? grzyConfig.socialLinks : null, 'socialLinks');
 			}
 
 			// ---- Visual array editors for navButtons / socialLinks ----
