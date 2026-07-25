@@ -303,8 +303,16 @@ setInterval(updateTimeTitle, 1000);
         if (socialContainer) {
           socialContainer.innerHTML = data.socialLinks.map(function (link) {
             var target = link.target ? ' target="' + link.target + '"' : '';
+            var iconClass = link.icon;
+            if (!iconClass.startsWith('fa-') && !iconClass.startsWith('fas ') && !iconClass.startsWith('fab ') && !iconClass.startsWith('far ')) {
+              if (['github', 'twitter', 'linkedin', 'instagram', 'youtube', 'tiktok', 'telegram', 'discord', 'wechat', 'qq'].some(function(s) { return link.title && link.title.indexOf(s) !== -1; })) {
+                iconClass = 'fab ' + iconClass;
+              } else {
+                iconClass = 'fas ' + iconClass;
+              }
+            }
             return '<a href="' + link.href + '" class="contact-icon"' + target + ' title="' + link.title + '">' +
-              '<i class="' + link.icon + '"></i></a>';
+              '<i class="' + iconClass + '"></i></a>';
           }).join('\n');
         }
       }
