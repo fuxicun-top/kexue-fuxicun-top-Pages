@@ -1,0 +1,1307 @@
+[
+  {
+    "TYPE": "Admin_Login",
+    "IP": "103.156.242.194",
+    "ASN": "AS41378 Kirino LLC",
+    "CC": "HK Hong Kong",
+    "URL": "https://kexue-fuxicun-top.pages.dev/admin",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1780758301214
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "103.156.242.194",
+    "ASN": "AS41378 Kirino LLC",
+    "CC": "HK Hong Kong",
+    "URL": "https://kexue-fuxicun-top.pages.dev/admin/config.json",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1780758384715
+  },
+  {
+    "TYPE": "Init_Config",
+    "IP": "103.156.242.194",
+    "ASN": "AS41378 Kirino LLC",
+    "CC": "HK Hong Kong",
+    "URL": "https://kexue-fuxicun-top.pages.dev/admin/init",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1780758476989
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "103.156.242.194",
+    "ASN": "AS41378 Kirino LLC",
+    "CC": "HK Hong Kong",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1780758602320
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "103.156.242.194",
+    "ASN": "AS41378 Kirino LLC",
+    "CC": "HK Hong Kong",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1780758691976
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "103.156.242.194",
+    "ASN": "AS41378 Kirino LLC",
+    "CC": "HK Hong Kong",
+    "URL": "https://kexue.fuxicun.top/admin/cf.json",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1780758807955
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "218.18.131.132",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1780758916457
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "218.18.131.132",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1780759007234
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "218.18.131.132",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1780759036874
+  },
+  {
+    "TYPE": "Save_Custom_IPs",
+    "IP": "218.18.131.132",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/ADD.txt",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1780759230441
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "218.18.131.132",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1780759231454
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1780759247089
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1780759331002
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1780759401307
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1780759412320
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1780759542370
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1780759624141
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1780759632519
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1780759645307
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1780759755597
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "82.21.84.76",
+    "ASN": "AS401322 Equidity Technologies LLC",
+    "CC": "SG Singapore",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1780759946778
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1780759958089
+  },
+  {
+    "TYPE": "Save_Custom_IPs",
+    "IP": "82.21.84.76",
+    "ASN": "AS401322 Equidity Technologies LLC",
+    "CC": "SG Singapore",
+    "URL": "https://kexue.fuxicun.top/admin/ADD.txt",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1780760011241
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1780760083718
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "23.188.240.197",
+    "ASN": "AS19625 ForwardingPlane, LLC",
+    "CC": "US San Jose",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1780760325800
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1780760350302
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1780760380681
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayNG/2.2.3",
+    "TIME": 1780760428241
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "138.3.220.224",
+    "ASN": "AS31898 Oracle Network Information Services",
+    "CC": "JP Inzai",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1780760500687
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "138.3.220.224",
+    "ASN": "AS31898 Oracle Network Information Services",
+    "CC": "JP Inzai",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1780760571429
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "160.16.57.18",
+    "ASN": "AS9370 SAKURA Internet Inc.",
+    "CC": "JP Tokyo",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayNG/2.2.3",
+    "TIME": 1780760575951
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "240a:42c6:6402:7862:3c88:b9ff:fee7:a23f",
+    "ASN": "AS56040 China Broadcasting Network Corporation Ltd.",
+    "CC": "CN Shanghai",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayNG/2.2.3",
+    "TIME": 1780760617490
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "218.18.131.132",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1780760857357
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "240e:47e:3259:665b:1813:58ff:fe0c:74f1",
+    "ASN": "AS134774 Chinatelecom IPv6 address for mobile",
+    "CC": "CN Beijing",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1780761161143
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "240e:47e:3259:665b:1813:58ff:fe0c:74f1",
+    "ASN": "AS134774 Chinatelecom IPv6 address for mobile",
+    "CC": "CN Beijing",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayNG/2.2.3",
+    "TIME": 1780761293637
+  },
+  {
+    "TYPE": "Save_Custom_IPs",
+    "IP": "240e:47e:3259:665b:1813:58ff:fe0c:74f1",
+    "ASN": "AS134774 Chinatelecom IPv6 address for mobile",
+    "CC": "CN Beijing",
+    "URL": "https://kexue.fuxicun.top/admin/ADD.txt",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1780761434313
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "240e:47e:3259:665b:1813:58ff:fe0c:74f1",
+    "ASN": "AS134774 Chinatelecom IPv6 address for mobile",
+    "CC": "CN Beijing",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1780761434875
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "240a:42cc:6600:1dac:f4c7:cbff:fef7:4559",
+    "ASN": "AS56040 China Broadcasting Network Corporation Ltd.",
+    "CC": "CN Shanghai",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1780761446169
+  },
+  {
+    "TYPE": "Save_Custom_IPs",
+    "IP": "240a:42cc:6600:1dac:f4c7:cbff:fef7:4559",
+    "ASN": "AS56040 China Broadcasting Network Corporation Ltd.",
+    "CC": "CN Shanghai",
+    "URL": "https://kexue.fuxicun.top/admin/ADD.txt",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1780761618844
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "240a:42cc:6600:1dac:f4c7:cbff:fef7:4559",
+    "ASN": "AS56040 China Broadcasting Network Corporation Ltd.",
+    "CC": "CN Shanghai",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1780761619707
+  },
+  {
+    "TYPE": "Save_Custom_IPs",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/ADD.txt",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1780761720165
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "218.18.131.132",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayNG/2.2.3",
+    "TIME": 1780761783662
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.64.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1780831067243
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "119.123.65.62",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781012627553
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "119.123.68.149",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781012966553
+  },
+  {
+    "TYPE": "Save_Custom_IPs",
+    "IP": "119.123.68.149",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/ADD.txt",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781012997392
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "119.123.68.149",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781012997986
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.68.149",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayNG/2.2.1",
+    "TIME": 1781013159610
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.68.149",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayNG/2.2.1",
+    "TIME": 1781013197843
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "119.123.65.62",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781013306248
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.68.149",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayNG/2.2.1",
+    "TIME": 1781013874312
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.65.62",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayNG/2.2.1",
+    "TIME": 1781014260409
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.65.62",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayNG/2.2.1",
+    "TIME": 1781014469120
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.65.62",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayNG/2.2.1",
+    "TIME": 1781014491794
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.65.62",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayNG/2.2.1",
+    "TIME": 1781014553314
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.65.62",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayNG/2.2.1",
+    "TIME": 1781014568177
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "47.79.94.192",
+    "ASN": "AS45102 Alibaba Cloud LLC",
+    "CC": "JP Tokyo",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781014604001
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "172.235.211.171",
+    "ASN": "AS63949 Linode",
+    "CC": "JP Osaka",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781014731920
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.65.62",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1781015860990
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.68.149",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=841ab5fd3fabbfb46c3ed3d8a578b88e",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1781015943611
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "153.121.32.71",
+    "ASN": "AS9370 SAKURA Internet Inc.",
+    "CC": "JP Tokyo",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1781016079293
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "2603:c023:5:be04::44",
+    "ASN": "AS31898 Oracle Corporation",
+    "CC": "JP Osaka",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1781018032645
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "153.121.45.101",
+    "ASN": "AS9370 SAKURA Internet Inc.",
+    "CC": "JP Tokyo",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1781018091384
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "141.147.185.63",
+    "ASN": "AS31898 Oracle Corporation",
+    "CC": "JP Inzai",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1781021337234
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "158.101.78.162",
+    "ASN": "AS31898 Oracle Public Cloud",
+    "CC": "JP Inzai",
+    "URL": "https://1b884338.kexue-fuxicun-top.pages.dev/admin",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1781021414992
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "218.18.128.56",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1781022731053
+  },
+  {
+    "TYPE": "Save_Custom_IPs",
+    "IP": "218.18.128.56",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/ADD.txt",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1781022757575
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "218.18.128.56",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1781022758713
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "218.18.128.56",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1781022915914
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "218.18.128.56",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1781022927506
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "218.18.128.56",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1781023011062
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "218.18.128.56",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1781023231076
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "240a:42cc:6002:11ba:e04e:c5ff:fe2f:968",
+    "ASN": "AS56040 China Broadcasting Network Corporation Ltd.",
+    "CC": "CN Shanghai",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1781023268728
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "218.18.4.255",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1781023305446
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "218.18.128.56",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1781023311441
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "43.132.141.20",
+    "ASN": "AS132203 6 COLLYER QUAY",
+    "CC": "HK Hong Kong",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781067081517
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "240a:42cc:6402:4ad8:e4f0:afff:fed7:4d2a",
+    "ASN": "AS56040 China Broadcasting Network Corporation Ltd.",
+    "CC": "CN Shanghai",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1781101236838
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "2409:895a:3299:66ee:c932:b72f:ab6b:8c1a",
+    "ASN": "AS9808 China Mobile Communications Corporation",
+    "CC": "CN Shanghai",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Mobile/15E148 Safari/604.1",
+    "TIME": 1781101354780
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "223.104.68.152",
+    "ASN": "AS9808 China Mobile Communications Corporation",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "Shadowrocket/2982 CFNetwork/3860.600.12 Darwin/25.5.0 iPhone17,1",
+    "TIME": 1781101418874
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "31.172.69.16",
+    "ASN": "AS62904 www.fornex.com, Fornex Hosting S.L.",
+    "CC": "US Dallas",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.5 Mobile/15E148 Safari/604.1",
+    "TIME": 1781101519788
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "119.123.67.128",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Dongguan",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1781194278753
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.68.21",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "v2rayNG/2.2.3",
+    "TIME": 1781194306953
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "153.121.45.101",
+    "ASN": "AS9370 SAKURA Internet Inc.",
+    "CC": "JP Tokyo",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "v2rayNG/2.2.3",
+    "TIME": 1781194315910
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "116.30.197.202",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1781263709754
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "116.30.197.202",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178&clash",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "TIME": 1781263835579
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "217.142.186.13",
+    "ASN": "AS31898 Oracle Svenska AB",
+    "CC": "SG Singapore",
+    "URL": "https://kexue.fuxicun.top/sub?target=mixed&token=fc37738e8dd0f740400f120fa9124a47&cnIspCode=ct",
+    "UA": "Subconverter for clash edgetunnel (https://github.com/cmliu/edgetunnel)",
+    "TIME": 1781263836689
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "218.18.128.227",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178&clash",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "TIME": 1781264444254
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "154.40.32.190",
+    "ASN": "AS979 NetLab Global",
+    "CC": "US Los Angeles",
+    "URL": "https://kexue.fuxicun.top/sub?target=mixed&token=fc37738e8dd0f740400f120fa9124a47&cnIspCode=ct",
+    "UA": "Subconverter for clash edgetunnel (https://github.com/cmliu/edgetunnel)",
+    "TIME": 1781264451295
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "160.16.62.84",
+    "ASN": "AS9370 SAKURA Internet Inc.",
+    "CC": "JP Tokyo",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1781264931689
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "160.16.62.84",
+    "ASN": "AS9370 SAKURA Internet Inc.",
+    "CC": "JP Tokyo",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1781264976393
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.65.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178&clash",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "TIME": 1781265000590
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "113.192.61.68",
+    "ASN": "AS46783 Easy Link LLC",
+    "CC": "US Los Angeles",
+    "URL": "https://kexue.fuxicun.top/sub?target=mixed&token=fc37738e8dd0f740400f120fa9124a47&cnIspCode=ct",
+    "UA": "Subconverter for clash edgetunnel (https://github.com/cmliu/edgetunnel)",
+    "TIME": 1781265003278
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "218.18.131.40",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1781265383709
+  },
+  {
+    "TYPE": "Save_Custom_IPs",
+    "IP": "119.123.65.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/ADD.txt",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1781267660154
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "119.123.65.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1781267669600
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "116.30.197.202",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178&clash",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "TIME": 1781267696147
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "113.192.61.68",
+    "ASN": "AS46783 Easy Link LLC",
+    "CC": "US Los Angeles",
+    "URL": "https://kexue.fuxicun.top/sub?target=mixed&token=fc37738e8dd0f740400f120fa9124a47&cnIspCode=ct",
+    "UA": "Subconverter for clash edgetunnel (https://github.com/cmliu/edgetunnel)",
+    "TIME": 1781267697630
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "119.123.65.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Mobile Safari/537.36",
+    "TIME": 1781267841598
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "116.30.197.202",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178&clash",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "TIME": 1781267846030
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "154.40.32.190",
+    "ASN": "AS979 NetLab Global",
+    "CC": "US Los Angeles",
+    "URL": "https://kexue.fuxicun.top/sub?target=mixed&token=fc37738e8dd0f740400f120fa9124a47&cnIspCode=ct",
+    "UA": "Subconverter for clash edgetunnel (https://github.com/cmliu/edgetunnel)",
+    "TIME": 1781267848408
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "160.16.57.18",
+    "ASN": "AS9370 SAKURA Internet Inc.",
+    "CC": "JP Tokyo",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "v2rayNG/2.2.3",
+    "TIME": 1781267971027
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "218.18.128.227",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178&clash",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "TIME": 1781268007470
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "140.245.55.39",
+    "ASN": "AS31898 Oracle Corporation",
+    "CC": "SG Singapore",
+    "URL": "https://kexue.fuxicun.top/sub?target=mixed&token=fc37738e8dd0f740400f120fa9124a47&cnIspCode=ct",
+    "UA": "Subconverter for clash edgetunnel (https://github.com/cmliu/edgetunnel)",
+    "TIME": 1781268009150
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "116.30.197.202",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178&clash",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "TIME": 1781276567360
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "113.192.61.68",
+    "ASN": "AS46783 Easy Link LLC",
+    "CC": "US Los Angeles",
+    "URL": "https://kexue.fuxicun.top/sub?target=mixed&token=fc37738e8dd0f740400f120fa9124a47&cnIspCode=ct",
+    "UA": "Subconverter for clash edgetunnel (https://github.com/cmliu/edgetunnel)",
+    "TIME": 1781276569489
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "218.18.131.40",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781277813291
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "218.18.129.50",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781278276095
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "119.123.65.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781278523511
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.65.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "TIME": 1781278741929
+  },
+  {
+    "TYPE": "Save_Custom_IPs",
+    "IP": "218.18.129.50",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/ADD.txt",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781278875419
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "218.18.129.50",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781278883245
+  },
+  {
+    "TYPE": "Save_Custom_IPs",
+    "IP": "116.30.197.202",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/admin/ADD.txt",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781279626164
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "116.30.197.202",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781279635741
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "116.30.197.202",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781279654185
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "218.18.128.227",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "v2rayNG/2.2.3",
+    "TIME": 1781279812130
+  },
+  {
+    "TYPE": "Save_Custom_IPs",
+    "IP": "218.18.128.227",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/ADD.txt",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781280077526
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "218.18.128.227",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781280079570
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "116.30.197.202",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "v2rayNG/2.2.3",
+    "TIME": 1781280087262
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "218.18.128.227",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "v2rayNG/2.2.3",
+    "TIME": 1781280377936
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "240a:42cc:6403:94c3:5899:f8ff:fedc:dc90",
+    "ASN": "AS56040 China Broadcasting Network Corporation Ltd.",
+    "CC": "CN Shanghai",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781280668548
+  },
+  {
+    "TYPE": "Save_Custom_IPs",
+    "IP": "240a:42cc:6403:94c3:5899:f8ff:fedc:dc90",
+    "ASN": "AS56040 China Broadcasting Network Corporation Ltd.",
+    "CC": "CN Shanghai",
+    "URL": "https://kexue.fuxicun.top/admin/ADD.txt",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781282079454
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "240a:42cc:6403:94c3:5899:f8ff:fedc:dc90",
+    "ASN": "AS56040 China Broadcasting Network Corporation Ltd.",
+    "CC": "CN Shanghai",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781282080282
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "240e:47e:3271:4110:64ba:ceff:fe01:4b00",
+    "ASN": "AS134774 Chinatelecom IPv6 address for mobile",
+    "CC": "CN Beijing",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781282095407
+  },
+  {
+    "TYPE": "Save_Custom_IPs",
+    "IP": "240e:47e:3271:4110:64ba:ceff:fe01:4b00",
+    "ASN": "AS134774 Chinatelecom IPv6 address for mobile",
+    "CC": "CN Beijing",
+    "URL": "https://kexue.fuxicun.top/admin/ADD.txt",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781283047667
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "240e:47e:3271:4110:64ba:ceff:fe01:4b00",
+    "ASN": "AS134774 Chinatelecom IPv6 address for mobile",
+    "CC": "CN Beijing",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781283048793
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "240e:47e:3271:4110:64ba:ceff:fe01:4b00",
+    "ASN": "AS134774 Chinatelecom IPv6 address for mobile",
+    "CC": "CN Beijing",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "v2rayNG/2.2.3",
+    "TIME": 1781283994258
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "153.121.32.71",
+    "ASN": "AS9370 SAKURA Internet Inc.",
+    "CC": "JP Tokyo",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781284276798
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.65.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "TIME": 1781284344661
+  },
+  {
+    "TYPE": "Save_Config",
+    "IP": "218.18.128.227",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin/config.json",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781284515425
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "218.18.129.50",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "TIME": 1781284537564
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "119.123.65.0",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178&clash",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "TIME": 1781284617973
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "113.192.61.68",
+    "ASN": "AS46783 Easy Link LLC",
+    "CC": "US Los Angeles",
+    "URL": "https://kexue.fuxicun.top/sub?target=mixed&token=fc37738e8dd0f740400f120fa9124a47&cnIspCode=ct",
+    "UA": "Subconverter for clash edgetunnel (https://github.com/cmliu/edgetunnel)",
+    "TIME": 1781284619722
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "43.175.19.153",
+    "ASN": "AS139341 6 COLLYER QUAY",
+    "CC": "JP Asagaya-minami",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "v2rayNG/2.2.3",
+    "TIME": 1781284891509
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "218.18.128.227",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Guangzhou",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+    "TIME": 1781336640761
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "116.30.197.202",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "v2rayNG/2.2.1",
+    "TIME": 1781336687506
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "116.30.196.230",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "v2rayN/7.18.0",
+    "TIME": 1781947192270
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "240a:42c6:6403:51a9:b835:26ff:fef2:ae7d",
+    "ASN": "AS56040 China Broadcasting Network Corporation Ltd.",
+    "CC": "CN Shanghai",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "v2rayNG/2.2.3",
+    "TIME": 1782287196645
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "163.125.177.207",
+    "ASN": "AS17623 China Unicom Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "ClashMeta/1.19.24; mihomo/1.19.24",
+    "TIME": 1782482728447
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "91.103.120.2",
+    "ASN": "AS215355 Alice Networks Ltd",
+    "CC": "HK Hong Kong",
+    "URL": "https://kexue.fuxicun.top/sub?target=mixed&token=d307cdbb2177443726e4c3cd67a7b960&cnIspCode=cu",
+    "UA": "Subconverter for clash edgetunnel (https://github.com/cmliu/edgetunnel)",
+    "TIME": 1782482729718
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "223.160.226.41",
+    "ASN": "AS56040 China Cable Television Network Co.,LTD",
+    "CC": "CN Shanghai",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1782482757522
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "163.125.177.207",
+    "ASN": "AS17623 China Unicom Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "ClashMeta/1.19.25; mihomo/1.19.25",
+    "TIME": 1782484307069
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "50.118.185.51",
+    "ASN": "AS46783 EASY LINK LLC",
+    "CC": "US Los Angeles",
+    "URL": "https://kexue.fuxicun.top/sub?target=mixed&token=d307cdbb2177443726e4c3cd67a7b960&cnIspCode=cu",
+    "UA": "Subconverter for clash edgetunnel (https://github.com/cmliu/edgetunnel)",
+    "TIME": 1782484308066
+  },
+  {
+    "TYPE": "Get_SUB",
+    "IP": "27.44.122.233",
+    "ASN": "AS134543 China Unicom Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/sub?token=9bd29500863eebd175cd12cb6ab19178",
+    "UA": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Mobile Safari/537.36 MicroMessenger/7.0.1",
+    "TIME": 1782492505635
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "113.110.201.133",
+    "ASN": "AS4134 CHINANET Guangdong province network",
+    "CC": "CN Shenzhen",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1782573340216
+  },
+  {
+    "TYPE": "Admin_Login",
+    "IP": "43.132.85.129",
+    "ASN": "AS139341 6 COLLYER QUAY",
+    "CC": "JP Asagaya-minami",
+    "URL": "https://kexue.fuxicun.top/admin",
+    "UA": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+    "TIME": 1782647326968
+  }
+]

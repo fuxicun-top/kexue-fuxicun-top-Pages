@@ -1,0 +1,104 @@
+{
+  "TIME": "2026-06-06T15:07:56.553Z",
+  "HOST": "kexue.fuxicun.top",
+  "HOSTS": [
+    "kexue.fuxicun.top"
+  ],
+  "UUID": "d79435d0-23a4-4b04-a6b5-73eaa7a81d7f",
+  "PATH": "/",
+  "协议类型": "vless",
+  "传输协议": "ws",
+  "gRPC模式": "gun",
+  "gRPCUserAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36",
+  "跳过证书验证": true,
+  "启用0RTT": true,
+  "TLS分片": "Shadowrocket",
+  "随机路径": true,
+  "ECH": true,
+  "ECHConfig": {
+    "DNS": "https://dns.alidns.com/dns-query",
+    "SNI": "cloudflare-ech.com"
+  },
+  "SS": {
+    "加密方式": "aes-128-gcm",
+    "TLS": true
+  },
+  "Fingerprint": "chrome",
+  "优选订阅生成": {
+    "local": true,
+    "本地IP库": {
+      "随机IP": false,
+      "随机数量": 16,
+      "指定端口": -1
+    },
+    "SUB": null,
+    "SUBNAME": "小周CF科学",
+    "SUBUpdateTime": 3,
+    "TOKEN": "1bd29500863eebd175cd12cb6ab19178"
+  },
+  "订阅转换配置": {
+    "SUBAPI": "https://subapi.cmliussss.net",
+    "SUBCONFIG": "https://raw.githubusercontent.com/cmliu/ACL4SSR/refs/heads/main/Clash/config/ACL4SSR_Online_Mini_MultiMode_CF.ini",
+    "SUBEMOJI": true
+  },
+  "反代": {
+    "PROXYIP": "auto",
+    "SOCKS5": {
+      "启用": null,
+      "全局": false,
+      "账号": "",
+      "白名单": [
+        "*tapecontent.net",
+        "*cloudatacdn.com",
+        "*loadshare.org",
+        "*cdn-centaurus.com",
+        "scholar.google.com"
+      ]
+    },
+    "路径模板": {
+      "PROXYIP": "proxyip={{IP:PORT}}",
+      "SOCKS5": {
+        "全局": "socks5://{{IP:PORT}}",
+        "标准": "socks5={{IP:PORT}}"
+      },
+      "HTTP": {
+        "全局": "http://{{IP:PORT}}",
+        "标准": "http={{IP:PORT}}"
+      },
+      "HTTPS": {
+        "全局": "https://{{IP:PORT}}",
+        "标准": "https={{IP:PORT}}"
+      },
+      "TURN": {
+        "全局": "turn://{{IP:PORT}}",
+        "标准": "turn={{IP:PORT}}"
+      },
+      "SSTP": {
+        "全局": "sstp://{{IP:PORT}}",
+        "标准": "sstp={{IP:PORT}}"
+      }
+    }
+  },
+  "TG": {
+    "启用": false,
+    "BotToken": null,
+    "ChatID": null
+  },
+  "CF": {
+    "Email": null,
+    "GlobalAPIKey": null,
+    "AccountID": "75e***************************a7",
+    "APIToken": "cfa************************************************a5",
+    "UsageAPI": null,
+    "Usage": {
+      "success": true,
+      "pages": 0,
+      "workers": 14229,
+      "total": 14229,
+      "max": 100000
+    }
+  },
+  "完整节点路径": "/?ed=2560",
+  "LINK": "vless://d79435d0-23a4-4b04-a6b5-73eaa7a81d7f@kexue.fuxicun.top:443?security=tls&type=ws&ech=cloudflare-ech.com%2Bhttps%3A%2F%2Fdns.alidns.com%2Fdns-query&host=kexue.fuxicun.top&fp=chrome&sni=kexue.fuxicun.top&path=%2Fgames%2Ftopic%2Fonline%3Fed%3D2560&fragment=1%2C40-60%2C30-50%2Ctlshello&encryption=none#%E5%B0%8F%E5%91%A8CF%E7%A7%91%E5%AD%A6",
+  "加载时间": "487.00ms"
+}
