@@ -80,6 +80,12 @@ export default {
 			return await 处理XHTTP请求(request, userID, 反代上下文);
 		} else {
 			if (url.protocol === 'http:') return Response.redirect(url.href.replace(`http://${url.hostname}`, `https://${url.hostname}`), 301);
+			// 静态资源直接代理到 GitHub Pages
+			if (!访问路径 || 访问路径.startsWith('asset/') || 访问路径.startsWith('admin/') ||
+				访问路径 === 'login' || 访问路径 === 'sub' || 访问路径 === 'locations' ||
+				访问路径 === 'version' || 访问路径 === 'robots.txt' || 访问路径 === 'favicon.ico') {
+				return fetch(Pages静态页面 + (访问路径 ? '/' + 访问路径 : '') + url.search);
+			}
 			if (!管理员密码) return fetch(Pages静态页面 + '/noADMIN').then(r => { const headers = new Headers(r.headers); headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate'); headers.set('Pragma', 'no-cache'); headers.set('Expires', '0'); return new Response(r.body, { status: 404, statusText: r.statusText, headers }) });
 			if (env.KV && typeof env.KV.get === 'function') {
 				const 区分大小写访问路径 = url.pathname.slice(1);
@@ -307,16 +313,16 @@ export default {
 								return new Response(JSON.stringify({ error: '保存自定义IP失败: ' + error.message }), { status: 500, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
 							}
 						} else if (访问路径 === 'admin/grzy.json') { // 保存首页配置
-							try {
-								const newGrzy = await request.json();
-								await env.KV.put('grzy.json', JSON.stringify(newGrzy, null, 2));
-								ctx.waitUntil(请求日志记录(env, request, 访问IP, 'Save_Grzy', config_JSON));
-								return new Response(JSON.stringify({ success: true, message: '首页配置已保存' }), { status: 200, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
-							} catch (error) {
-								console.error('保存首页配置失败:', error);
-								return new Response(JSON.stringify({ error: '保存首页配置失败: ' + error.message }), { status: 500, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
-							}
-						} else return new Response(JSON.stringify({ error: '不支持的POST请求路径' }), { status: 404, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
+				try {
+					const newGrzy = await request.json();
+					await env.KV.put('grzy.json', JSON.stringify(newGrzy, null, 2));
+					ctx.waitUntil(请求日志记录(env, request, 访问IP, 'Save_Grzy', config_JSON));
+					return new Response(JSON.stringify({ success: true, message: '首页配置已保存' }), { status: 200, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
+				} catch (error) {
+					console.error('保存首页配置失败:', error);
+					return new Response(JSON.stringify({ error: '保存首页配置失败: ' + error.message }), { status: 500, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
+				}
+			} else return new Response(JSON.stringify({ error: '不支持的POST请求路径' }), { status: 404, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
 					} else if (访问路径 === 'admin/config.json') {// 处理 admin/config.json 请求，返回JSON
 						return new Response(JSON.stringify(config_JSON, null, 2), { status: 200, headers: { 'Content-Type': 'application/json' } });
 					} else if (区分大小写访问路径 === 'admin/ADD.txt') {// 处理 admin/ADD.txt 请求，返回本地优选IP
