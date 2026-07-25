@@ -35,9 +35,9 @@ jobs:
         run: |
           mkdir -p _site
           # 复制静态页面文件，排除 worker.js 等非前端文件
-          cp -r admin cdn-cgi login noADMIN noKV sub version _site/
+          cp -r admin asset cdn-cgi login noADMIN noKV sub version _site/
           cp locations _site/
-          cp index.html .gitignore README.md _site/
+          cp index.html .gitignore README.md favicon.ico _site/
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
