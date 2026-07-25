@@ -303,8 +303,16 @@ setInterval(updateTimeTitle, 1000);
         if (socialContainer) {
           socialContainer.innerHTML = data.socialLinks.map(function (link) {
             var target = link.target ? ' target="' + link.target + '"' : '';
+            // 确保 icon 有 fas/fab 前缀（与原版模板一致）
+            var iconClass = link.icon;
+            if (!iconClass.match(/^(fas|fab|far|fal)\s/)) {
+              // 根据图标类型判断前缀：github/twitter/linkedin 等品牌图标用 fab
+              var brandIcons = ['github', 'twitter', 'linkedin', 'instagram', 'youtube', 'tiktok', 'telegram', 'discord', 'wechat', 'qq', 'weibo', 'bilibili'];
+              var isBrand = brandIcons.some(function(b) { return iconClass.indexOf(b) !== -1 || (link.title && link.title.indexOf(b) !== -1); });
+              iconClass = (isBrand ? 'fab ' : 'fas ') + iconClass;
+            }
             return '<a href="' + link.href + '" class="contact-icon"' + target + ' title="' + link.title + '">' +
-              '<i class="' + link.icon + '"></i></a>';
+              '<i class="' + iconClass + '"></i></a>';
           }).join('\n');
         }
       }
