@@ -26,3 +26,9 @@ yarn.lock
 
 # 上游参考文件（不提交到仓库）
 _worker_upstream.js
+
+# 同步日记（本地参考，不提交）
+每次同步上游更新必须按照这个标准执行要求.md
+
+# 备份文件
+worker_backup_*.js
