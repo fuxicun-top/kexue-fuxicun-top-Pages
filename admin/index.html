@@ -26057,17 +26057,20 @@
 					const res = await fetch(api('/admin/grzy.json?_t=' + Date.now()));
 					if (res.ok) {
 						grzyConfig = await res.json();
+						fillGrzyForm();
+						previewGrzy();
+						showToast('✅ 首页配置已加载', 'success');
 					} else {
 						grzyConfig = { ...GRZY_DEFAULTS };
+						fillGrzyForm();
+						previewGrzy();
+						showToast('⚠️ KV 不可用，已使用默认数据', 'info');
 					}
-					fillGrzyForm();
-					previewGrzy();
-					showToast('✅ 首页配置已加载', 'success');
 				} catch (e) {
 					grzyConfig = { ...GRZY_DEFAULTS };
 					fillGrzyForm();
 					previewGrzy();
-					showToast('😢 加载失败: ' + e.message, 'error');
+					showToast('⚠️ 加载失败，已使用默认数据', 'info');
 				}
 			}
 
