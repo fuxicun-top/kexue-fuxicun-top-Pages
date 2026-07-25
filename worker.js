@@ -100,8 +100,8 @@ export default {
 							copyrightName: 'XiaoZhou',
 							beianText: '桂ICP备2021000123号-2',
 							beianUrl: 'https://beian.miit.gov.cn/',
-							navButtons: [{ text: '后台管理', url: '/admin', target: '_blank' }, { text: '项目', url: 'https://github.com/fuxicun-top/kexue-fuxicun-top-Pages', target: '_blank' }, { text: '联系', url: 'mailto:kexue@fuxicun.top' }, { text: '关于', url: '#about' }],
-							socialLinks: [{ icon: 'fa-envelope', title: '邮箱', url: 'mailto:kexue@fuxicun.top' }, { icon: 'fa-github', title: 'GitHub', url: 'https://github.com/fuxicun-top/kexue-fuxicun-top-Pages', target: '_blank' }]
+							navButtons: [{ text: '后台管理', href: '/admin', target: '_blank' }, { text: '项目', href: 'https://github.com/fuxicun-top/kexue-fuxicun-top-Pages', target: '_blank' }, { text: '联系', href: 'mailto:kexue@fuxicun.top' }, { text: '关于', href: '#about' }],
+							socialLinks: [{ icon: 'fa-envelope', title: '邮箱', href: 'mailto:kexue@fuxicun.top' }, { icon: 'fa-github', title: 'GitHub', href: 'https://github.com/fuxicun-top/kexue-fuxicun-top-Pages', target: '_blank' }]
 						}, null, 2);
 						await env.KV.put('grzy.json', grzyJSON);
 					}

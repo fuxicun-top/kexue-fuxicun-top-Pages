@@ -26039,17 +26039,17 @@
 				pageTitle: '小周の主页',
 				keywords: '小周，xiaozhou,个人主页,xiaozhou-小周个人主页',
 				description: '小周，xiaozhou,个人主页,xiaozhou-小周个人主页',
-				avatarUrl: '',
-				avatarFallback: '',
+				avatarUrl: 'https://q1.qlogo.cn/g?b=qq&nk=2933206679&s=640&img_type=jpg',
+				avatarFallback: 'https://zdd-wjgx.fuxicun.top/api/preview/1784982407008_a7noifwj',
 				name: 'XiaoZhou',
 				subtitle: 'be your true self',
-				navButtons: '[{"text":"后台管理","href":"/admin","target":"_blank"},{"text":"项目","href":"https://github.com/fuxicun-top/kexue-fuxicun-top-Pages","target":"_blank"},{"text":"联系","href":"mailto:kexue@fuxicun.top","target":""},{"text":"关于","href":"#about","target":""}]',
-				socialLinks: '[{"icon":"fas fa-envelope","href":"mailto:kexue@fuxicun.top","title":"邮箱"},{"icon":"fab fa-github","href":"https://github.com/fuxicun-top/kexue-fuxicun-top-Pages","title":"GitHub","target":"_blank"}]',
-				defaultDescription: '每一个都应该<span class="highlight-red">明确</span>自己的方向<span class="highlight-green">和</span>位置\n\t\t\t\t\t<strong>-「Xiao周」</strong>',
-				hitokotoApi: 'https://v1.hitokoto.cn',
+				defaultDescription: '每一个人都应该<span class="highlight-red">明确</span>自己的方向<span class="highlight-green">和</span>位置\n\t\t\t\t<strong>-「Xiao周」</strong>',
+				hitokotoApi: 'https://v1.hitokoto.cn/',
 				copyrightName: 'XiaoZhou',
 				beianText: '桂ICP备2021000123号-2',
-				beianUrl: 'https://beian.miit.gov.cn/'
+				beianUrl: 'https://beian.miit.gov.cn/',
+				navButtons: [{"text":"后台管理","href":"/admin","target":"_blank"},{"text":"项目","href":"https://github.com/fuxicun-top/kexue-fuxicun-top-Pages","target":"_blank"},{"text":"联系","href":"mailto:kexue@fuxicun.top"},{"text":"关于","href":"#about"}],
+				socialLinks: [{"icon":"fa-envelope","title":"邮箱","href":"mailto:kexue@fuxicun.top"},{"icon":"fa-github","title":"GitHub","href":"https://github.com/fuxicun-top/kexue-fuxicun-top-Pages","target":"_blank"}]
 			};
 
 			async function loadGrzyConfig() {
@@ -26147,8 +26147,8 @@
 
 			function showGrzyHint(field) {
 				const hints = {
-					navButtons: '格式：\n[\n  {"text": "按钮名", "href": "链接", "target": "_blank"},\n  ...\n]\ntarget 留空表示当前页面打开。',
-					socialLinks: '格式：\n[\n  {"icon": "fas fa-envelope", "href": "mailto:test@test.com", "title": "邮箱", "target": ""},\n  ...\n]\nicon 使用 FontAwesome 类名，如 fas fa-weixin'
+					navButtons: '格式：\n[\n  {"text": "按钮名", "url": "链接", "target": "_blank"},\n  ...\n]\ntarget 留空表示当前页面打开。',
+					socialLinks: '格式：\n[\n  {"icon": "fa-envelope", "url": "mailto:test@test.com", "title": "邮箱", "target": ""},\n  ...\n]\nicon 使用 FontAwesome 类名（不带 fas/fa- 前缀也可自动补全）'
 				};
 				alert(hints[field] || '');
 			}
