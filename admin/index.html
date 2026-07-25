@@ -26109,14 +26109,12 @@
 						card.appendChild(makeGrzyField('文本', 'text', item.text || '', idx).wrapper);
 						card.appendChild(makeGrzyField('链接', 'href', item.href || '', idx).wrapper);
 						const targetSelect = makeGrzySelect('target', item.target || '', ['_blank', '_self', ''], idx, 'navButtons');
-						targetSelect.querySelector('label').textContent = '新窗口';
 						card.appendChild(targetSelect.wrapper);
 					} else {
 						card.appendChild(makeGrzyField('图标类名', 'icon', item.icon || '', idx).wrapper);
 						card.appendChild(makeGrzyField('标题', 'title', item.title || '', idx).wrapper);
 						card.appendChild(makeGrzyField('链接', 'href', item.href || '', idx).wrapper);
 						const targetSelect = makeGrzySelect('target', item.target || '', ['_blank', '_self', ''], idx, type);
-						targetSelect.querySelector('label').textContent = '新窗口';
 						card.appendChild(targetSelect.wrapper);
 					}
 					container.appendChild(card);
@@ -26149,7 +26147,7 @@
 				wrapper.style.gap = '6px';
 				const lbl = document.createElement('span');
 				lbl.style.cssText = 'font-size:12px; color:#6b7280; min-width:50px;';
-				lbl.textContent = '选择:';
+				lbl.textContent = '新窗口:';
 				const sel = document.createElement('select');
 				sel.style.cssText = 'flex:1; padding:4px 8px; border:1px solid #d1d5db; border-radius:4px; font-size:13px;';
 				options.forEach(o => {
