@@ -307,16 +307,16 @@ export default {
 								return new Response(JSON.stringify({ error: '保存自定义IP失败: ' + error.message }), { status: 500, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
 							}
 						} else if (访问路径 === 'admin/grzy.json') { // 保存首页配置
-				try {
-					const newGrzy = await request.json();
-					await env.KV.put('grzy.json', JSON.stringify(newGrzy, null, 2));
-					ctx.waitUntil(请求日志记录(env, request, 访问IP, 'Save_Grzy', config_JSON));
-					return new Response(JSON.stringify({ success: true, message: '首页配置已保存' }), { status: 200, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
-				} catch (error) {
-					console.error('保存首页配置失败:', error);
-					return new Response(JSON.stringify({ error: '保存首页配置失败: ' + error.message }), { status: 500, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
-				}
-			} else return new Response(JSON.stringify({ error: '不支持的POST请求路径' }), { status: 404, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
+							try {
+								const newGrzy = await request.json();
+								await env.KV.put('grzy.json', JSON.stringify(newGrzy, null, 2));
+								ctx.waitUntil(请求日志记录(env, request, 访问IP, 'Save_Grzy', config_JSON));
+								return new Response(JSON.stringify({ success: true, message: '首页配置已保存' }), { status: 200, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
+							} catch (error) {
+								console.error('保存首页配置失败:', error);
+								return new Response(JSON.stringify({ error: '保存首页配置失败: ' + error.message }), { status: 500, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
+							}
+						} else return new Response(JSON.stringify({ error: '不支持的POST请求路径' }), { status: 404, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
 					} else if (访问路径 === 'admin/config.json') {// 处理 admin/config.json 请求，返回JSON
 						return new Response(JSON.stringify(config_JSON, null, 2), { status: 200, headers: { 'Content-Type': 'application/json' } });
 					} else if (区分大小写访问路径 === 'admin/ADD.txt') {// 处理 admin/ADD.txt 请求，返回本地优选IP
