@@ -304,7 +304,8 @@ setInterval(updateTimeTitle, 1000);
           socialContainer.innerHTML = data.socialLinks.map(function (link) {
             var target = link.target ? ' target="' + link.target + '"' : '';
             var iconClass = link.icon;
-            if (!iconClass.startsWith('fa-') && !iconClass.startsWith('fas ') && !iconClass.startsWith('fab ') && !iconClass.startsWith('far ')) {
+            // 如果只有 fa- 没有 fas/fab/fa前缀，自动补全
+            if (!iconClass.startsWith('fas ') && !iconClass.startsWith('fab ') && !iconClass.startsWith('far ')) {
               if (['github', 'twitter', 'linkedin', 'instagram', 'youtube', 'tiktok', 'telegram', 'discord', 'wechat', 'qq'].some(function(s) { return link.title && link.title.indexOf(s) !== -1; })) {
                 iconClass = 'fab ' + iconClass;
               } else {
