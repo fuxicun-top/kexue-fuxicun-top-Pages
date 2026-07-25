@@ -26055,8 +26055,12 @@
 			async function loadGrzyConfig() {
 				try {
 					const res = await fetch(api('/admin/grzy.json?_t=' + Date.now()));
+					console.log('[loadGrzyConfig] status:', res.status, 'ok:', res.ok);
 					if (res.ok) {
 						grzyConfig = await res.json();
+						console.log('[loadGrzyConfig] grzyConfig:', grzyConfig);
+						console.log('[loadGrzyConfig] navButtons type:', typeof grzyConfig.navButtons, 'isArray:', Array.isArray(grzyConfig.navButtons));
+						console.log('[loadGrzyConfig] socialLinks type:', typeof grzyConfig.socialLinks, 'isArray:', Array.isArray(grzyConfig.socialLinks));
 						fillGrzyForm();
 						previewGrzy();
 						showToast('✅ 首页配置已加载', 'success');
