@@ -26058,9 +26058,6 @@
 					console.log('[loadGrzyConfig] status:', res.status, 'ok:', res.ok);
 					if (res.ok) {
 						grzyConfig = await res.json();
-						console.log('[loadGrzyConfig] grzyConfig:', grzyConfig);
-						console.log('[loadGrzyConfig] navButtons type:', typeof grzyConfig.navButtons, 'isArray:', Array.isArray(grzyConfig.navButtons));
-						console.log('[loadGrzyConfig] socialLinks type:', typeof grzyConfig.socialLinks, 'isArray:', Array.isArray(grzyConfig.socialLinks));
 						fillGrzyForm();
 						previewGrzy();
 						showToast('✅ 首页配置已加载', 'success');
@@ -26094,7 +26091,6 @@
 				if (!container) return;
 				container.innerHTML = '';
 				if (!items || !Array.isArray(items)) items = [];
-				console.log('[renderGrzyArrayEditor]', type, 'items:', items.length, items);
 				items.forEach((item, idx) => {
 					const card = document.createElement('div');
 					card.style.cssText = 'background:#f3f4f6; border:1px solid #e5e7eb; border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px; position:relative;';
@@ -26110,18 +26106,18 @@
 					};
 					card.appendChild(removeBtn);
 					if (type === 'navButtons') {
-						card.appendChild(makeGrzyField('文本', 'text', item.text || '', idx));
-						card.appendChild(makeGrzyField('链接', 'href', item.href || '', idx));
+						card.appendChild(makeGrzyField('文本', 'text', item.text || '', idx).wrapper);
+						card.appendChild(makeGrzyField('链接', 'href', item.href || '', idx).wrapper);
 						const targetSelect = makeGrzySelect('target', item.target || '', ['_blank', '_self', ''], idx, 'navButtons');
 						targetSelect.querySelector('label').textContent = '新窗口';
-						card.appendChild(targetSelect);
+						card.appendChild(targetSelect.wrapper);
 					} else {
-						card.appendChild(makeGrzyField('图标类名', 'icon', item.icon || '', idx));
-						card.appendChild(makeGrzyField('标题', 'title', item.title || '', idx));
-						card.appendChild(makeGrzyField('链接', 'href', item.href || '', idx));
+						card.appendChild(makeGrzyField('图标类名', 'icon', item.icon || '', idx).wrapper);
+						card.appendChild(makeGrzyField('标题', 'title', item.title || '', idx).wrapper);
+						card.appendChild(makeGrzyField('链接', 'href', item.href || '', idx).wrapper);
 						const targetSelect = makeGrzySelect('target', item.target || '', ['_blank', '_self', ''], idx, type);
 						targetSelect.querySelector('label').textContent = '新窗口';
-						card.appendChild(targetSelect);
+						card.appendChild(targetSelect.wrapper);
 					}
 					container.appendChild(card);
 				});
