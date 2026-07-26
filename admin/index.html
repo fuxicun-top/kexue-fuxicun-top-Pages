@@ -26291,7 +26291,7 @@
 					// 直接从 GitHub Pages 静态文件读取 grzy.json 默认数据（不经过 Worker/KV）
 					const pagesBase = 'https://fuxicun-top.github.io/kexue-fuxicun-top-Pages';
 					const res = await fetch(pagesBase + '/admin/grzy.json');
-					if (!res.ok) throw new Error('无法获取 GitHub 默认数据');
+					if (!res.ok) throw new Error('无法获取默认数据');
 					const defaultData = await res.json();
 					// 写入 KV
 					const saveRes = await fetch(api('/admin/grzy.json'), {
