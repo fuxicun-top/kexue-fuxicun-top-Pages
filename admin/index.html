@@ -26302,11 +26302,15 @@
 			}
 
 			function resetGrzyConfig() {
-				if (!confirm('确定要重置为默认数据吗？')) return;
+				if (!confirm('确定要重置为默认数据吗？这将覆盖 KV 中的配置。')) return;
 				grzyConfig = { ...GRZY_DEFAULTS };
 				fillGrzyForm();
 				previewGrzy();
-				showToast('🗑️ 已重置为默认值', 'info');
+				saveGrzyConfig().then(() => {
+					showToast('🗑️ 已重置并同步到默认值', 'success');
+				}).catch(() => {
+					showToast('🗑️ 前端已重置，但同步到 KV 失败，请手动保存', 'info');
+				});
 			}
 
 			window.addEventListener('DOMContentLoaded', () => {

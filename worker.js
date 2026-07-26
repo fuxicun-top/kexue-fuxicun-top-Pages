@@ -92,22 +92,17 @@ export default {
 				if (访问路径 === 'admin/grzy.json' && request.method === 'GET') {
 					let grzyJSON = await env.KV.get('grzy.json');
 					if (!grzyJSON) {
-						grzyJSON = JSON.stringify({
-							pageTitle: '小周の主页',
-							keywords: '小周，xiaozhou,个人主页,xiaozhou-小周个人主页',
-							description: '小周，xiaozhou,个人主页,xiaozhou-小周个人主页',
-							avatarUrl: 'https://q1.qlogo.cn/g?b=qq&nk=2933206679&s=640&img_type=jpg',
-							avatarFallback: 'https://zdd-wjgx.fuxicun.top/api/preview/1784982407008_a7noifwj',
-							name: 'XiaoZhou',
-							subtitle: 'be your true self',
-							defaultDescription: '每一个人都应该<span class="highlight-red">明确</span>自己的方向<span class="highlight-green">和</span>位置 -「Xiao周」',
-							hitokotoApi: 'https://v1.hitokoto.cn/',
-							copyrightName: 'XiaoZhou',
-							beianText: '桂ICP备2021000123号-2',
-							beianUrl: 'https://beian.miit.gov.cn/',
-							navButtons: [{ text: '后台管理', href: '/admin', target: '_blank' }, { text: '项目', href: 'https://github.com/fuxicun-top/kexue-fuxicun-top-Pages', target: '_blank' }, { text: '联系', href: 'mailto:kexue@fuxicun.top' }, { text: '关于', href: '#about' }],
-							socialLinks: [{ icon: 'fa-envelope', title: '邮箱', href: 'mailto:kexue@fuxicun.top' }, { icon: 'fa-github', title: 'GitHub', href: 'https://github.com/fuxicun-top/kexue-fuxicun-top-Pages', target: '_blank' }]
-						}, null, 2);
+						try {
+							const resp = await fetch(Pages静态页面 + '/admin/grzy.json');
+							if (resp.ok) {
+								grzyJSON = await resp.text();
+							} else {
+								throw new Error('从 Pages 加载默认配置失败');
+							}
+						} catch (e) {
+							console.error('加载默认grzy.json失败:', e);
+							return new Response(JSON.stringify({ error: '加载默认配置失败，请检查 KV 和 Pages 部署' }), { status: 500, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
+						}
 						await env.KV.put('grzy.json', grzyJSON);
 					}
 					return new Response(grzyJSON, { status: 200, headers: { 'Content-Type': 'application/json;charset=utf-8' } });
@@ -536,9 +531,8 @@ export default {
 					const authCookie = cookies.split(';').find(c => c.trim().startsWith('auth='))?.split('=')[1];
 					if (authCookie && authCookie == await MD5MD5(UA + 加密秘钥 + 管理员密码)) return fetch(new Request('https://speed.cloudflare.com/locations', { headers: { 'Referer': 'https://speed.cloudflare.com/' } }));
 				} else if (访问路径 === 'robots.txt') return new Response('User-agent: *\nDisallow: /', { status: 200, headers: { 'Content-Type': 'text/plain; charset=UTF-8' } });
-					// 未匹配的路径：兜底到 GitHub Pages 静态文件
-					return fetch(Pages静态页面 + url.pathname + url.search);
-				}
+				// 未匹配的路径：兜底到 GitHub Pages 静态文件
+				return fetch(Pages静态页面 + url.pathname + url.search);
 			} else if (!envUUID) return fetch(Pages静态页面 + '/noKV').then(r => { const headers = new Headers(r.headers); headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate'); headers.set('Pragma', 'no-cache'); headers.set('Expires', '0'); return new Response(r.body, { status: 404, statusText: r.statusText, headers }) });
 		}
 
