@@ -26257,6 +26257,12 @@
 				if (el) el.textContent = JSON.stringify(data, null, 2);
 			}
 
+			function autoResizeTextarea(el) {
+				if (!el) return;
+				el.style.height = 'auto';
+				el.style.height = el.scrollHeight + 'px';
+			}
+
 			async function saveGrzyConfig() {
 				const data = readGrzyForm();
 				if (!data) return;
