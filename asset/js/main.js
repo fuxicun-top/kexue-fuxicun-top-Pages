@@ -299,26 +299,29 @@ var _kvReady = null;
       var subtitleEl = document.querySelector('[data-grzy="subtitle"]');
       if (subtitleEl && data.subtitle) subtitleEl.textContent = data.subtitle;
 
-      // 5. 导航按钮
+      // 5. 导航按钮（KV 数据缺失时保留页面硬编码的默认值）
       if (data.navButtons && Array.isArray(data.navButtons) && data.navButtons.length > 0) {
         var navContainer = document.getElementById('grzy-navButtons');
         if (navContainer) {
           navContainer.innerHTML = data.navButtons.map(function (btn) {
+            if (!btn.href || !btn.text) return ''; // 跳过无效数据
             var target = btn.target ? ' target="' + btn.target + '"' : '';
             return '<a href="' + btn.href + '" class="pill-button"' + target + '>' +
               '<div class="pill-button-decor pill-left"></div>' +
               '<div class="pill-button-decor pill-right"></div>' +
               '<span class="pill-button-text">' + btn.text + '</span>' +
               '</a>';
-          }).join('\n');
+          }).filter(Boolean).join('\n');
+          if (!navContainer.innerHTML) navContainer.innerHTML = '';
         }
       }
 
-      // 6. 社交链接
+      // 6. 社交链接（KV 数据缺失时保留页面硬编码的默认值）
       if (data.socialLinks && Array.isArray(data.socialLinks) && data.socialLinks.length > 0) {
         var socialContainer = document.getElementById('grzy-socialLinks');
         if (socialContainer) {
           socialContainer.innerHTML = data.socialLinks.map(function (link) {
+            if (!link.href || !link.icon) return ''; // 跳过无效数据
             var target = link.target ? ' target="' + link.target + '"' : '';
             // 确保 icon 有 fas/fab 前缀（与原版模板一致）
             var iconClass = link.icon;
@@ -328,9 +331,10 @@ var _kvReady = null;
               var isBrand = brandIcons.some(function(b) { return iconClass.indexOf(b) !== -1 || (link.title && link.title.indexOf(b) !== -1); });
               iconClass = (isBrand ? 'fab ' : 'fas ') + iconClass;
             }
-            return '<a href="' + link.href + '" class="contact-icon"' + target + ' title="' + link.title + '">' +
+            return '<a href="' + link.href + '" class="contact-icon"' + target + ' title="' + (link.title || '') + '">' +
               '<i class="' + iconClass + '"></i></a>';
-          }).join('\n');
+          }).filter(Boolean).join('\n');
+          if (!socialContainer.innerHTML) socialContainer.innerHTML = '';
         }
       }
 
