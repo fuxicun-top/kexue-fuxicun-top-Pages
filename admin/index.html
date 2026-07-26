@@ -26297,7 +26297,7 @@
 					if (!saveRes.ok) throw new Error('保存失败');
 					// 重新加载
 					await loadGrzyConfig();
-					showToast('✅ 已重置为 GitHub 默认数据并同步到 KV', 'success');
+					showToast('✅ 已重置为默认数据并同步到 KV', 'success');
 				} catch (e) {
 					showToast('😢 重置失败: ' + e.message, 'error');
 				}
