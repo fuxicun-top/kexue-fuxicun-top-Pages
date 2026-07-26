@@ -26097,11 +26097,37 @@
 				if (descEl) autoResizeTextarea(descEl);
 			}
 
+			// 标准化数组数据（兼容旧版中文键名）
+			function normalizeGrzyArray(arr, type) {
+				if (!Array.isArray(arr)) return [];
+				const result = arr.map(item => {
+					if (type === 'navButtons') {
+						return {
+							text: item.text || item['✕'] || '',
+							href: item.href || item['文本'] || '',
+							target: item.target || ''
+						};
+					} else {
+						return {
+							icon: item.icon || item['✕'] || '',
+							title: item.title || item['图标类名'] || '',
+							href: item.href || item['标题'] || '',
+							target: item.target || ''
+						};
+					}
+				});
+				console.log('[normalizeGrzyArray]', type, '->', JSON.stringify(result));
+				return result;
+			}
+
 			// ---- Visual array editors for navButtons / socialLinks ----
 			function renderGrzyArrayEditor(containerId, items, type) {
 				const container = document.getElementById(containerId);
 				if (!container) { console.warn('[renderGrzyArrayEditor] container not found:', containerId); return; }
+				console.log('[renderGrzyArrayEditor] BEFORE normalize:', type, 'items=', JSON.stringify(items));
 				container.innerHTML = '';
+				items = normalizeGrzyArray(items, type);
+				console.log('[renderGrzyArrayEditor] AFTER normalize:', type, 'items=', JSON.stringify(items));
 				if (!items || !Array.isArray(items)) items = [];
 				items.forEach((item, idx) => {
 					const card = document.createElement('div');
@@ -26180,29 +26206,31 @@
 				if (!container) return [];
 				const cards = container.querySelectorAll(':scope > div');
 				const items = [];
-				cards.forEach(card => {
-					const inputs = card.querySelectorAll('input[type="text"]');
-					const selects = card.querySelectorAll('select');
+				cards.forEach((card) => {
+					// card.children: [button(✕), wrapper1, wrapper2, ...]
+					const wrappers = Array.from(card.children).filter(el => el.tagName === 'DIV');
 					const item = {};
-					inputs.forEach(inp => {
-						const lbl = inp.parentElement.previousElementSibling;
-						if (lbl && lbl.textContent) item[lbl.textContent.trim()] = inp.value;
+
+					// 从每个 wrapper 提取 label 和 value
+					const fields = wrappers.map(w => {
+						const span = w.querySelector('span');
+						const input = w.querySelector('input[type="text"]');
+						const select = w.querySelector('select');
+						return {
+							label: span ? span.textContent.trim() : '',
+							value: input ? input.value : (select ? select.value : ''),
+							isSelect: !!select
+						};
 					});
-					selects.forEach(sel => {
-						item['target'] = sel.value;
-					});
-					if (inputs.length >= 2) {
-						const firstLabel = inputs[0].parentElement.previousElementSibling?.textContent?.trim();
-						if (firstLabel === '文本') {
-							item.text = inputs[0].value;
-							item.href = inputs[1].value;
-						} else if (firstLabel === '图标类名') {
-							item.icon = inputs[0].value;
-							item.title = inputs[1].value;
-							item.href = inputs[2].value;
-						}
+
+					for (const f of fields) {
+						if (f.label === '文本') item.text = f.value;
+						else if (f.label === '链接') item.href = f.value;
+						else if (f.label === '图标类名') item.icon = f.value;
+						else if (f.label === '标题') item.title = f.value;
+						else if (f.label === '新窗口:') item.target = f.value;
 					}
-					if (selects.length > 0) item.target = selects[0].value;
+
 					items.push(item);
 				});
 				return items;
