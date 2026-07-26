@@ -14,7 +14,7 @@
   "navButtons": [
     {
       "text": "后台管理",
-      "href": "/admin",
+      "href": "./admin/",
       "target": "_blank"
     },
     {
