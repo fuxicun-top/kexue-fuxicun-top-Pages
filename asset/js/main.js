@@ -233,6 +233,16 @@ $('.btn-mobile-menu__icon').click(function () {
 	$('.btn-mobile-menu__icon').toggleClass('social iconfont icon-list social iconfont icon-ngleup animated fadeIn');
 });
 
+// 关于弹窗
+$(document).on('click', 'a[href="#about"]', function(e) {
+	e.preventDefault();
+	var about = document.getElementById('about');
+	if (about) about.style.display = 'block';
+});
+$(document).on('click', '#about', function(e) {
+	if (e.target === this) this.style.display = 'none';
+});
+
 //title
 // 从当前页面标题获取基础名称（优先使用 KV 数据，无数据时使用默认值）
 var originalTitle = document.title.replace(/ - .*$/, '');
