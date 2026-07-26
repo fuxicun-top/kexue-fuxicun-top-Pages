@@ -26276,17 +26276,22 @@
 			}
 
 			async function resetGrzyConfig() {
-				if (!confirm('确定要重置为 GitHub 默认数据吗？这将覆盖 KV 中的配置并重新加载。')) return;
+				if (!confirm('确定要重置为 GitHub 默认数据吗？这将覆盖 KV 中的配置。')) return;
 				try {
-					// 先清空 KV 中的 grzy.json，让 worker.js 下次从 GitHub 拉取默认值
-					const res = await fetch(api('/admin/grzy.json'), {
-						method: 'DELETE',
-						headers: { 'Content-Type': 'application/json' }
+					// 从 GitHub 静态文件读取 grzy.json 默认数据
+					const res = await fetch('./admin/grzy.json');
+					if (!res.ok) throw new Error('无法获取 GitHub 默认数据');
+					const defaultData = await res.json();
+					// 写入 KV
+					const saveRes = await fetch(api('/admin/grzy.json'), {
+						method: 'POST',
+						headers: { 'Content-Type': 'application/json' },
+						body: JSON.stringify(defaultData)
 					});
-					if (!res.ok) throw new Error('清空失败');
+					if (!saveRes.ok) throw new Error('保存失败');
 					// 重新加载
 					await loadGrzyConfig();
-					showToast('🗑️ 已重置，KV 已清空，将从 GitHub 重新加载默认值', 'success');
+					showToast('✅ 已重置为 GitHub 默认数据并同步到 KV', 'success');
 				} catch (e) {
 					showToast('😢 重置失败: ' + e.message, 'error');
 				}
