@@ -26229,7 +26229,7 @@
 
 			function readGrzyForm() {
 				const data = {};
-				const textFields = ['pageTitle', 'keywords', 'description', 'avatarUrl', 'avatarFallback', 'name', 'subtitle', 'defaultDescription', 'hitokotoApi', 'copyrightName', 'beianText', 'beianUrl'];
+				const textFields = ['pageTitle', 'keywords', 'description', 'avatarUrl', 'avatarFallback', 'name', 'subtitle', 'defaultDescription', 'hitokotoApi', 'copyrightName', 'beianText', 'beianUrl', 'bgImageUrl'];
 				textFields.forEach(f => {
 					const el = document.getElementById('grzy_' + f);
 					if (el) data[f] = el.value;
