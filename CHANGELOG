@@ -1,3 +1,16 @@
+## v2.1.20260726093000
+- 新增: 首页背景图 URL 可通过 admin 后台自定义配置（bgImageUrl 字段）
+- 新增: 关于弹窗增加自我介绍卡片，注明项目基于 edgetunnel、EDT-Pages 二次开发
+- 新增: 关于弹窗完整更新日志时间线展示（按版本解析 CHANGELOG 渲染为可视化时间线）
+- 新增: 动态页面标题功能（根据时间段显示不同问候语）
+- 修复: admin 后台保存首页配置时遗漏 bgImageUrl 字段导致自定义背景图无法写入 KV
+- 修复: 首页背景图使用完整 CSS background shorthand 彻底覆盖默认样式，避免 repeat-x 平铺问题
+- 修复: originalTitle 硬编码问题，优先使用 KV 数据中的 pageTitle
+- 优化: 自我介绍内容使用用户自定义措辞，更贴合个人风格
+- 优化: 座右铭更新为"开源成就你我，科技改变生活"
+- 品牌: SUBNAME 更新为"小周CF科学"
+- 地址: 静态页面地址指向 https://fuxicun-top.github.io/kexue-fuxicun-top-Pages
+
 ## v2.1.20260725120000
 - 新增: 首页配置管理面板（grzy.json KV 读写管理）
 - 新增: 前端首页配置动态加载（从 admin/grzy.json 获取 KV 数据覆盖默认值）
