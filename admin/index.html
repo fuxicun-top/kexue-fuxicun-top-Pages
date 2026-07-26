@@ -26052,13 +26052,13 @@
 					} else {
 						fillGrzyForm();
 						previewGrzy();
-						showToast('⚠️ 加载失败，请检查 KV 配置', 'error');
+						showToast('⚠️ 首页配置加载失败，请检查 KV 配置', 'error');
 					}
 				} catch (e) {
 					console.error('[loadGrzyConfig] error:', e);
 					fillGrzyForm();
 					previewGrzy();
-					showToast('⚠️ 加载失败: ' + e.message, 'error');
+					showToast('⚠️ 首页配置加载失败: ' + e.message, 'error');
 				}
 			}
 
