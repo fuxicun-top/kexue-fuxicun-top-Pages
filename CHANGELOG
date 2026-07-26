@@ -1,3 +1,15 @@
+## v2.1.20260725120000
+- 新增: 首页配置管理面板（grzy.json KV 读写管理）
+- 新增: 前端首页配置动态加载（从 admin/grzy.json 获取 KV 数据覆盖默认值）
+- 新增: 首页信息编辑面板（pageTitle、navButtons、socialLinks 等可后台配置）
+- 新增: navButtons 和 socialLinks 支持后台可视化编辑
+- 新增: 重置默认功能，一键恢复 grzy.json 到 GitHub 默认值
+- 修复: 重置默认按钮 fetch 路径错误导致 404
+- 修复: 后台管理按钮 href 使用绝对路径导致 GitHub Pages 子路径部署无法跳转
+- 优化: admin/index.html 内置默认配置，不再硬编码 GRZY_DEFAULTS，统一从 admin/grzy.json 文件读取
+- 品牌: SUBNAME 更新为"小周CF科学"
+- 地址: 静态页面地址指向 https://fuxicun-top.github.io/kexue-fuxicun-top-Pages
+
 ## v2.1.20260721070000
 - 新增: WS 本地测速模式（speedtest 站点本地返回 204，避免误报）
 - 新增: isSpeedTestSite 支持 cp.cloudflare.com

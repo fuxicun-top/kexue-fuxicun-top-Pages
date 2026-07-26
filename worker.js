@@ -1,4 +1,4 @@
-const Version = '2026-07-21 07:00:00';
+const Version = '2026-07-25 07:00:00';
 let config_JSON, 缓存SOCKS5白名单 = null, 调试日志打印 = false;
 let SOCKS5白名单 = ['*tapecontent.net', '*cloudatacdn.com', '*loadshare.org', '*cdn-centaurus.com', 'scholar.google.com'];
 const Pages静态页面 = 'https://fuxicun-top.github.io/kexue-fuxicun-top-Pages';
