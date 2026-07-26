@@ -7,6 +7,7 @@
 - 修复: 重置默认按钮 fetch 路径错误导致 404
 - 修复: 后台管理按钮 href 使用绝对路径导致 GitHub Pages 子路径部署无法跳转
 - 优化: admin/index.html 内置默认配置，不再硬编码 GRZY_DEFAULTS，统一从 admin/grzy.json 文件读取
+- 优化: 首页替换成功，个人主页页面后台可以自定义修改个人主页的信息，支持直接自定义个人主页的引导页面
 - 品牌: SUBNAME 更新为"小周CF科学"
 - 地址: 静态页面地址指向 https://fuxicun-top.github.io/kexue-fuxicun-top-Pages
 
