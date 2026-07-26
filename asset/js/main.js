@@ -271,8 +271,9 @@ setInterval(updateTimeTitle, 1000);
 
 // ==================== KV 首页配置加载 ====================
 // 从 admin/grzy.json 获取 KV 数据，有数据则替换页面硬编码的默认值
+var _kvReady = null;
 (function loadGrzyFromKV() {
-  fetch('./admin/grzy.json')
+  _kvReady = fetch('./admin/grzy.json')
     .then(function (res) { return res.json(); })
     .then(function (data) {
       if (!data || typeof data !== 'object') return;
