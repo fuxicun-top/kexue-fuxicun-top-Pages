@@ -237,11 +237,82 @@ $('.btn-mobile-menu__icon').click(function () {
 $(document).on('click', 'a[href="#about"]', function(e) {
 	e.preventDefault();
 	var about = document.getElementById('about');
-	if (about) about.style.display = 'block';
+	if (about) {
+		about.style.display = 'block';
+		// 首次打开时加载 CHANGELOG
+		if (!window._changelogLoaded) {
+			loadChangelogTimeline();
+			window._changelogLoaded = true;
+		}
+	}
 });
 $(document).on('click', '#about', function(e) {
 	if (e.target === this) this.style.display = 'none';
 });
+
+// 加载 CHANGELOG 渲染为时间线
+async function loadChangelogTimeline() {
+	try {
+		const res = await fetch('./CHANGELOG');
+		if (!res.ok) return;
+		const text = await res.text();
+		const entries = parseChangelog(text);
+		const container = document.getElementById('changelog-timeline');
+		if (!container || !entries.length) return;
+		container.innerHTML = entries.map((entry, i) => {
+			const isLast = i === entries.length - 1;
+			const dotColor = entry.type === '新增' ? '#22c55e' : entry.type === '修复' ? '#ef4444' : '#faab41';
+			return `
+				<div style="position: relative; padding-left: 28px; padding-bottom: ${isLast ? '0' : '20px'};">
+					<div style="position: absolute; left: 0; top: 4px; width: 10px; height: 10px; border-radius: 50%; background: ${dotColor}; box-shadow: 0 0 8px ${dotColor}60;"></div>
+					${!isLast ? '<div style="position: absolute; left: 4px; top: 16px; width: 2px; height: calc(100% - 6px); background: rgba(255,255,255,0.1);"></div>' : ''}
+					<div style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px 16px; margin-bottom: 4px;">
+						<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+							<span style="font-size: 13px; font-weight: 700; color: #faab41;">${entry.version}</span>
+							<span style="font-size: 11px; color: rgba(255,255,255,0.4);">${entry.date}</span>
+						</div>
+						<ul style="list-style: none; padding: 0; margin: 0;">
+							${entry.items.map(item => {
+								let icon = '●';
+								let color = 'rgba(255,255,255,0.6)';
+								if (item.startsWith('新增')) { icon = '✦'; color = '#22c55e'; }
+								else if (item.startsWith('修复')) { icon = '✎'; color = '#ef4444'; }
+								else if (item.startsWith('优化')) { icon = '◆'; color = '#faab41'; }
+								else if (item.startsWith('品牌')) { icon = '★'; color = '#a78bfa'; }
+								else if (item.startsWith('地址')) { icon = '→'; color = '#38bdf8'; }
+								return `<li style="color: ${color}; font-size: 13px; line-height: 1.5; margin-bottom: 2px;"><span style="margin-right: 4px;">${icon}</span>${item.replace(/^[^：：]+[：:]/, '')}</li>`;
+							}).join('')}
+						</ul>
+					</div>
+				</div>`;
+		}).join('');
+	} catch (e) {
+		console.error('加载更新日志失败:', e);
+	}
+}
+
+function parseChangelog(text) {
+	const versions = [];
+	const blocks = text.split(/^## /m).filter(b => b.trim());
+	blocks.forEach(block => {
+		const lines = block.trim().split('\n');
+		const header = lines[0].trim();
+		// 解析版本号 v2.1.20260725120000
+		const verMatch = header.match(/^(v[\d.]+)(\d{14})?$/);
+		let version = header;
+		let date = '';
+		if (verMatch) {
+			version = verMatch[1];
+			if (verMatch[2]) {
+				const ts = verMatch[2];
+				date = `${ts.substring(0,4)}-${ts.substring(4,6)}-${ts.substring(6,8)} ${ts.substring(8,10)}:${ts.substring(10,12)}:${ts.substring(12,14)}`;
+			}
+		}
+		const items = lines.slice(1).map(l => l.replace(/^- /, '').trim()).filter(Boolean);
+		versions.push({ version, date, items });
+	});
+	return versions;
+}
 
 //title
 // 从当前页面标题获取基础名称（优先使用 KV 数据，无数据时使用默认值）
