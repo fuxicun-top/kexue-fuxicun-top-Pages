@@ -37,7 +37,7 @@ jobs:
           # 排除非前端文件，其余全部上传
           for item in *; do
             case "$item" in
-              worker.js|.git|check-braces.js) ;;
+              worker.js|.git|check-braces.js|_site) ;;
               *) cp -r "$item" _site/ ;;
             esac
           done
