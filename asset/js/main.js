@@ -234,8 +234,8 @@ $('.btn-mobile-menu__icon').click(function () {
 });
 
 //title
-// 在脚本开始时保存原始标题（假设原始标题不包含时间信息）
-var originalTitle = "小周の主页"; // 根据实际情况调整
+// 从当前页面标题获取基础名称（优先使用 KV 数据，无数据时使用默认值）
+var originalTitle = document.title.replace(/ - .*$/, '');
 
 function updateTimeTitle() {
   // 获取当前时间
@@ -254,7 +254,7 @@ function updateTimeTitle() {
     formattedText = "早上好，昨晚睡得还好吗？";
 } else if (formattedHours <= 10) {
     formattedText = "而你 我的朋友，天一亮你才是真正的帕鲁";
-} else if (formattedHours >= 10 && formattedHours <= 17) {
+} else if (formattedHours >= 16 && formattedHours <= 17) {
     formattedText = "傍晚了，想好吃什么了吗？";
 } else if (formattedHours >= 20 && formattedHours <= 24) {
     formattedText = "快深夜了，再忙也要注意休息呀";
