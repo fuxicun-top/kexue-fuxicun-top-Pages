@@ -26035,23 +26035,8 @@
 			// ==================== 首页信息管理 (grzy.json) ====================
 			let grzyConfig = {};
 			let grzyModifiedFields = new Set();
-			let grzyDefaultsLoaded = false;
-			let grzyDefaultsData = null;
-
-			async function loadGrzyDefaults() {
-				if (grzyDefaultsData) return grzyDefaultsData;
-				try {
-					const res = await fetch('./admin/grzy.json');
-					if (res.ok) {
-						grzyDefaultsData = await res.json();
-						grzyDefaultsLoaded = true;
-					}
-				} catch (e) { /* 使用空配置 */ }
-				return grzyDefaultsData;
-			}
 
 			async function loadGrzyConfig() {
-				await loadGrzyDefaults();
 				try {
 					const res = await fetch(api('/admin/grzy.json?_t=' + Date.now()));
 					console.log('[loadGrzyConfig] status:', res.status, 'ok:', res.ok);
@@ -26060,27 +26045,16 @@
 						fillGrzyForm();
 						previewGrzy();
 						showToast('✅ 首页配置已加载', 'success');
-					} else if (grzyDefaultsLoaded) {
-						grzyConfig = grzyDefaultsData || {};
-						fillGrzyForm();
-						previewGrzy();
-						showToast('⚠️ KV 不可用，已使用默认数据', 'info');
 					} else {
 						fillGrzyForm();
 						previewGrzy();
-						showToast('⚠️ 加载失败', 'info');
+						showToast('⚠️ 加载失败，请检查 KV 配置', 'error');
 					}
 				} catch (e) {
-					if (grzyDefaultsLoaded) {
-						grzyConfig = grzyDefaultsData || {};
-						fillGrzyForm();
-						previewGrzy();
-						showToast('⚠️ KV 不可用，已使用默认数据', 'info');
-					} else {
-						fillGrzyForm();
-						previewGrzy();
-						showToast('⚠️ 加载失败', 'info');
-					}
+					console.error('[loadGrzyConfig] error:', e);
+					fillGrzyForm();
+					previewGrzy();
+					showToast('⚠️ 加载失败: ' + e.message, 'error');
 				}
 			}
 
@@ -26302,16 +26276,20 @@
 			}
 
 			async function resetGrzyConfig() {
-				if (!confirm('确定要重置为默认数据吗？这将覆盖 KV 中的配置。')) return;
-				await loadGrzyDefaults();
-				grzyConfig = grzyDefaultsData || {};
-				fillGrzyForm();
-				previewGrzy();
-				saveGrzyConfig().then(() => {
-					showToast('🗑️ 已重置并同步到默认值', 'success');
-				}).catch(() => {
-					showToast('🗑️ 前端已重置，但同步到 KV 失败，请手动保存', 'info');
-				});
+				if (!confirm('确定要重置为 GitHub 默认数据吗？这将覆盖 KV 中的配置并重新加载。')) return;
+				try {
+					// 先清空 KV 中的 grzy.json，让 worker.js 下次从 GitHub 拉取默认值
+					const res = await fetch(api('/admin/grzy.json'), {
+						method: 'DELETE',
+						headers: { 'Content-Type': 'application/json' }
+					});
+					if (!res.ok) throw new Error('清空失败');
+					// 重新加载
+					await loadGrzyConfig();
+					showToast('🗑️ 已重置，KV 已清空，将从 GitHub 重新加载默认值', 'success');
+				} catch (e) {
+					showToast('😢 重置失败: ' + e.message, 'error');
+				}
 			}
 
 			window.addEventListener('DOMContentLoaded', () => {
