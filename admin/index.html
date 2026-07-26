@@ -26041,7 +26041,7 @@
 			async function loadGrzyDefaults() {
 				if (grzyDefaultsData) return grzyDefaultsData;
 				try {
-					const res = await fetch('./admin/grzy1.json');
+					const res = await fetch('./admin/grzy.json');
 					if (res.ok) {
 						grzyDefaultsData = await res.json();
 						grzyDefaultsLoaded = true;
