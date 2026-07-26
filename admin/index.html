@@ -26276,7 +26276,7 @@
 			}
 
 			async function resetGrzyConfig() {
-				if (!confirm('确定要重置为 GitHub 默认数据吗？这将覆盖 KV 中的配置。')) return;
+				if (!confirm('确定要重置为默认数据吗？这将覆盖 KV 中的配置。')) return;
 				try {
 				// 从 GitHub 静态文件读取 grzy.json 默认数据（用 / 开头避免 basePath 拼接错误）
 					const res = await fetch('/admin/grzy.json');
