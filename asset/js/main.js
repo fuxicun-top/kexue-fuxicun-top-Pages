@@ -254,7 +254,7 @@ function updateTimeTitle() {
     formattedText = "早上好，昨晚睡得还好吗？";
 } else if (formattedHours <= 10) {
     formattedText = "而你 我的朋友，天一亮你才是真正的帕鲁";
-} else if (formattedHours >= 16 && formattedHours <= 17) {
+} else if (formattedHours >= 10 && formattedHours <= 17) {
     formattedText = "傍晚了，想好吃什么了吗？";
 } else if (formattedHours >= 20 && formattedHours <= 24) {
     formattedText = "快深夜了，再忙也要注意休息呀";
@@ -362,4 +362,3 @@ var _kvReady = null;
       // KV 不可用或无数据，保持页面硬编码的默认值不动
     });
 })();
-
