@@ -26035,33 +26035,23 @@
 			// ==================== 首页信息管理 (grzy.json) ====================
 			let grzyConfig = {};
 			let grzyModifiedFields = new Set();
-			const GRZY_DEFAULTS = {
-				pageTitle: '小周の主页',
-				keywords: '小周，xiaozhou,个人主页,xiaozhou-小周个人主页',
-				description: '小周，xiaozhou,个人主页,xiaozhou-小周个人主页',
-				avatarUrl: 'https://q1.qlogo.cn/g?b=qq&nk=2933206679&s=640&img_type=jpg',
-				avatarFallback: 'https://zdd-wjgx.fuxicun.top/api/preview/1784982407008_a7noifwj',
-				name: 'XiaoZhou',
-				subtitle: 'be your true self',
-				defaultDescription: '每一个人都应该<span class="highlight-red">明确</span>自己的方向<span class="highlight-green">和</span>位置\n\t\t\t\t<strong>-「Xiao周」</strong>',
-				hitokotoApi: 'https://v1.hitokoto.cn/',
-				copyrightName: 'XiaoZhou',
-				beianText: '桂ICP备2021000123号-2',
-				beianUrl: 'https://beian.miit.gov.cn/',
-				navButtons: [{"text":"后台管理","href":"/admin","target":"_blank"},{"text":"项目","href":"https://github.com/fuxicun-top/kexue-fuxicun-top-Pages","target":"_blank"},{"text":"联系","href":"mailto:kexue@fuxicun.top"},{"text":"关于","href":"#about"}],
-				socialLinks: [{"icon":"fa-envelope","title":"邮箱","href":"mailto:kexue@fuxicun.top"},{"icon":"fa-github","title":"GitHub","href":"https://github.com/fuxicun-top/kexue-fuxicun-top-Pages","target":"_blank"}]
-			};
+			let grzyDefaultsLoaded = false;
+			let grzyDefaultsData = null;
 
-			function autoResizeTextarea(el) {
-				const minRows = 2;
-				const rowHeight = parseFloat(getComputedStyle(el).lineHeight) || 18;
-				el.style.height = 'auto';
-				const h = el.scrollHeight;
-				// 至少保持 minRows 的高度，不超过 6 行
-				el.style.height = Math.max(minRows * rowHeight, Math.min(h, 6 * rowHeight)) + 'px';
+			async function loadGrzyDefaults() {
+				if (grzyDefaultsData) return grzyDefaultsData;
+				try {
+					const res = await fetch('./admin/grzy1.json');
+					if (res.ok) {
+						grzyDefaultsData = await res.json();
+						grzyDefaultsLoaded = true;
+					}
+				} catch (e) { /* 使用空配置 */ }
+				return grzyDefaultsData;
 			}
 
 			async function loadGrzyConfig() {
+				await loadGrzyDefaults();
 				try {
 					const res = await fetch(api('/admin/grzy.json?_t=' + Date.now()));
 					console.log('[loadGrzyConfig] status:', res.status, 'ok:', res.ok);
@@ -26070,17 +26060,27 @@
 						fillGrzyForm();
 						previewGrzy();
 						showToast('✅ 首页配置已加载', 'success');
-					} else {
-						grzyConfig = { ...GRZY_DEFAULTS };
+					} else if (grzyDefaultsLoaded) {
+						grzyConfig = grzyDefaultsData || {};
 						fillGrzyForm();
 						previewGrzy();
 						showToast('⚠️ KV 不可用，已使用默认数据', 'info');
+					} else {
+						fillGrzyForm();
+						previewGrzy();
+						showToast('⚠️ 加载失败', 'info');
 					}
 				} catch (e) {
-					grzyConfig = { ...GRZY_DEFAULTS };
-					fillGrzyForm();
-					previewGrzy();
-					showToast('⚠️ 加载失败，已使用默认数据', 'info');
+					if (grzyDefaultsLoaded) {
+						grzyConfig = grzyDefaultsData || {};
+						fillGrzyForm();
+						previewGrzy();
+						showToast('⚠️ KV 不可用，已使用默认数据', 'info');
+					} else {
+						fillGrzyForm();
+						previewGrzy();
+						showToast('⚠️ 加载失败', 'info');
+					}
 				}
 			}
 
@@ -26301,9 +26301,10 @@
 				}
 			}
 
-			function resetGrzyConfig() {
+			async function resetGrzyConfig() {
 				if (!confirm('确定要重置为默认数据吗？这将覆盖 KV 中的配置。')) return;
-				grzyConfig = { ...GRZY_DEFAULTS };
+				await loadGrzyDefaults();
+				grzyConfig = grzyDefaultsData || {};
 				fillGrzyForm();
 				previewGrzy();
 				saveGrzyConfig().then(() => {
