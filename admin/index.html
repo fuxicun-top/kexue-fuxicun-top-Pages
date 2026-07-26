@@ -26282,10 +26282,11 @@
 			}
 
 			async function resetGrzyConfig() {
-				if (!confirm('确定要重置为默认数据吗？这将覆盖 KV 中的配置。')) return;
+				if (!confirm('确定要重置为 GitHub 默认数据吗？这将覆盖 KV 中的配置。')) return;
 				try {
-				// 从 GitHub 静态文件读取 grzy.json 默认数据（用 / 开头避免 basePath 拼接错误）
-					const res = await fetch('/admin/grzy.json');
+					// 直接从 GitHub Pages 静态文件读取 grzy.json 默认数据（不经过 Worker/KV）
+					const pagesBase = 'https://fuxicun-top.github.io/kexue-fuxicun-top-Pages';
+					const res = await fetch(pagesBase + '/admin/grzy.json');
 					if (!res.ok) throw new Error('无法获取 GitHub 默认数据');
 					const defaultData = await res.json();
 					// 写入 KV
@@ -26297,7 +26298,7 @@
 					if (!saveRes.ok) throw new Error('保存失败');
 					// 重新加载
 					await loadGrzyConfig();
-					showToast('✅ 已重置为默认数据并同步到 KV', 'success');
+					showToast('✅ 已重置为 GitHub 默认数据并同步到 KV', 'success');
 				} catch (e) {
 					showToast('😢 重置失败: ' + e.message, 'error');
 				}
