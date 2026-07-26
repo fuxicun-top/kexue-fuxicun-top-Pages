@@ -16318,7 +16318,6 @@
 				const versionMatch = workerText.match(/^\s*const\s+Version\s*=\s*['"]([^'"]+)['"]\s*;?/m);
 				const latestVersion = versionMatch ? parseVersionNumber(versionMatch[1]) : 0;
 				cachedLatestOnlineVersion = latestVersion;
-				console.log(`[Version] 在线最新版本识别: raw="${versionMatch ? versionMatch[1] : ''}", parsed=${latestVersion}`);
 				return latestVersion;
 			} catch (error) {
 				console.warn('[Version] 在线获取最新版本失败，按 0 处理:', error);
@@ -16331,7 +16330,6 @@
 			const currentVersionNumber = parseVersionNumber(currentVersion);
 			const latestVersionNumber = await fetchLatestOnlineVersionNumber();
 			const diff = currentVersionNumber - latestVersionNumber;
-			console.log(`[Version] 版本比较: current=${currentVersionNumber}, latest=${latestVersionNumber}, diff=${diff}`);
 			setVersionBadgeHealthState(diff);
 		}
 
@@ -16365,7 +16363,6 @@
 					}
 
 					const currentVersion = parseVersionNumber(data.Version);
-					console.log(`[Version] 当前版本识别: raw="${data.Version}", parsed=${currentVersion}, attempt=${attempt}/${maxRetries}`);
 					updateVersionBadge(currentVersion);
 					setHttpsProxyFeatureAvailability(currentVersion);
 					await updateVersionBadgeHealthByLatest(currentVersion);
@@ -16802,10 +16799,6 @@
 				const renderResult = renderChangelogMarkdown(cachedChangelogRawText);
 				contentEl.innerHTML = renderResult.html || '<p class="version-changelog-placeholder">暂无更新日志内容。</p>';
 				const cachedAtText = formatVersionChangelogTime(cachedChangelogLoadedAt);
-				if (cachedAtText) {
-					console.log(`[请求RAW] 使用缓存更新日志，上次加载时间=${cachedAtText}`);
-				} else {
-					console.log('[请求RAW] 使用缓存更新日志');
 				}
 				if (renderResult.currentVersionPosition > 0) {
 					console.log(
@@ -16822,8 +16815,6 @@
 			if (pendingChangelogLoadPromise) {
 				return pendingChangelogLoadPromise;
 			}
-
-			console.log('[请求RAW] 进度: 正在拉取更新日志');
 			contentEl.innerHTML = '<p class="version-changelog-placeholder">正在加载更新日志...</p>';
 
 			pendingChangelogLoadPromise = (async () => {
@@ -16833,8 +16824,6 @@
 					cachedChangelogLoadedAt = Date.now();
 
 					const renderResult = renderChangelogMarkdown(changelogText);
-					contentEl.innerHTML = renderResult.html || '<p class="version-changelog-placeholder">暂无更新日志内容。</p>';
-					console.log(`[请求RAW] 成功: 更新日志已加载，时间=${formatVersionChangelogTime(cachedChangelogLoadedAt)}`);
 					if (renderResult.currentVersionPosition > 0) {
 						console.log(
 							`[更新日志] 当前版本定位成功: ${renderResult.currentVersionDisplayText || '当前版本'} 命中 ${renderResult.currentVersionHeadingText || ''}，位于第${renderResult.currentVersionPosition}条（共${renderResult.versionEntryCount}条）`
@@ -18834,7 +18823,6 @@
 				const text = await fetchWithAutoMirror(url, 'SubConfig');
 				subConfigData = JSON.parse(text);
 				populateSubConfigSelect();
-				console.log('[订阅转换配置列表] SUBCONFIG 数据加载成功');
 			} catch (error) {
 				console.error('Error loading SubConfig:', error);
 				// 加载失败时，仍然显示下拉框（只有自定义选项）
@@ -22138,7 +22126,6 @@
 					throw new Error('Bot Token 无效: ' + (getMeData.description || '未知错误'));
 				}
 
-				console.log(`[TelegramBot] 验证成功，Bot: @${getMeData.result.username}，当前接口: ${getMeResult.base}`);
 
 				// 验证成功
 				statusEl.style.background = 'linear-gradient(135deg, #10b981 0, #059669 100%)';
@@ -23166,14 +23153,12 @@
 				});
 			}
 
-			console.log(`[请求RAW] 进度: 并发拉取 ${description}，候选源数量=${candidates.length}`);
 
 			const controllers = candidates.map(() => new AbortController());
 			let hasWinner = false;
 
 			const requests = candidates.map((candidate, index) => (async () => {
 				try {
-					console.log(`[请求RAW] 进度: 发起${candidate.label}请求 URL=${candidate.url}`);
 					const response = await fetch(candidate.url, {
 						signal: controllers[index].signal
 					});
@@ -23200,7 +23185,6 @@
 					}
 				});
 
-				console.log(`[请求RAW] 成功: 从${winner.label}拉取 ${description}，长度=${winner.text.length} 字符`);
 				return winner.text;
 			} catch (error) {
 				const mirrorCount = Math.max(candidates.length - 1, 0);
@@ -23872,7 +23856,6 @@
 				setNetworkFieldValue('ipip-country', location || '未知', 'location');
 				applyNetworkCardFlag('ipip-country');
 				setStatus('status-ipip', 'success');
-				console.log(`[国内测试] 成功: IP=${ip}, 位置=${location}, 来源=${fastestSuccess.source}`);
 			} catch (detailError) {
 				setNetworkFieldValue('ipip-country', '未知', 'location');
 				applyNetworkCardFlag('ipip-country');
@@ -23912,7 +23895,6 @@
 
 						return { edgeIp, loc, url: api.url };
 					})().catch(error => {
-						console.log(`[国外测试] ${api.url} 失败: ${error.message}`);
 						throw error;
 					})
 				};
@@ -23925,7 +23907,6 @@
 				setNetworkFieldValue('overseas-country', loc || '未知', 'location');
 				applyNetworkCardFlag('overseas-country');
 				setStatus('status-overseas', 'success');
-				console.log(`[国外测试] 成功: IP=${edgeIp}, 位置=${loc}`);
 				return;
 			} catch (error) {
 				requestTasks.forEach(task => task.cancel && task.cancel());
@@ -24110,7 +24091,6 @@
 					const endpoint = endpoints[index];
 					if (result.status !== 'fulfilled') {
 						const reason = result.reason?.message || String(result.reason || 'unknown error');
-						console.log(`[CloudFlare] ${endpoint.url} 失败: ${reason}`);
 						return;
 					}
 
@@ -24144,7 +24124,6 @@
 				setStatus('status-cf', 'success');
 
 				const summary = cloudFlareEntries.map(entry => `${entry.ip}(${entry.version})`).join(', ');
-				console.log(`[CloudFlare] 成功: ${summary}`);
 			} catch (error) {
 				setNetworkFieldError('cf-ip', '加载失败');
 				clearNetworkFieldValue('cf-country');
@@ -24304,7 +24283,6 @@
 					const taskPromise = task.promise.then(result => {
 						return { source: source.name, result };
 					}).catch(sourceError => {
-						console.log(`[墙外测试] ${source.name} 失败: ${sourceError.message}`);
 						return { source: source.name, error: sourceError };
 					});
 					return { cancel: task.cancel, promise: taskPromise };
@@ -24351,7 +24329,6 @@
 				setStatus('status-twitter', 'success');
 
 				const summary = twitterEntries.map(e => `${e.ip}(${e.providerName})`).join(', ');
-				console.log(`[墙外测试] 成功: ${summary}`);
 			} catch (error) {
 				setNetworkFieldError('twitter-ip', '翻墙未开启');
 				clearNetworkFieldValue('twitter-country');
@@ -26043,7 +26020,6 @@
 			async function loadGrzyConfig() {
 				try {
 					const res = await fetch(api('/admin/grzy.json?_t=' + Date.now()));
-					console.log('[loadGrzyConfig] status:', res.status, 'ok:', res.ok);
 					if (res.ok) {
 						grzyConfig = await res.json();
 						fillGrzyForm();
@@ -26055,7 +26031,6 @@
 						showToast('⚠️ 首页配置加载失败，请检查 KV 配置', 'error');
 					}
 				} catch (e) {
-					console.error('[loadGrzyConfig] error:', e);
 					fillGrzyForm();
 					previewGrzy();
 					showToast('⚠️ 首页配置加载失败: ' + e.message, 'error');
@@ -26094,24 +26069,19 @@
 						};
 					}
 				});
-				console.log('[normalizeGrzyArray]', type, '->', JSON.stringify(result));
 				return result;
 			}
 
 			// ---- Visual array editors for navButtons / socialLinks ----
 			function renderGrzyArrayEditor(containerId, items, type) {
 				const container = document.getElementById(containerId);
-				if (!container) { console.warn('[renderGrzyArrayEditor] container not found:', containerId); return; }
-				console.log('[renderGrzyArrayEditor] BEFORE normalize:', type, 'items=', JSON.stringify(items));
+				if (!container) return;
 				container.innerHTML = '';
 				items = normalizeGrzyArray(items, type);
-				console.log('[renderGrzyArrayEditor] AFTER normalize:', type, 'items=', JSON.stringify(items));
 				if (!items || !Array.isArray(items)) items = [];
 				items.forEach((item, idx) => {
-					const card = document.createElement('div');
 					card.style.cssText = 'background:#f3f4f6; border:1px solid #e5e7eb; border-radius:8px; padding:10px; display:flex; flex-direction:column; gap:6px; position:relative;';
 					const removeBtn = document.createElement('button');
-					removeBtn.type = 'button';
 					removeBtn.textContent = '✕';
 					removeBtn.style.cssText = 'position:absolute; top:6px; right:8px; background:none; border:none; font-size:16px; cursor:pointer; color:#9ca3af;';
 					removeBtn.onclick = () => {
@@ -26135,7 +26105,6 @@
 					}
 					container.appendChild(card);
 				});
-				console.log('[renderGrzyArrayEditor]', type, '-> rendered', container.children.length, 'cards');
 			}
 
 			function makeGrzyField(labelText, fieldKey, value, idx) {
@@ -26145,7 +26114,6 @@
 				wrapper.style.gap = '6px';
 				const lbl = document.createElement('span');
 				lbl.style.cssText = 'font-size:12px; color:#6b7280; min-width:50px;';
-				lbl.textContent = labelText;
 				const inp = document.createElement('input');
 				inp.type = 'text';
 				inp.value = value;
