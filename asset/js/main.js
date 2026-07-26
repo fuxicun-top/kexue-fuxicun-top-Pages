@@ -374,6 +374,12 @@ var _kvReady = null;
       var fallbackEls = document.querySelectorAll('[data-grzy="avatarFallback"]');
       fallbackEls.forEach(function (el) { if (data.avatarFallback) el.src = data.avatarFallback; });
 
+      // 10. 首页背景图
+      if (data.bgImageUrl) {
+        var bgEl = document.getElementById('bg');
+        if (bgEl) bgEl.style.backgroundImage = 'url("' + data.bgImageUrl + '")';
+      }
+
       // 4. 昵称 & 签名
       var nameEl = document.querySelector('[data-grzy="name"]');
       if (nameEl && data.name) nameEl.textContent = data.name;

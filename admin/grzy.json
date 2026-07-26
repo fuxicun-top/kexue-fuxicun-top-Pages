@@ -11,6 +11,7 @@
   "copyrightName": "XiaoZhou",
   "beianText": "桂ICP备2021000123号-2",
   "beianUrl": "https://beian.miit.gov.cn/",
+  "bgImageUrl": "https://img-api.moeblock.com/api.php",
   "navButtons": [
     {
       "text": "后台管理",

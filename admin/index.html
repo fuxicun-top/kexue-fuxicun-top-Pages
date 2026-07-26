@@ -8757,6 +8757,10 @@
 						<label for="grzy_beianUrl">备案链接</label>
 						<input type="text" id="grzy_beianUrl" placeholder="https://beian.miit.gov.cn/" onchange="markGrzyModified('beianUrl')" oninput="previewGrzy()">
 					</div>
+					<div class="form-group">
+						<label for="grzy_bgImageUrl">首页背景图 URL</label>
+						<input type="text" id="grzy_bgImageUrl" placeholder="https://img-api.moeblock.com/api.php" onchange="markGrzyModified('bgImageUrl')" oninput="previewGrzy()">
+					</div>
 
 					<div style="display: flex; gap: 12px; margin-top: 20px;">
 						<button type="button" class="btn btn-primary" id="saveGrzyBtn" onclick="saveGrzyConfig()" disabled>💾 保存首页配置</button>
@@ -26059,7 +26063,7 @@
 			}
 
 			function fillGrzyForm() {
-				const fields = ['pageTitle', 'keywords', 'description', 'avatarUrl', 'avatarFallback', 'name', 'subtitle', 'defaultDescription', 'hitokotoApi', 'copyrightName', 'beianText', 'beianUrl'];
+				const fields = ['pageTitle', 'keywords', 'description', 'avatarUrl', 'avatarFallback', 'name', 'subtitle', 'defaultDescription', 'hitokotoApi', 'copyrightName', 'beianText', 'beianUrl', 'bgImageUrl'];
 				fields.forEach(f => {
 					const el = document.getElementById('grzy_' + f);
 					if (el) el.value = grzyConfig[f] || '';
