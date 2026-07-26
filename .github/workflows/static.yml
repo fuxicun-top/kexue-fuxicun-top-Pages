@@ -34,11 +34,13 @@ jobs:
       - name: Prepare static files
         run: |
           mkdir -p _site
-          # 复制静态页面文件，排除 worker.js 等非前端文件
-          cp -r admin asset cdn-cgi login noADMIN noKV sub version _site/
-          cp -r admin/grzy1.json _site/admin/
-          cp locations _site/
-          cp index.html .gitignore README.md favicon.ico _site/
+          # 排除非前端文件，其余全部上传
+          for item in *; do
+            case "$item" in
+              worker.js|.git|check-braces.js) ;;
+              *) cp -r "$item" _site/ ;;
+            esac
+          done
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
