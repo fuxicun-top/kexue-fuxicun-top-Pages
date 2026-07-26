@@ -36,7 +36,7 @@ jobs:
           mkdir -p _site
           # 复制静态页面文件，排除 worker.js 等非前端文件
           cp -r admin asset cdn-cgi login noADMIN noKV sub version _site/
-          cp -r admin/grzy.json _site/admin/
+          cp -r admin/grzy1.json _site/admin/
           cp locations _site/
           cp index.html .gitignore README.md favicon.ico _site/
       - name: Setup Pages
