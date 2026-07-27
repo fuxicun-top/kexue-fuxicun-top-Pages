@@ -377,7 +377,7 @@ var _kvReady = null;
       // 10. 首页背景图
       if (data.bgImageUrl) {
         var bgEl = document.getElementById('bg');
-        if (bgEl) bgEl.style.background = '#ffffff url("' + data.bgImageUrl + '") center left no-repeat';
+        if (bgEl) bgEl.style.backgroundImage = 'url("' + data.bgImageUrl + '")';
       }
 
       // 4. 昵称 & 签名
