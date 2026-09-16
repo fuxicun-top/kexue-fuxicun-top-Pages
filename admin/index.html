@@ -78,29 +78,6 @@
 			}
 		}
 
-		@keyframes easter-egg-shake {
-
-			0%,
-			100% {
-				transform: translateX(0)
-			}
-
-			10%,
-			30%,
-			50%,
-			70%,
-			90% {
-				transform: translateX(-7px) rotate(-1deg)
-			}
-
-			20%,
-			40%,
-			60%,
-			80% {
-				transform: translateX(7px) rotate(1deg)
-			}
-		}
-
 		@keyframes gradientShift {
 			0% {
 				background-position: 0 50%
@@ -2033,9 +2010,6 @@
 			background: linear-gradient(135deg, #10b981 0, #059669 100%);
 			color: #fff;
 			box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
-			user-select: none;
-			-webkit-user-select: none;
-			-webkit-touch-callout: none;
 		}
 
 		.btn-version-copy:hover {
@@ -2046,54 +2020,6 @@
 		.btn-version-copy:active {
 			transform: translateY(0);
 			box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
-		}
-
-		.btn-version-copy.easter-egg-shaking {
-			animation: egg-tremble 0.13s linear infinite;
-		}
-
-		.btn-version-copy.egg-release {
-			animation: egg-release 0.22s ease-out forwards;
-		}
-
-		@keyframes egg-tremble {
-			0%,
-			100% {
-				transform: translate(0, 0);
-			}
-
-			25% {
-				transform: translate(-1.5px, 0.5px);
-			}
-
-			50% {
-				transform: translate(1.5px, -0.5px);
-			}
-
-			75% {
-				transform: translate(-1px, 0.5px);
-			}
-		}
-
-		@keyframes egg-release {
-			0% {
-				transform: scale(1);
-			}
-
-			50% {
-				transform: scale(1.04);
-			}
-
-			100% {
-				transform: scale(1);
-			}
-		}
-
-		@media (prefers-reduced-motion: reduce) {
-			.btn-version-copy.easter-egg-shaking,
-			.btn-version-copy.egg-release {
-				animation: none;
-			}
 		}
 
 		.btn-version-download {
@@ -6012,140 +5938,6 @@
 			color: #42a5f5;
 		}
 
-		/* ALPN 协议协商警告弹窗 */
-		.alpn-warning-modal {
-			min-width: 400px;
-		}
-
-		.alpn-header {
-			display: flex;
-			align-items: center;
-			gap: 12px;
-			margin-bottom: 20px;
-			padding-bottom: 15px;
-			border-bottom: 2px solid var(--border-color);
-		}
-
-		.alpn-icon {
-			font-size: 28px;
-			line-height: 1;
-		}
-
-		.alpn-title {
-			margin: 0;
-			font-size: 18px;
-			font-weight: 600;
-			color: #ef4444;
-		}
-
-		.alpn-content {
-			margin-bottom: 24px;
-		}
-
-		.alpn-text {
-			margin: 0 0 12px 0;
-			line-height: 1.6;
-			font-size: 14px;
-			color: var(--text-primary);
-		}
-
-		.alpn-text:last-child {
-			margin-bottom: 0;
-		}
-
-		.alpn-buttons {
-			display: flex;
-			gap: 12px;
-			justify-content: space-between;
-		}
-
-		.btn-confirm-alpn {
-			flex: 1;
-		}
-
-		.btn-alpn-safe {
-			flex: 1;
-			background: linear-gradient(135deg, #10b981 0, #059669 100%);
-			color: #fff;
-		}
-
-		/* 暗模式 - ALPN 协议协商警告弹窗 */
-		html.dark-mode .alpn-title {
-			color: #ff6b6b;
-		}
-
-		/* ECH×指纹冲突弹窗 */
-		.ech-conflict-modal {
-			min-width: 480px;
-		}
-
-		.ech-header {
-			display: flex;
-			align-items: center;
-			gap: 12px;
-			margin-bottom: 20px;
-			padding-bottom: 15px;
-			border-bottom: 2px solid var(--border-color);
-		}
-
-		.ech-icon {
-			font-size: 28px;
-			line-height: 1;
-		}
-
-		.ech-title {
-			margin: 0;
-			font-size: 18px;
-			font-weight: 600;
-			color: #ef4444;
-		}
-
-		.ech-content {
-			margin-bottom: 24px;
-		}
-
-		.ech-text {
-			margin: 0 0 12px 0;
-			line-height: 1.6;
-			font-size: 14px;
-			color: var(--text-primary);
-		}
-
-		.ech-text:last-child {
-			margin-bottom: 0;
-		}
-
-		.ech-buttons {
-			display: flex;
-			flex-direction: column;
-			gap: 12px;
-		}
-
-		.btn-ech-option {
-			width: 100%;
-			font-size: 14px;
-		}
-
-		.btn-ech-chrome {
-			background: linear-gradient(135deg, #10b981 0, #059669 100%);
-			color: #fff;
-		}
-
-		.btn-ech-firefox {
-			background: linear-gradient(135deg, #f59e0b 0, #d97706 100%);
-			color: #fff;
-		}
-
-		.btn-ech-disable {
-			background: linear-gradient(135deg, #ef4444 0, #dc2626 100%);
-			color: #fff;
-		}
-
-		/* 暗模式 - ECH×指纹冲突弹窗 */
-		html.dark-mode .ech-title {
-			color: #ff6b6b;
-		}
-
 		/* 日志容器 */
 		.logs-container {
 			margin-bottom: 20px;
@@ -6429,561 +6221,6 @@
 			background: rgba(17, 24, 39, 0.92);
 			color: #d1d5db;
 			box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
-		}
-
-		/* ==================== 开始优选 - 方式选择弹窗 ==================== */
-		.optimize-start-modal {
-			max-width: 720px;
-			width: min(95vw, 720px);
-			padding: 34px 30px 30px;
-			text-align: center;
-		}
-
-		.optimize-start-title {
-			font-size: 22px;
-			font-weight: 700;
-			color: #0f172a;
-			margin: 0 0 6px;
-		}
-
-		.optimize-start-subtitle {
-			font-size: 13px;
-			color: #64748b;
-			margin: 0 0 24px;
-		}
-
-		.optimize-start-cards {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 16px;
-		}
-
-		.optimize-start-card {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			gap: 9px;
-			padding: 24px 18px;
-			border-radius: 14px;
-			border: 2px solid #e2e8f0;
-			background: #f8fafc;
-			cursor: pointer;
-			text-align: center;
-			font-family: inherit;
-			transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
-		}
-
-		.optimize-start-card:hover {
-			transform: translateY(-3px);
-			box-shadow: 0 12px 28px rgba(23, 32, 51, .12);
-		}
-
-		.optimize-start-card:active {
-			transform: translateY(0);
-		}
-
-		/* 在线优选卡片：默认绿色高亮，暗示优先选择 */
-		.optimize-card-online {
-			position: relative;
-			border-color: #10b981;
-			background: linear-gradient(180deg, #ecfdf5 0, #f8fafc 100%);
-			box-shadow: 0 4px 14px rgba(16, 185, 129, .18);
-		}
-
-		.optimize-card-badge {
-			display: inline-block;
-			margin-left: 6px;
-			padding: 2px 8px;
-			border-radius: 999px;
-			font-size: 11px;
-			font-weight: 600;
-			color: #fff;
-			background: linear-gradient(135deg, #10b981 0, #059669 100%);
-			vertical-align: middle;
-			white-space: nowrap;
-		}
-
-		.optimize-card-online:hover {
-			border-color: #10b981;
-			background: linear-gradient(180deg, #ecfdf5 0, #f8fafc 100%);
-		}
-
-		.optimize-card-local:hover {
-			border-color: #6366f1;
-			background: linear-gradient(180deg, #eef2ff 0, #f8fafc 100%);
-		}
-
-		.optimize-card-icon {
-			font-size: 34px;
-			line-height: 1;
-		}
-
-		.optimize-card-title {
-			font-size: 18px;
-			font-weight: 700;
-			color: #0f172a;
-		}
-
-		.optimize-card-desc {
-			font-size: 13px;
-			line-height: 1.65;
-			color: #475569;
-		}
-
-		.optimize-card-tag {
-			font-size: 12px;
-			line-height: 1.5;
-			padding: 5px 10px;
-			border-radius: 8px;
-			width: 100%;
-		}
-
-		.optimize-card-tag.tag-pro {
-			color: #047857;
-			background: #d1fae5;
-		}
-
-		.optimize-card-tag.tag-con {
-			color: #b45309;
-			background: #fef3c7;
-		}
-
-		html.dark-mode .optimize-start-title,
-		html.dark-mode .optimize-card-title {
-			color: var(--text-primary);
-		}
-
-		html.dark-mode .optimize-start-subtitle {
-			color: #94a3b8;
-		}
-
-		html.dark-mode .optimize-start-card {
-			background: rgba(148, 163, 184, .08);
-			border-color: rgba(148, 163, 184, .18);
-		}
-
-		html.dark-mode .optimize-card-online {
-			border-color: #10b981;
-			background: rgba(16, 185, 129, .12);
-			box-shadow: 0 4px 14px rgba(16, 185, 129, .22);
-		}
-
-		html.dark-mode .optimize-card-online:hover {
-			border-color: #10b981;
-			background: rgba(16, 185, 129, .14);
-		}
-
-		html.dark-mode .optimize-card-local:hover {
-			border-color: #6366f1;
-			background: rgba(99, 102, 241, .16);
-		}
-
-		html.dark-mode .optimize-card-desc {
-			color: #cbd5e1;
-		}
-
-		html.dark-mode .optimize-card-tag.tag-pro {
-			color: #6ee7b7;
-			background: rgba(16, 185, 129, .15);
-		}
-
-		html.dark-mode .optimize-card-tag.tag-con {
-			color: #fcd34d;
-			background: rgba(245, 158, 11, .15);
-		}
-
-		/* ==================== 本地优选 - 工具目录弹窗 ==================== */
-		.local-optimize-modal {
-			max-width: 640px;
-			width: min(95vw, 640px);
-			max-height: 82vh;
-			overflow-y: auto;
-			text-align: left;
-			padding: 28px 26px 26px;
-			scrollbar-width: thin;
-			scrollbar-color: #818cf8 transparent;
-		}
-
-		.local-optimize-modal::-webkit-scrollbar {
-			width: 8px;
-		}
-
-		.local-optimize-modal::-webkit-scrollbar-track {
-			background: transparent;
-		}
-
-		.local-optimize-modal::-webkit-scrollbar-thumb {
-			background: linear-gradient(180deg, #a5b4fc, #6366f1);
-			border-radius: 999px;
-			border: 2px solid transparent;
-			background-clip: padding-box;
-		}
-
-		.local-optimize-modal::-webkit-scrollbar-thumb:hover {
-			background: linear-gradient(180deg, #818cf8, #4f46e5);
-		}
-
-		.local-optimize-title {
-			font-size: 20px;
-			font-weight: 700;
-			color: #0f172a;
-			margin: 0 0 4px;
-		}
-
-		.local-optimize-subtitle {
-			font-size: 13px;
-			color: #64748b;
-			margin: 0 0 20px;
-		}
-
-		.local-optimize-tools {
-			display: flex;
-			flex-direction: column;
-			gap: 14px;
-		}
-
-		.local-optimize-footer {
-			margin-top: 20px;
-			text-align: center;
-			font-size: 12px;
-			color: #94a3b8;
-			letter-spacing: .5px;
-		}
-
-		.local-ui-filter {
-			display: flex;
-			flex-wrap: nowrap;
-			gap: 8px;
-			margin-bottom: 14px;
-			overflow-x: auto;
-			-webkit-overflow-scrolling: touch;
-			scrollbar-width: none;
-			padding-bottom: 2px;
-			scroll-snap-type: x proximity;
-		}
-
-		.local-ui-filter::-webkit-scrollbar {
-			display: none;
-		}
-
-		.local-ui-filter-btn {
-			flex-shrink: 0;
-			padding: 4px 11px;
-			border-radius: 999px;
-			border: 1px solid transparent;
-			background: #f1f5f9;
-			color: #475569;
-			font-size: 12px;
-			font-weight: 500;
-			white-space: nowrap;
-			cursor: pointer;
-			scroll-snap-align: start;
-			transition: background .18s ease-out, color .18s ease-out, border-color .18s ease-out;
-		}
-
-		.local-ui-filter-btn:hover {
-			background: #e2e8f0;
-			color: #0f172a;
-		}
-
-		.local-ui-filter-btn.is-active {
-			background: #4f46e5;
-			color: #fff;
-			border-color: #4f46e5;
-		}
-
-		@keyframes localToolFadeIn {
-			from {
-				opacity: 0;
-				transform: translateY(6px);
-			}
-			to {
-				opacity: 1;
-				transform: translateY(0);
-			}
-		}
-
-		.local-tool-card {
-			display: flex;
-			flex-direction: column;
-			gap: 9px;
-			padding: 18px 20px;
-			border: 2px solid #e2e8f0;
-			border-radius: 14px;
-			background: #f8fafc;
-			transition: border-color .18s ease, box-shadow .18s ease;
-			animation: localToolFadeIn .3s ease-out both;
-		}
-
-		@media (prefers-reduced-motion: reduce) {
-			.local-tool-card {
-				animation: none !important;
-			}
-		}
-
-		.local-tool-card:hover {
-			border-color: #6366f1;
-			box-shadow: 0 8px 20px rgba(23, 32, 51, .08);
-		}
-
-		.local-tool-head {
-			display: flex;
-			align-items: center;
-			flex-wrap: wrap;
-			gap: 8px;
-		}
-
-		.local-tool-name {
-			font-size: 16px;
-			font-weight: 700;
-			color: #0f172a;
-		}
-
-		.local-tool-author {
-			font-size: 12px;
-			color: #4f46e5;
-			background: #eef2ff;
-			padding: 2px 8px;
-			border-radius: 999px;
-		}
-
-		.local-tool-stars {
-			display: inline-flex;
-			align-items: center;
-			gap: 4px;
-			margin-left: auto;
-			font-size: 12px;
-			font-weight: 600;
-			line-height: 1.5;
-			padding: 2px 9px;
-			border-radius: 999px;
-			background: #fffbeb;
-			color: #b45309;
-		}
-
-		.local-tool-stars svg {
-			flex: 0 0 auto;
-			color: #f59e0b;
-		}
-
-		.local-tool-ui {
-			display: inline-flex;
-			align-items: center;
-			gap: 3px;
-			font-size: 11.5px;
-			line-height: 1.5;
-			padding: 3px 10px;
-			border-radius: 999px;
-			background: #f1f5f9;
-			color: #475569;
-		}
-
-		.local-tool-ui-webui {
-			background: #ecfeff;
-			color: #0e7490;
-		}
-
-		.local-tool-ui-gui {
-			background: #fdf4ff;
-			color: #a21caf;
-		}
-
-		.local-tool-ui-cli {
-			background: #fffbeb;
-			color: #b45309;
-		}
-
-		.local-tool-desc {
-			font-size: 13px;
-			line-height: 1.7;
-			color: #475569;
-		}
-
-		.local-tool-platforms {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 6px;
-		}
-
-		.local-tool-platform {
-			font-size: 11.5px;
-			padding: 3px 10px;
-			border-radius: 999px;
-			background: #e2e8f0;
-			color: #475569;
-		}
-
-		.local-tool-actions {
-			display: flex;
-			justify-content: flex-end;
-			margin-top: 2px;
-		}
-
-		.local-tool-github {
-			display: inline-flex;
-			align-items: center;
-			gap: 6px;
-			padding: 8px 16px;
-			border-radius: 9px;
-			border: 0;
-			background: linear-gradient(135deg, #3b82f6 0, #1d4ed8 100%);
-			color: #fff;
-			font-size: 13.5px;
-			font-weight: 600;
-			cursor: pointer;
-			transition: transform .15s ease, box-shadow .15s ease;
-		}
-
-		.local-tool-github:hover {
-			transform: translateY(-1px);
-			box-shadow: 0 6px 16px rgba(37, 99, 235, .35);
-		}
-
-		.local-tools-loading,
-		.local-tools-error {
-			text-align: center;
-			padding: 36px 16px;
-			color: #64748b;
-			font-size: 14px;
-			line-height: 1.8;
-		}
-
-		.local-tools-error {
-			color: #b45309;
-		}
-
-		.local-tools-retry {
-			display: inline-block;
-			margin-top: 12px;
-			padding: 8px 22px;
-			border-radius: 9px;
-			border: 0;
-			background: linear-gradient(135deg, #f59e0b 0, #d97706 100%);
-			color: #fff;
-			font-size: 13.5px;
-			font-weight: 600;
-			cursor: pointer;
-		}
-
-		html.dark-mode .local-optimize-title,
-		html.dark-mode .local-tool-name {
-			color: var(--text-primary);
-		}
-
-		html.dark-mode .local-optimize-subtitle {
-			color: #94a3b8;
-		}
-
-		html.dark-mode .local-optimize-modal {
-			scrollbar-color: #818cf8 rgba(148, 163, 184, .12);
-		}
-
-		html.dark-mode .local-optimize-modal::-webkit-scrollbar-thumb {
-			background: linear-gradient(180deg, #a5b4fc, #818cf8);
-		}
-
-		html.dark-mode .local-optimize-modal::-webkit-scrollbar-thumb:hover {
-			background: linear-gradient(180deg, #c7d2fe, #a5b4fc);
-		}
-
-		html.dark-mode .local-optimize-footer {
-			color: #64748b;
-		}
-
-		html.dark-mode .local-ui-filter-btn {
-			background: rgba(148, 163, 184, .14);
-			color: #cbd5e1;
-			border-color: rgba(148, 163, 184, .22);
-		}
-
-		html.dark-mode .local-ui-filter-btn:hover {
-			background: rgba(148, 163, 184, .24);
-			color: #f1f5f9;
-		}
-
-		html.dark-mode .local-ui-filter-btn.is-active {
-			background: #4f46e5;
-			color: #fff;
-			border-color: #4f46e5;
-		}
-
-		html.dark-mode .local-tool-card {
-			background: rgba(148, 163, 184, .08);
-			border-color: rgba(148, 163, 184, .18);
-		}
-
-		html.dark-mode .local-tool-card:hover {
-			border-color: #6366f1;
-		}
-
-		html.dark-mode .local-tool-author {
-			color: #a5b4fc;
-			background: rgba(99, 102, 241, .18);
-		}
-
-		html.dark-mode .local-tool-stars {
-			background: rgba(245, 158, 11, .15);
-			color: #fcd34d;
-		}
-
-		html.dark-mode .local-tool-stars svg {
-			color: #fbbf24;
-		}
-
-		html.dark-mode .local-tool-ui {
-			background: rgba(148, 163, 184, .16);
-			color: #cbd5e1;
-		}
-
-		html.dark-mode .local-tool-ui-webui {
-			background: rgba(14, 116, 144, .2);
-			color: #67e8f9;
-		}
-
-		html.dark-mode .local-tool-ui-gui {
-			background: rgba(162, 28, 175, .2);
-			color: #f0abfc;
-		}
-
-		html.dark-mode .local-tool-ui-cli {
-			background: rgba(180, 83, 9, .2);
-			color: #fcd34d;
-		}
-
-		html.dark-mode .local-tool-desc {
-			color: #cbd5e1;
-		}
-
-		html.dark-mode .local-tool-platform {
-			background: rgba(148, 163, 184, .16);
-			color: #cbd5e1;
-		}
-
-		html.dark-mode .local-tools-loading {
-			color: #94a3b8;
-		}
-
-		html.dark-mode .local-tools-error {
-			color: #fcd34d;
-		}
-
-		@media (max-width: 560px) {
-			.optimize-start-cards {
-				grid-template-columns: 1fr;
-			}
-
-			.optimize-start-modal {
-				padding: 24px 18px 20px;
-			}
-
-			.local-tool-actions {
-				justify-content: stretch;
-			}
-
-			.local-tool-github {
-				width: 100%;
-				justify-content: center;
-			}
 		}
 
 		html.dark-mode .online-optimize-fallback-close:hover {
@@ -8240,85 +7477,6 @@
 			box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
 		}
 
-		/* ============================================================
-		   gRPC 功能提示弹窗（极简重设计）
-		   - 白底跟随 .modal 默认，红色仅用于标题
-		   - 干净 <ol> 列表，无卡片、无编号气泡、无色块
-		   - 不影响 .sstls-modal-* 与 .grpc-modal-{path,confirm-btn,path-icon}
-		   ============================================================ */
-
-		/* 内容容器 */
-		.grpc-modal-body {
-			text-align: left;
-		}
-
-		/* 底部按钮容器 */
-		.grpc-modal-actions {
-			display: flex;
-			justify-content: center;
-			margin-top: 20px;
-		}
-
-		/* 标题：居中红色简单 h2 */
-		.grpc-modal-title {
-			margin: 0 0 16px 0;
-			text-align: center;
-			color: #f44336;
-			font-size: 22px;
-			font-weight: 700;
-		}
-
-		/* 说明段 */
-		.grpc-modal-desc {
-			margin: 0 0 16px 0;
-			font-size: 14px;
-			line-height: 1.6;
-			color: var(--text-primary);
-		}
-
-		/* 有序列表 */
-		.grpc-modal-list {
-			margin: 0;
-			padding-left: 22px;
-		}
-
-		.grpc-modal-list li {
-			margin-bottom: 13px;
-			font-size: 14px;
-			line-height: 1.7;
-			color: var(--text-primary);
-		}
-
-		.grpc-modal-list li:last-child {
-			margin-bottom: 0;
-		}
-
-		/* 编号弱化：让正文突出 */
-		.grpc-modal-list li::marker {
-			color: var(--text-secondary);
-		}
-
-		/* 链接 */
-		.grpc-modal-link {
-			color: #2196F3;
-			text-decoration: underline;
-			text-underline-offset: 2px;
-			transition: color 0.2s ease;
-		}
-
-		.grpc-modal-link:hover {
-			color: #1976D2;
-		}
-
-		/* 暗色模式：仅链接提亮，其余自动跟随 CSS 变量 */
-		html.dark-mode .grpc-modal-link {
-			color: #64B5F6;
-		}
-
-		html.dark-mode .grpc-modal-link:hover {
-			color: #90CAF9;
-		}
-
 		.sstls-modal-alert {
 			margin: 0 0 12px 0;
 			font-size: 14px;
@@ -9351,703 +8509,6 @@
 		html.low-performance-mode .cf-percentage-center {
 			text-shadow: none !important;
 		}
-
-		/* 集中的小屏幕适配：保持桌面布局不变，仅降低平板和手机端的信息密度 */
-		@media (max-width: 768px) {
-			html,
-			body {
-				max-width: 100%;
-				overflow-x: hidden;
-			}
-
-			.page-wrapper {
-				width: 100%;
-				padding: 12px;
-				align-items: flex-start;
-			}
-
-			.card-container {
-				width: 100%;
-				min-width: 0;
-				padding: 0;
-				margin: 0 auto;
-			}
-
-			.header {
-				align-items: stretch;
-				gap: 12px;
-				padding: 16px;
-				margin-bottom: 14px;
-				border-radius: 12px;
-			}
-
-			.header-title,
-			.header-buttons,
-			.module,
-			.module-content,
-			.module .form-group,
-			.module .input-wrapper,
-			.module-footer,
-			.modal,
-			.modal-content-side {
-				min-width: 0;
-			}
-
-			.header-title h1 {
-				font-size: 23px;
-				line-height: 1.25;
-				text-align: center;
-			}
-
-			.header-buttons {
-				gap: 8px;
-			}
-
-			.header .btn,
-			.btn {
-				min-width: 0;
-				min-height: 36px;
-				padding: 8px 12px;
-				border-radius: 8px;
-				font-size: 13px;
-				line-height: 1.3;
-				letter-spacing: 0;
-				white-space: normal;
-			}
-
-			.module {
-				padding: 16px;
-				margin-bottom: 14px;
-				border-radius: 12px;
-			}
-
-			.module-title {
-				margin-bottom: 14px;
-				font-size: 17px;
-				line-height: 1.35;
-			}
-
-			.module .form-group,
-			#portSection {
-				gap: 7px;
-				margin-bottom: 14px;
-			}
-
-			.label-with-hint {
-				gap: 6px;
-				margin-bottom: 0;
-			}
-
-			.module .form-group label,
-			.form-group label,
-			.checkbox-label {
-				font-size: 12px;
-				line-height: 1.4;
-			}
-
-			.module .form-group input,
-			.module .form-group select,
-			.module .form-group textarea,
-			.form-group input,
-			.form-group select,
-			.form-group textarea {
-				min-width: 0;
-				padding: 9px 10px;
-				border-radius: 8px;
-				font-size: 14px;
-				line-height: 1.35;
-			}
-
-			.form-group textarea {
-				min-height: 220px;
-			}
-
-			.line-editor,
-			.line-editor .editor-area,
-			.line-editor textarea {
-				min-height: 220px;
-			}
-
-			.line-editor {
-				grid-template-columns: 46px minmax(0, 1fr);
-				border-radius: 8px;
-			}
-
-			.line-editor textarea,
-			.line-editor .wrap-measure {
-				padding: 10px !important;
-				font-size: 12px !important;
-			}
-
-			.line-editor .gutter pre {
-				padding: 10px 7px 10px 3px;
-			}
-
-			.module-footer {
-				gap: 8px;
-				margin-top: 16px;
-				padding-top: 14px;
-			}
-
-			.module-footer .btn-group,
-			.subscription-link-wrapper .btn-container,
-			.api-buttons,
-			.subapi-buttons,
-			.reset-modal-buttons,
-			.skipverify-buttons,
-			.alpn-buttons,
-			.ech-buttons,
-			.hosts-edit-buttons {
-				gap: 8px !important;
-			}
-
-			.checkbox-row {
-				gap: 8px;
-			}
-
-			.mobile-compact-grid,
-			.compact-checkbox-grid {
-				display: grid;
-				grid-template-columns: repeat(2, minmax(0, 1fr));
-				grid-auto-flow: row dense;
-				gap: 8px 10px;
-				align-items: start;
-			}
-
-			.mobile-compact-grid>.form-group {
-				grid-column: 1 / -1;
-				margin-bottom: 0;
-			}
-
-			.mobile-compact-grid>.form-group.mobile-half {
-				grid-column: auto;
-			}
-
-			.compact-checkbox-grid {
-				align-items: center;
-			}
-
-			.compact-checkbox-grid .form-group {
-				width: 100%;
-			}
-
-			.network-cards-container,
-			.latency-cards {
-				gap: 10px;
-				margin-top: 10px;
-			}
-
-			.network-card,
-			.latency-card {
-				padding: 12px;
-				border-radius: 10px;
-			}
-
-			.network-card-title {
-				gap: 7px;
-				margin-bottom: 8px;
-				font-size: 14px;
-			}
-
-			.network-info-content {
-				min-width: 0;
-				padding-left: 0;
-			}
-
-			.ip-text {
-				font-size: 14px;
-			}
-
-			.location-text,
-			.network-tip {
-				font-size: 11px;
-			}
-
-			.cf-usage-wrapper {
-				padding: 14px 0 0;
-			}
-
-			.cf-stats-card {
-				padding: 14px;
-				margin-bottom: 14px;
-			}
-
-			.cf-stats-grid {
-				grid-template-columns: repeat(3, minmax(0, 1fr));
-				gap: 8px;
-			}
-
-			.cf-stat-label {
-				margin-bottom: 5px;
-				font-size: 10px;
-			}
-
-			.cf-stat-value {
-				font-size: 19px;
-			}
-
-			.cf-progress-bar {
-				height: 22px;
-			}
-
-			.cf-info-box {
-				gap: 8px;
-				padding: 10px;
-			}
-
-			.cf-info-text {
-				min-width: 0;
-				font-size: 11px;
-				line-height: 1.5;
-				white-space: normal;
-				word-break: break-word;
-				overflow-wrap: anywhere;
-			}
-
-			.social-links {
-				flex-wrap: wrap;
-				gap: 8px;
-				padding: 14px 0;
-			}
-
-			.social-link {
-				width: 38px;
-				height: 38px;
-				border-radius: 9px;
-			}
-
-			.social-link svg,
-			.theme-icon {
-				width: 18px;
-				height: 18px;
-			}
-
-			.social-link.social-version {
-				min-width: 96px;
-				padding: 0 8px;
-				font-size: 10px;
-			}
-
-			.modal-overlay {
-				padding: 12px;
-				overflow-y: auto;
-			}
-
-			.modal {
-				width: 100%;
-				min-width: 0 !important;
-				max-width: calc(100vw - 24px);
-				max-height: calc(100vh - 24px);
-				max-height: calc(100dvh - 24px);
-				padding: 18px;
-				border-radius: 12px;
-				overflow-y: auto;
-			}
-
-			.modal h2,
-			.api-optimize-modal-title,
-			.subapi-modal-title,
-			.logs-modal-title,
-			.path-template-modal-title {
-				margin-bottom: 14px !important;
-				font-size: 18px !important;
-				line-height: 1.35;
-				overflow-wrap: anywhere;
-			}
-
-			.modal p,
-			.modal li,
-			.modal small {
-				font-size: 12px;
-				word-break: break-word;
-				overflow-wrap: anywhere;
-			}
-
-			.modal-close {
-				top: 8px;
-				right: 8px;
-				width: 32px;
-				height: 32px;
-				font-size: 20px;
-			}
-
-			#getMoreProxyIPModal .modal,
-			#exploreSocks5Modal .modal,
-			#exploreHTTPModal .modal,
-			#exploreHTTPSModal .modal {
-				width: 100%;
-				height: calc(100vh - 24px);
-				height: calc(100dvh - 24px);
-				max-height: calc(100vh - 24px);
-				max-height: calc(100dvh - 24px);
-			}
-
-			.modal-content-side {
-				padding: 14px;
-			}
-
-			.api-form-group,
-			.api-results-container,
-			.hosts-edit-container {
-				margin-bottom: 14px;
-			}
-
-			.api-form-row,
-			.api-form-row-item,
-			.chain-proxy-modal .api-form-row-item {
-				min-width: 0;
-				gap: 6px;
-			}
-
-			.api-form-row label,
-			.api-form-row-item label {
-				font-size: 12px;
-			}
-
-			.api-form-row input,
-			.api-form-row-item input[type="number"],
-			.api-form-row-item input[type="text"],
-			.chain-proxy-preferred-wrapper input,
-			.chain-proxy-input-wrapper select,
-			.chain-proxy-input-wrapper input {
-				min-width: 0;
-				padding: 8px;
-				font-size: 13px;
-			}
-
-			.api-results-textarea,
-			.hosts-edit-textarea {
-				height: 160px;
-				padding: 9px;
-				font-size: 12px;
-			}
-
-			.ip-detail-modal {
-				padding: 8px;
-			}
-
-			.ip-detail-content {
-				width: 100%;
-				max-width: 100%;
-				padding: 0;
-				border-radius: 14px 14px 0 0;
-			}
-
-			.ip-detail-header,
-			.ip-detail-grid-container {
-				padding: 14px;
-			}
-
-			.ip-detail-map-container {
-				height: 180px;
-			}
-
-			.ip-detail-card {
-				padding: 14px;
-				border-radius: 10px;
-			}
-
-			.score-tooltip {
-				width: calc(100vw - 24px);
-				min-width: 0;
-				max-width: calc(100vw - 24px);
-				padding: 12px;
-			}
-
-			.toast {
-				left: 12px;
-				right: 12px;
-				top: 12px;
-				max-width: none;
-				padding: 10px 12px;
-				font-size: 12px;
-			}
-
-			.qrcode-container {
-				min-height: 260px;
-				margin: 18px 0;
-			}
-
-			.qrcode-container img,
-			.qrcode-container canvas {
-				max-width: 100%;
-				height: auto !important;
-			}
-
-			.logs-all-container,
-			.logs-container {
-				max-width: 100%;
-			}
-		}
-
-		@media (max-width: 480px) {
-			.page-wrapper {
-				padding: 6px;
-			}
-
-			.header {
-				gap: 10px;
-				padding: 12px;
-				margin-bottom: 10px;
-				border-radius: 10px;
-			}
-
-			.header-title h1 {
-				font-size: 20px;
-			}
-
-			.header-buttons {
-				grid-template-columns: repeat(2, minmax(0, 1fr));
-				gap: 6px;
-			}
-
-			.header .btn,
-			.btn {
-				min-height: 34px;
-				padding: 7px 9px;
-				font-size: 11.5px;
-			}
-
-			.module {
-				padding: 12px;
-				margin-bottom: 10px;
-				border-radius: 10px;
-			}
-
-			.module-title {
-				gap: 6px;
-				margin-bottom: 11px;
-				font-size: 15px;
-			}
-
-			.module-title .collapse-icon {
-				width: 16px;
-				height: 16px;
-				padding: 3px;
-			}
-
-			.module .form-group,
-			#portSection {
-				gap: 5px;
-				margin-bottom: 11px;
-			}
-
-			.module .form-group input,
-			.module .form-group select,
-			.module .form-group textarea,
-			.form-group input,
-			.form-group select,
-			.form-group textarea {
-				padding: 8px;
-				font-size: 13px;
-			}
-
-			.form-group textarea,
-			.line-editor,
-			.line-editor .editor-area,
-			.line-editor textarea {
-				min-height: 180px;
-			}
-
-			.line-editor {
-				grid-template-columns: 38px minmax(0, 1fr);
-			}
-
-			.module-footer {
-				gap: 6px;
-				margin-top: 12px;
-				padding-top: 11px;
-			}
-
-			.module-footer .btn-group,
-			.subscription-link-wrapper .btn-container {
-				gap: 6px !important;
-			}
-
-			.module-footer .btn-online-optimize:not(.hidden-section),
-			.module-footer .btn-api-optimize:not(.hidden-section),
-			.module-footer .btn-chain-proxy:not(.hidden-section) {
-				min-width: calc(50% - 3px);
-			}
-
-			.proxy-protocol-wrapper select {
-				flex-basis: 72px;
-				width: 72px;
-				min-width: 72px;
-			}
-
-			.grpc-ua-wrapper input {
-				padding-right: 76px !important;
-			}
-
-			.grpc-ua-action {
-				right: 7px;
-				font-size: 10px;
-			}
-
-			.network-card,
-			.latency-card {
-				padding: 10px;
-			}
-
-			.cf-stats-card {
-				padding: 10px;
-				border-left-width: 3px;
-			}
-
-			.cf-stats-grid {
-				gap: 5px;
-			}
-
-			.cf-stat-label {
-				font-size: 9px;
-				text-transform: none;
-			}
-
-			.cf-stat-value {
-				font-size: 16px;
-			}
-
-			.social-links {
-				gap: 6px;
-				padding: 10px 0;
-			}
-
-			.social-link {
-				width: 34px;
-				height: 34px;
-			}
-
-			.social-link.social-version {
-				min-width: 88px;
-				font-size: 9px;
-			}
-
-			.modal-overlay {
-				padding: 6px;
-			}
-
-			.modal {
-				max-width: calc(100vw - 12px);
-				max-height: calc(100vh - 12px);
-				max-height: calc(100dvh - 12px);
-				padding: 14px;
-				border-radius: 10px;
-			}
-
-			.modal h2,
-			.api-optimize-modal-title,
-			.subapi-modal-title,
-			.logs-modal-title,
-			.path-template-modal-title {
-				padding-right: 20px;
-				font-size: 16px !important;
-			}
-
-			.api-form-row,
-			.api-form-row-item,
-			.chain-proxy-modal .api-form-row-item {
-				grid-template-columns: minmax(0, 1fr) !important;
-				align-items: stretch;
-			}
-
-			.api-form-row-dual {
-				grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-				gap: 8px;
-			}
-
-			.api-form-row label,
-			.api-form-row-item label {
-				white-space: normal;
-			}
-
-			.chain-proxy-preferred-wrapper,
-			.chain-proxy-input-wrapper {
-				grid-template-columns: minmax(0, 1fr) auto minmax(64px, 0.55fr);
-			}
-
-			.chain-route-node {
-				padding: 8px;
-			}
-
-			.api-buttons,
-			.subapi-buttons {
-				gap: 6px !important;
-			}
-
-			.reset-modal-buttons,
-			.skipverify-buttons,
-			.alpn-buttons,
-			.ech-buttons,
-			.hosts-edit-footer {
-				flex-wrap: wrap;
-				gap: 6px;
-			}
-
-			.reset-modal-buttons .btn,
-			.skipverify-buttons .btn,
-			.alpn-buttons .btn,
-			.ech-buttons .btn,
-			.hosts-edit-buttons,
-			.hosts-edit-buttons .btn {
-				flex: 1 1 100%;
-				width: 100%;
-			}
-
-			.ip-detail-header,
-			.ip-detail-grid-container,
-			.ip-detail-card {
-				padding: 10px;
-			}
-
-			.ip-detail-title {
-				font-size: 16px;
-			}
-
-			.ip-detail-security-grid {
-				grid-template-columns: repeat(2, minmax(0, 1fr));
-				gap: 0 8px;
-			}
-
-			.ip-detail-security-grid .ip-detail-item {
-				min-width: 0;
-				gap: 4px;
-				padding: 7px 0;
-			}
-
-			.ip-detail-security-grid .ip-detail-label,
-			.ip-detail-security-grid .ip-detail-value {
-				font-size: 11px;
-			}
-
-			.ip-detail-map-container {
-				height: 150px;
-			}
-
-			.score-tooltip {
-				width: calc(100vw - 12px);
-				max-width: calc(100vw - 12px);
-			}
-
-			.logs-modal {
-				width: 100%;
-			}
-
-			.logs-all-container table,
-			.logs-container table {
-				width: 100% !important;
-				table-layout: fixed !important;
-				font-size: 9px !important;
-			}
-
-		html.low-performance-mode .cf-bar-green,
-		html.low-performance-mode .cf-bar-blue {
-			box-shadow: none !important;
-		}
-
-		html.low-performance-mode .cf-percentage-center {
-			text-shadow: none !important;
-		}
 	</style>
 
 </head>
@@ -10456,7 +8917,7 @@
 
 					<div class="module-footer">
 						<button type="button" class="btn btn-online-optimize hidden-section" id="onlineOptimizeBtn"
-							onclick="openOptimizeStartModal()">开始优选</button>
+							onclick="openOnlineOptimizeModal()">在线优选</button>
 						<button type="button" class="btn btn-api-optimize hidden-section" id="apiOptimizeBtn"
 							onclick="openAPIOptimizeModal()">订阅接口</button>
 						<button type="button" class="btn btn-chain-proxy hidden-section" id="chainProxyBtn"
@@ -10530,14 +8991,14 @@
 						</select>
 					</div>
 
-						<div class="form-group mobile-half" id="transportGroup" style="display: none;">
-							<label>传输协议</label>
-							<select id="transport" title="传输协议" onchange="handleTransportChange()">
-								<option value="ws">WebSocket 稳！</option>
-								<option value="xhttp">XHTTP 大量消耗请求数！[封号警告，请求已被CDN识别！需等待上下游更新！]</option>
-								<option value="grpc">gRPC 花里胡笑！</option>
-							</select>
-						</div>
+					<div class="form-group" id="transportGroup" style="display: none;">
+						<label>传输协议</label>
+						<select id="transport" title="传输协议" onchange="handleTransportChange()">
+							<option value="ws">WebSocket 稳！</option>
+							<option value="xhttp">XHTTP 大量消耗请求数！[封号警告，请求已被CDN识别！需等待上下游更新！]</option>
+							<option value="grpc">gRPC 花里胡笑！</option>
+						</select>
+					</div>
 
 					<div class="form-group" id="grpcModeGroup" style="display: none;">
 						<label for="grpcMode">gRPC模式</label>
@@ -10559,38 +9020,21 @@
 						</div>
 					</div>
 
-						<div class="form-group mobile-half" id="fingerprintGroup">
-							<label for="fingerprint">指纹伪装</label>
-							<select id="fingerprint" title="浏览器指纹"
-								onchange="handleFingerprintChange(); markModified('config')">
-								<option value="chrome">chrome（支持ECH）</option>
-								<option value="firefox">firefox（支持ECH）</option>
-								<option value="safari">safari</option>
-								<option value="ios">ios</option>
-								<option value="android">android</option>
-								<option value="edge">edge</option>
-								<option value="360">360</option>
-								<option value="qq">qq</option>
-								<option value="random">random</option>
-								<option value="randomized">randomized</option>
-							</select>
-						</div>
-
-						<div class="form-group mobile-half" id="alpnGroup" style="display: none;">
-							<label for="alpn"
-								title="ALPN（Application-Layer Protocol Negotiation）应用层协议协商。&#10;默认「客户端自动协商」由客户端自行决定协议，兼容性最佳。&#10;手动指定后节点将固定使用所选协议集，若与客户端或网络环境不兼容，最坏情况会导致节点无法连接。">ALPN</label>
-							<select id="alpn"
-								title="ALPN（Application-Layer Protocol Negotiation）应用层协议协商。&#10;默认「客户端自动协商」由客户端自行决定协议，兼容性最佳。&#10;手动指定后节点将固定使用所选协议集，若与客户端或网络环境不兼容，最坏情况会导致节点无法连接。"
-								onchange="handleALPNChange(event)">
-								<option value="">客户端自动协商</option>
-								<option value="h3">h3</option>
-								<option value="h2">h2</option>
-								<option value="http/1.1">http/1.1</option>
-								<option value="h3,h2">h3,h2</option>
-								<option value="h2,http/1.1">h2,http/1.1</option>
-								<option value="h3,h2,http/1.1">h3,h2,http/1.1</option>
-							</select>
-						</div>
+					<div class="form-group" id="fingerprintGroup">
+						<label for="fingerprint">指纹伪装</label>
+						<select id="fingerprint" title="浏览器指纹"
+							onchange="handleFingerprintChange(); markModified('config')">
+							<option value="chrome">chrome（支持ECH）</option>
+							<option value="firefox">firefox（支持ECH）</option>
+							<option value="safari">safari</option>
+							<option value="ios">ios</option>
+							<option value="android">android</option>
+							<option value="edge">edge</option>
+							<option value="360">360</option>
+							<option value="qq">qq</option>
+							<option value="random">random</option>
+							<option value="randomized">randomized</option>
+						</select>
 					</div>
 
 					<div class="checkbox-row">
@@ -10978,14 +9422,6 @@
 								</div>
 							</div>
 						</div>
-						<div class="form-group" id="expandGroup" style="display: none;">
-							<div class="input-wrapper">
-								<div class="checkbox-group">
-									<input type="checkbox" id="expand" title="展开规则全文，输出完整分流规则列表" onchange="markModified('convert')">
-									<label for="expand" class="checkbox-label" title="展开规则全文，输出完整分流规则列表">展开规则全文</label>
-								</div>
-							</div>
-						</div>
 					</div>
 
 					<div class="module-footer">
@@ -11140,7 +9576,7 @@
 						class="version-state-tip is-outdated">需要更新</span></p>
 			</div>
 			<div class="version-info-actions">
-				<button type="button" id="versionCopyBtn" class="btn btn-version-copy" onclick="copyLatestWorkerSourceToClipboard()">📋
+				<button type="button" class="btn btn-version-copy" onclick="copyLatestWorkerSourceToClipboard()">📋
 					复制最新Worker.js源码 到剪贴板</button>
 				<button type="button" class="btn btn-version-changelog" id="versionChangelogToggleBtn"
 					onclick="openVersionChangelogModal()">📜 查看更新日志</button>
@@ -11188,47 +9624,6 @@
 				<button type="button" class="btn btn-confirm-skip-verify btn-confirm-reset"
 					onclick="confirmSkipVerify()">确认开启</button>
 				<button type="button" class="btn btn-secondary" onclick="closeSkipVerifyWarning()">关闭</button>
-			</div>
-		</div>
-	</div>
-
-	<!-- ALPN 协议协商警告弹窗 -->
-	<div class="modal-overlay" id="alpnWarningModal" onclick="closeALPNWarningModal(event)">
-		<div class="modal alpn-warning-modal" onclick="event.stopPropagation()">
-			<button type="button" class="modal-close" onclick="closeALPNWarningModal()">×</button>
-			<div class="alpn-header">
-				<div class="alpn-icon">⚠️</div>
-				<h2 class="alpn-title">关于 ALPN 协议协商</h2>
-			</div>
-			<div class="alpn-content" style="text-align: left;">
-				<p class="alpn-text">您当前选择的 ALPN 选项为「<span id="alpnPendingLabel"></span>」。ALPN
-					用于显式指定节点所使用的应用层协议优先级，属于<strong>高级配置项</strong>。</p>
-				<p class="alpn-text">设置不当可能导致节点与您的客户端或网络环境不兼容，<strong>最坏情况下节点将无法建立连接</strong>。如果您不确定该选项的含义与影响，建议保持默认的「客户端自动协商」，由客户端自行完成协议协商。</p>
-			</div>
-			<div class="alpn-buttons">
-				<button type="button" class="btn btn-confirm-alpn btn-confirm-reset"
-					onclick="confirmALPNSelection()">我知道风险，继续使用</button>
-				<button type="button" class="btn btn-alpn-safe" onclick="keepAutoALPN()">使用「客户端自动协商」</button>
-			</div>
-		</div>
-	</div>
-
-	<!-- ECH×指纹冲突弹窗 -->
-	<div class="modal-overlay" id="echConflictModal" onclick="closeECHConflictModal(event)">
-		<div class="modal ech-conflict-modal" onclick="event.stopPropagation()">
-			<button type="button" class="modal-close" onclick="closeECHConflictModal()">×</button>
-			<div class="ech-header">
-				<div class="ech-icon">⚠️</div>
-				<h2 class="ech-title">ECH 与浏览器指纹冲突</h2>
-			</div>
-			<div class="ech-content" style="text-align: left;">
-				<p class="ech-text">您已开启 ECH，但当前选择的浏览器指纹「<span id="echConflictFingerprint"></span>」不支持 ECH。</p>
-				<p class="ech-text">ECH（Encrypted ClientHello）仅在 <strong>chrome / firefox</strong> 指纹下生效。请选择处理方式：切换到支持的浏览器指纹以保留 ECH，或关闭 ECH。</p>
-			</div>
-			<div class="ech-buttons">
-				<button type="button" class="btn btn-ech-option btn-ech-chrome" onclick="resolveECHConflict('chrome')">使用 chrome 指纹并开启 ECH</button>
-				<button type="button" class="btn btn-ech-option btn-ech-firefox" onclick="resolveECHConflict('firefox')">使用 firefox 指纹并开启 ECH</button>
-				<button type="button" class="btn btn-ech-option btn-ech-disable" onclick="resolveECHConflict('disable')">关闭 ECH</button>
 			</div>
 		</div>
 	</div>
@@ -11409,48 +9804,6 @@
 			<button type="button" class="online-optimize-fallback-close" title="关闭" aria-label="关闭"
 				onclick="closeOnlineOptimizeModal()">×</button>
 			<iframe id="onlineOptimizeFrame" class="online-optimize-frame" title="在线优选"></iframe>
-		</div>
-	</div>
-
-	<!-- 开始优选 - 优选方式选择弹窗 -->
-	<div class="modal-overlay" id="optimizeStartModal" onclick="closeOptimizeStartModal(event)">
-		<div class="modal optimize-start-modal" onclick="event.stopPropagation()">
-			<button type="button" class="modal-close" onclick="closeOptimizeStartModal()" aria-label="关闭">×</button>
-			<h2 class="optimize-start-title">🚀 开始优选</h2>
-			<p class="optimize-start-subtitle">请选择一种优选方式</p>
-			<div class="optimize-start-cards">
-				<button type="button" class="optimize-start-card optimize-card-online" onclick="chooseOnlineOptimize()">
-					<span class="optimize-card-icon">🌐</span>
-					<span class="optimize-card-title">在线优选<span class="optimize-card-badge">推荐</span></span>
-					<span class="optimize-card-desc">通过浏览器实时进行在线优选，兼容性高，有浏览器就能进行</span>
-					<span class="optimize-card-tag tag-pro">✅ 优点：无需安装，即开即用</span>
-					<span class="optimize-card-tag tag-con">⚠️ 缺点：易受运营商阻断，阻断时无法使用</span>
-				</button>
-				<button type="button" class="optimize-start-card optimize-card-local" onclick="chooseLocalOptimize()">
-					<span class="optimize-card-icon">💻</span>
-					<span class="optimize-card-title">本地优选</span>
-					<span class="optimize-card-desc">下载客户端在本地设备上运行，灵活多变，功能性更多</span>
-					<span class="optimize-card-tag tag-pro">✅ 优点：灵活多变，功能丰富</span>
-					<span class="optimize-card-tag tag-con">⚠️ 缺点：需下载客户端，在本地设备上运行</span>
-				</button>
-			</div>
-		</div>
-	</div>
-
-	<!-- 本地优选 - CF 优选工具目录弹窗 -->
-	<div class="modal-overlay" id="localOptimizeModal" onclick="closeLocalOptimizeModal(event)">
-		<div class="modal local-optimize-modal" onclick="event.stopPropagation()">
-			<button type="button" class="modal-close" onclick="closeLocalOptimizeModal()" aria-label="关闭">×</button>
-			<h2 class="local-optimize-title">💻 本地优选工具</h2>
-			<p class="local-optimize-subtitle">选择一款工具，点击「前往 GitHub」即可在新窗口查看与下载</p>
-			<div class="local-ui-filter" id="localUiFilter">
-				<button type="button" class="local-ui-filter-btn is-active" data-ui="all" onclick="setLocalUiFilter('all')">全部</button>
-				<button type="button" class="local-ui-filter-btn" data-ui="webui" onclick="setLocalUiFilter('webui')">🌐 网页界面</button>
-				<button type="button" class="local-ui-filter-btn" data-ui="gui" onclick="setLocalUiFilter('gui')">🖥️ 图形界面</button>
-				<button type="button" class="local-ui-filter-btn" data-ui="cli" onclick="setLocalUiFilter('cli')">⌨️ 命令行CLI</button>
-			</div>
-			<div id="localOptimizeToolList" class="local-optimize-tools"><!-- 动态渲染 --></div>
-			<div class="local-optimize-footer">欢迎开源优选项目投稿</div>
 		</div>
 	</div>
 
@@ -12908,7 +11261,6 @@
 				.network-warning-actions {
 					display: flex;
 					justify-content: flex-end;
-					gap: 12px;
 					padding: 0 24px 24px;
 				}
 
@@ -12936,32 +11288,6 @@
 					background: #fff7e6;
 					color: #6f3d0a;
 					box-shadow: 0 16px 36px rgba(92, 54, 9, 0.32);
-				}
-
-				/* 本地优选（推荐）按钮：绿色渐变实心，突出引导前往 */
-				.network-warning-actions .btn-local-warning {
-					background: linear-gradient(135deg, #10b981 0, #059669 100%);
-					color: #ffffff;
-					border-color: rgba(255, 255, 255, 0.9);
-					box-shadow: 0 12px 28px rgba(6, 95, 70, 0.5), 0 0 0 4px rgba(16, 185, 129, 0.26);
-				}
-
-				.network-warning-modal.is-request-failed .network-warning-actions .btn-local-warning {
-					color: #ffffff;
-				}
-
-				.network-warning-actions .btn-local-warning:hover:not(:disabled) {
-					background: linear-gradient(135deg, #34d399 0, #10b981 100%);
-					color: #ffffff;
-					border-color: #ffffff;
-					box-shadow: 0 16px 36px rgba(6, 95, 70, 0.6), 0 0 0 4px rgba(16, 185, 129, 0.36);
-					transform: translateY(-1px);
-				}
-
-				.network-warning-modal.is-request-failed .network-warning-actions .btn-local-warning:hover:not(:disabled) {
-					background: linear-gradient(135deg, #34d399 0, #10b981 100%);
-					color: #ffffff;
-					box-shadow: 0 16px 36px rgba(6, 95, 70, 0.6), 0 0 0 4px rgba(16, 185, 129, 0.36);
 				}
 
 				@keyframes networkWarningPop {
@@ -13514,9 +11840,8 @@
 				</div>
 
 				<p class="bestcf-credit">
-					© BestCF · 在线优选得以实现，离不开巨人的肩膀。感谢 <a href="https://t.me/Six00NotLao" target="_blank"
-						rel="noopener noreferrer">@600不是佬</a>、@ktff、@Lfreea、<a href="https://hidoha.net" target="_blank"
-						rel="noopener noreferrer">HiDNS</a> 的探索与贡献。
+					© BestCF · 在线优选得以实现，离不开巨人的肩膀。感谢 @ktff、@Lfreea、<a href="https://hidoha.net"
+						target="_blank" rel="noopener noreferrer">HiDNS</a> 的探索与贡献。
 				</p>
 			</main>
 
@@ -13534,7 +11859,6 @@
 						</details>
 					</div>
 					<div class="network-warning-actions">
-						<button class="btn btn-local-warning" id="networkWarningLocalBtn" type="button">本地优选</button>
 						<button class="btn" id="networkWarningConfirmBtn" type="button">确定</button>
 					</div>
 				</div>
@@ -13565,78 +11889,24 @@
 					// Standalone demo mode does not need parent theme sync.
 				}
 				const TLS_PORTS = [443, 2053, 2083, 2087, 2096, 8443];
-				const BEST_HOSTS = [
-					"bestcf.cmliussss.hidns.vip",
-					"ns.psb.kdns.fr"
-				];
 				const DETECT_ENDPOINTS = {
 					ipv4: [
-						"https://671F04**.{{host}}",
-						"https://6CA2C0**.{{host}}",
-						"https://BC7260**.{{host}}",
-						"https://681000**.{{host}}",
-						"https://681800**.{{host}}",
-						"https://AC4000**.{{host}}"
+						"https://671F04**.bestcf.cmliussss.hidns.vip",
+						"https://6CA2C0**.bestcf.cmliussss.hidns.vip",
+						"https://BC7260**.bestcf.cmliussss.hidns.vip",
+						"https://681000**.bestcf.cmliussss.hidns.vip",
+						"https://681800**.bestcf.cmliussss.hidns.vip",
+						"https://AC4000**.bestcf.cmliussss.hidns.vip"
 					],
 					ipv6: [
-						"https://2606-4700--**.{{host}}",
-						"https://2606-4700--1000-**.{{host}}",
-						"https://2606-4700--2000-**.{{host}}",
-						"https://2606-4700--3000-**.{{host}}"
+						"https://2606-4700--**.bestcf.cmliussss.hidns.vip",
+						"https://2606-4700--1000-**.bestcf.cmliussss.hidns.vip",
+						"https://2606-4700--2000-**.bestcf.cmliussss.hidns.vip",
+						"https://2606-4700--3000-**.bestcf.cmliussss.hidns.vip"
 					]
 				};
 				function expandWildcardEndpoints(endpoints) {
 					return endpoints.map(ep => ep.replace(/\*\*/g, () => Math.floor(Math.random() * 255 + 1).toString(16).padStart(2, '0')));
-				}
-				const BEST_HOST_CACHE_KEY = "bestcf:active-best-host";
-				let activeBestHost = "";
-
-				function readCachedBestHost() {
-					try {
-						return window.localStorage.getItem(BEST_HOST_CACHE_KEY) || "";
-					} catch (error) {
-						return "";
-					}
-				}
-
-				function cacheBestHost(host) {
-					if (!host) return;
-					activeBestHost = host;
-					try {
-						window.localStorage.setItem(BEST_HOST_CACHE_KEY, host);
-					} catch (error) {
-						// Some embedded contexts can deny storage; in-memory restore still works.
-					}
-				}
-
-				function buildDetectEndpoints(family, host) {
-					return expandWildcardEndpoints(DETECT_ENDPOINTS[family].map(ep => ep.replace("{{host}}", host)));
-				}
-
-				async function resolveBestHost() {
-					if (!activeBestHost) activeBestHost = readCachedBestHost();
-					if (activeBestHost && BEST_HOSTS.includes(activeBestHost)) return activeBestHost;
-
-					for (const host of BEST_HOSTS) {
-						try {
-							const allEndpoints = [
-								...buildDetectEndpoints("ipv4", host),
-								...buildDetectEndpoints("ipv6", host)
-							];
-							await fetchJsonFromFastestEndpoint(allEndpoints, "ip.json", 6500);
-							cacheBestHost(host);
-							return host;
-						} catch (error) {
-							// This host failed; try the next one.
-						}
-					}
-
-					cacheBestHost(BEST_HOSTS[0]);
-					return BEST_HOSTS[0];
-				}
-
-				function getActiveBestHost() {
-					return activeBestHost || BEST_HOSTS[0];
 				}
 				const IP_LIBRARIES = [
 					{ label: "CF官方列表v4", family: "ipv4", url: "https://cf.090227.xyz/ips-v4" },
@@ -13726,8 +11996,7 @@
 					networkWarningSummary: $("#networkWarningSummary"),
 					networkWarningDetails: $("#networkWarningDetails"),
 					networkWarningJson: $("#networkWarningJson"),
-					networkWarningConfirmBtn: $("#networkWarningConfirmBtn"),
-					networkWarningLocalBtn: $("#networkWarningLocalBtn")
+					networkWarningConfirmBtn: $("#networkWarningConfirmBtn")
 				};
 
 				document.addEventListener("DOMContentLoaded", () => {
@@ -13841,7 +12110,6 @@
 					});
 					els.closeBestCFBtn.addEventListener("click", closeBestCFModule);
 					els.networkWarningConfirmBtn.addEventListener("click", confirmNetworkWarning);
-					els.networkWarningLocalBtn.addEventListener("click", openLocalOptimizeFromWarning);
 					document.querySelectorAll("[data-sort]").forEach((button) => {
 						button.addEventListener("click", () => setResultSort(button.dataset.sort));
 					});
@@ -13937,10 +12205,9 @@
 					updateActionAvailability();
 
 					try {
-						const bestHost = await resolveBestHost();
 						const checks = await Promise.allSettled([
-							detectStack("ipv4", bestHost),
-							detectStack("ipv6", bestHost)
+							detectStack("ipv4"),
+							detectStack("ipv6")
 						]);
 
 						checks.forEach((result, index) => {
@@ -13988,25 +12255,25 @@
 					const completed = entries.filter(({ info }) => info && info.status === "done");
 					const nonCn = completed.filter(({ info }) => !info.allowed);
 
-				if (nonCn.length) {
+					if (nonCn.length) {
+						return {
+							kind: "non-cn",
+							heading: "红牌警告",
+							title: "检测到当前网络出口不是 CN 直连",
+							message: "请确认浏览器当前网络是否经过了 代理、VPN 或 境外网络，\n在线优选仅有 CN 直连网络环境才可以实现！",
+							rows: nonCn,
+							details: completed
+						};
+					}
+
 					return {
-						kind: "non-cn",
-						heading: "红牌警告",
-						title: "检测到当前网络出口不是 CN 直连",
-						message: "请确认浏览器当前网络是否经过了 代理、VPN 或 境外网络，\n在线优选仅有 CN 直连网络环境才可以实现！\n当前网络环境无法进行在线优选，可尝试使用「本地优选」。",
-						rows: nonCn,
+						kind: "request-failed",
+						heading: "检测失败",
+						title: "优选域名请求失败",
+						message: "优选域名请求失败，自行检查网络环境，确保优选域名可访问。",
+						rows: entries,
 						details: completed
 					};
-				}
-
-				return {
-					kind: "request-failed",
-					heading: "黄牌警告",
-					title: "优选域名请求失败",
-					message: "当前网络环境无法进行在线优选，但可尝试使用「本地优选」。\n请自行检查网络环境，确保优选域名可访问。",
-					rows: entries,
-					details: completed
-				};
 				}
 
 				function renderNetworkWarning(context) {
@@ -14076,31 +12343,8 @@
 					window.location.reload();
 				}
 
-				function openLocalOptimizeFromWarning() {
-					// 关闭当前警告弹窗
-					els.networkWarningOverlay.classList.remove("is-visible");
-
-					if (window.parent && window.parent !== window) {
-						try {
-							if (typeof window.parent.switchToLocalOptimizeFromOnline === "function") {
-								window.parent.switchToLocalOptimizeFromOnline();
-								return;
-							}
-						} catch (error) {
-							// Fall back to postMessage below when direct parent access is unavailable.
-						}
-
-						try {
-							window.parent.postMessage({ type: "bestcf-open-local-optimize" }, "*");
-							return;
-						} catch (error) {
-							// Ignore — nothing else we can do from inside the frame.
-						}
-					}
-				}
-
-				async function detectStack(family, host) {
-					const { endpoint, data } = await fetchJsonFromFastestEndpoint(buildDetectEndpoints(family, host), "ip.json", 6500);
+				async function detectStack(family) {
+					const { endpoint, data } = await fetchJsonFromFastestEndpoint(expandWildcardEndpoints(DETECT_ENDPOINTS[family]), "ip.json", 6500);
 					const allowed = data.country === "CN";
 					return {
 						status: "done",
@@ -15768,7 +14012,7 @@
 						? ipv4ToHexLabel(parsed.ip)
 						: parsed.ip.toLowerCase().replace(/:/g, "-");
 					const search = new URLSearchParams({ _t: String(Date.now()), ...params });
-					return `https://${label}.${getActiveBestHost()}:${parsed.port}/${path}?${search.toString()}`;
+					return `https://${label}.bestcf.cmliussss.hidns.vip:${parsed.port}/${path}?${search.toString()}`;
 				}
 
 				function ipv4ToHexLabel(ip) {
@@ -17084,32 +15328,32 @@
 	<div class="modal-overlay" id="transportGrpcModal" onclick="closeTransportGrpcModal(event)">
 		<div class="modal" onclick="event.stopPropagation()">
 			<button type="button" class="modal-close" onclick="hideTransportGrpcTooltip()">×</button>
-			<div class="grpc-modal-body">
-				<h2 class="grpc-modal-title">⚠️ gRPC 功能提示</h2>
-				<p class="grpc-modal-desc">当前你选择了 <strong>XHTTP</strong> 或 <strong>gRPC</strong> 传输协议，使用前请确认以下两点：</p>
-				<ol class="grpc-modal-list">
-					<li>项目必须部署在 <strong>Workers</strong>（不是 Pages）。</li>
-					<li>
-						请前往 <a class="grpc-modal-link" href="https://dash.cloudflare.com/" target="_blank"
-							rel="noopener noreferrer">Cloudflare 面板</a> 为当前域名开启
-						<strong>gRPC</strong>，否则节点可能无法连接。
-						<div class="grpc-modal-path sstls-modal-path">
-							<svg class="grpc-modal-path-icon" role="presentation" xmlns="http://www.w3.org/2000/svg"
-								viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-								<path
-									d="M8 1.363A5.083 5.083 0 002.922 6.44c0 3.5 4.448 9.25 4.638 9.48h.785c.195-.25 4.732-6 4.732-9.485A5.083 5.083 0 008 1.363zm-.043 13.42c-1.08-1.478-4.035-5.75-4.035-8.343a4.078 4.078 0 118.155 0c0 2.588-3.017 6.867-4.12 8.343z">
-								</path>
-								<path
-									d="M7.98 4.25a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5zm0 3.5A1.25 1.25 0 119.23 6.5a1.25 1.25 0 01-1.25 1.268V7.75z">
-								</path>
-							</svg>
-							<span>网络 (Network) &gt; gRPC &gt; 开启 ✅</span>
-						</div>
-					</li>
-				</ol>
+			<div style="text-align: center; padding: 20px 0;">
+				<h2 style="color: #f44336; margin: 0 0 16px 0; font-size: 22px; font-weight: 700;">⚠️ gRPC 功能提示</h2>
+				<p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; text-align: left;">
+					当前你选择了 <strong>XHTTP</strong> 或 <strong>gRPC</strong> 传输协议。
+				</p>
+				<p style="margin: 0 0 12px 0; font-size: 14px; line-height: 1.6; text-align: left; color: #f44336;">
+					请前往 <a href="https://dash.cloudflare.com/" target="_blank" rel="noopener noreferrer">Cloudflare
+						面板</a> 为当前域名开启
+					<strong>gRPC</strong>，否则节点可能无法连接。
+				</p>
+				<div class="grpc-modal-path">
+					<svg class="grpc-modal-path-icon" role="presentation" xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+						<path
+							d="M8 1.363A5.083 5.083 0 002.922 6.44c0 3.5 4.448 9.25 4.638 9.48h.785c.195-.25 4.732-6 4.732-9.485A5.083 5.083 0 008 1.363zm-.043 13.42c-1.08-1.478-4.035-5.75-4.035-8.343a4.078 4.078 0 118.155 0c0 2.588-3.017 6.867-4.12 8.343z">
+						</path>
+						<path
+							d="M7.98 4.25a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5zm0 3.5A1.25 1.25 0 119.23 6.5a1.25 1.25 0 01-1.25 1.268V7.75z">
+						</path>
+					</svg>
+					<span>网络 (Network) &gt; gRPC &gt; 开启 ✅</span>
+				</div>
 			</div>
-			<div class="grpc-modal-actions">
-				<button type="button" class="btn grpc-modal-confirm-btn" onclick="hideTransportGrpcTooltip()">我已开启 gRPC</button>
+			<div style="display: flex; gap: 12px; justify-content: center;">
+				<button type="button" class="btn grpc-modal-confirm-btn" onclick="hideTransportGrpcTooltip()">我已开启
+					gRPC</button>
 			</div>
 		</div>
 	</div>
@@ -17216,8 +15460,6 @@
 		const TURN_SSTP_PROXY_MIN_VERSION = 20260504172138;
 		const CHAIN_PROXY_MIN_VERSION = 20260506175102;
 		const SKIP_VERIFY_WARNING_BYPASS_MIN_VERSION = 20260601154939;
-		const ALPN_FEATURE_MIN_VERSION = 20260904162413;
-		const ECH_SUPPORTED_FINGERPRINTS = ['chrome', 'firefox'];
 		let cachedWorkerVersionRawText = '';
 		let cachedLatestOnlineVersion = 0;
 		let cachedCurrentVersionNumber = 0;
@@ -17228,7 +15470,6 @@
 		let httpsProxyFeatureEnabled = false;
 		let turnSstpProxyFeatureEnabled = false;
 		let chainProxyFeatureEnabled = false;
-		let alpnFeatureEnabled = false;
 		let proxyFeatureAvailabilityInitialized = false;
 		const PROXY_PROTOCOLS = ['socks5', 'http', 'https', 'turn', 'sstp'];
 
@@ -17965,9 +16206,7 @@
 			httpsProxyFeatureEnabled = versionNumber >= HTTPS_PROXY_MIN_VERSION;
 			turnSstpProxyFeatureEnabled = versionNumber >= TURN_SSTP_PROXY_MIN_VERSION;
 			chainProxyFeatureEnabled = versionNumber >= CHAIN_PROXY_MIN_VERSION;
-			alpnFeatureEnabled = versionNumber >= ALPN_FEATURE_MIN_VERSION;
 			updateChainProxyButtonVisibility();
-			updateALPNGroupVisibility();
 
 			const httpsOption = document.getElementById('httpsProxyOption');
 			if (httpsOption) {
@@ -18192,35 +16431,19 @@
 			}
 		}
 
-		// ==================== 复制按钮长按彩蛋（JShaman 混淆）====================
-		const VERSION_COPY_LONG_PRESS_MS = 618;
-		const VERSION_COPY_FETCH_TIMEOUT_MS = 60000;
-		const VERSION_COPY_SUPPRESS_CLICK_MS = 500;
-		const JSHAMAN_SUBMIT_URL = 'https://www.jshaman.com:4430/submit_js_code/';
-		const JSHAMAN_VIP_CODE = 'free';
-		const JSHAMAN_FREE_MAX_BYTES = 512 * 1024;
-		let versionCopyPressTimer = null;
-		let versionCopyAbortController = null;
-		let versionCopyPressActive = false;
-		let versionCopyEasterEggActive = false;
-		let versionCopyRequestInFlight = false;
-		let versionCopyEasterEggDone = false;
-		let versionCopyUserReleased = false;
-		let versionCopyLastPointerHandledAt = 0;
-
-		// 通用剪贴板复制（供原始复制与彩蛋混淆复制复用）
-		async function copyTextToClipboard(text) {
-			const content = String(text ?? '');
-			if (!content) {
-				return false;
+		async function copyLatestWorkerSourceToClipboard() {
+			const source = String(cachedWorkerVersionRawText || '');
+			if (!source) {
+				showToast('暂无可复制的最新 Worker.js 源码', 'error');
+				return;
 			}
 
 			try {
 				if (navigator.clipboard && window.isSecureContext) {
-					await navigator.clipboard.writeText(content);
+					await navigator.clipboard.writeText(source);
 				} else {
 					const tempTextarea = document.createElement('textarea');
-					tempTextarea.value = content;
+					tempTextarea.value = source;
 					tempTextarea.style.position = 'fixed';
 					tempTextarea.style.opacity = '0';
 					tempTextarea.style.left = '-9999px';
@@ -18232,222 +16455,12 @@
 					document.body.removeChild(tempTextarea);
 					if (!success) throw new Error('execCommand copy failed');
 				}
-				return true;
-			} catch (error) {
-				console.error('[Version] 复制文本到剪贴板失败:', error);
-				return false;
-			}
-		}
 
-		// 复制原始（未混淆）源码并提示，保持原有点击行为
-		function copyOriginalWorkerSourceWithToast() {
-			const source = String(cachedWorkerVersionRawText || '');
-			if (!source) {
-				showToast('暂无可复制的最新 Worker.js 源码', 'error');
-				return;
-			}
-			copyTextToClipboard(source).then((copied) => {
-				showToast(copied ? '✅ 已复制最新 Worker.js 源码到剪贴板' : '复制失败，请手动复制源码', copied ? 'success' : 'error');
-			});
-		}
-
-		async function copyLatestWorkerSourceToClipboard() {
-			// 若刚刚已由长按指针事件处理过复制，则跳过（避免 click 与 pointerup 双重复制）
-			if (Date.now() - versionCopyLastPointerHandledAt < VERSION_COPY_SUPPRESS_CLICK_MS) {
-				versionCopyLastPointerHandledAt = 0;
-				return;
-			}
-
-			const source = String(cachedWorkerVersionRawText || '');
-			if (!source) {
-				showToast('暂无可复制的最新 Worker.js 源码', 'error');
-				return;
-			}
-
-			const copied = await copyTextToClipboard(source);
-			if (copied) {
 				showToast('✅ 已复制最新 Worker.js 源码到剪贴板', 'success');
-			} else {
+			} catch (error) {
+				console.error('[Version] 复制最新 Worker.js 源码失败:', error);
 				showToast('复制失败，请手动复制源码', 'error');
 			}
-		}
-
-		// 调用 JShaman 免费混淆 Web API，返回混淆后的代码
-		async function obfuscateWorkerSourceWithJShaman(source) {
-			const controller = new AbortController();
-			versionCopyAbortController = controller;
-			const timeoutId = setTimeout(() => controller.abort(), VERSION_COPY_FETCH_TIMEOUT_MS);
-
-			try {
-				const response = await fetch(JSHAMAN_SUBMIT_URL, {
-					method: 'POST',
-					mode: 'cors',
-					headers: {
-						'Content-Type': 'application/json'
-					},
-					// JShaman 免费 VIP 码(free)不支持 config 参数（实测返回"权限不足，您的VIP码无法配置参数"），故使用其服务端默认混淆参数
-					body: JSON.stringify({
-						js_code: String(source),
-						vip_code: JSHAMAN_VIP_CODE
-					}),
-					signal: controller.signal
-				});
-				if (!response.ok) throw new Error('JShaman 请求失败 HTTP ' + response.status);
-
-				const data = await response.json();
-				if (!data || data.status !== 0) {
-					throw new Error((data && data.message) ? data.message : 'JShaman 返回状态异常');
-				}
-				const obfuscated = String(data.content || '');
-				if (!obfuscated) {
-					throw new Error('JShaman 返回内容为空');
-				}
-				return obfuscated;
-			} finally {
-				clearTimeout(timeoutId);
-			}
-		}
-
-		// 停止按钮颤抖并清理释放态残留（幂等安全）
-		function stopVersionCopyEasterEggShake() {
-			const button = document.getElementById('versionCopyBtn') || document.querySelector('.btn-version-copy');
-			if (button) {
-				button.classList.remove('easter-egg-shaking', 'egg-release');
-			}
-		}
-
-		// 按钮轻弹释放：混淆成功瞬间轻微弹一下（克制，不过冲），播放结束后移除类以恢复常态
-		function playVersionCopyRelease(button) {
-			if (!button) return;
-			button.classList.remove('egg-release');
-			void button.offsetWidth; // 强制 reflow，确保动画可重播
-			button.classList.add('egg-release');
-			const removeRelease = () => button.classList.remove('egg-release');
-			button.addEventListener('animationend', removeRelease, { once: true });
-			setTimeout(removeRelease, 500);
-		}
-
-		// 长按满 618ms 后触发：颤抖按钮并调用 JShaman 混淆，完成后复制混淆源码
-		async function startVersionCopyEasterEgg() {
-			const source = String(cachedWorkerVersionRawText || '');
-			const button = document.getElementById('versionCopyBtn') || document.querySelector('.btn-version-copy');
-
-			if (!source) {
-				versionCopyEasterEggActive = true;
-				versionCopyEasterEggDone = true;
-				stopVersionCopyEasterEggShake();
-				showToast('暂无可混淆的最新 Worker.js 源码', 'error');
-				return;
-			}
-
-			// 免费版限制：提交代码量限 512KB（按字节数计算，source.length 为 UTF-16 字符数而非字节数）
-			const sourceBytes = new TextEncoder().encode(source).length;
-			if (sourceBytes > JSHAMAN_FREE_MAX_BYTES) {
-				versionCopyEasterEggActive = true;
-				versionCopyEasterEggDone = true;
-				stopVersionCopyEasterEggShake();
-				const copied = await copyTextToClipboard(source);
-				showToast(copied ? '源码超过免费版 512KB 限制，已复制原始源码' : '源码超过免费版 512KB 限制，复制原始源码失败', 'error');
-				return;
-			}
-
-			versionCopyEasterEggActive = true;
-			versionCopyRequestInFlight = true;
-			if (button) {
-				button.classList.remove('egg-release');
-				button.classList.add('easter-egg-shaking');
-			}
-			console.log('[Version] 长按彩蛋触发，开始 JShaman 混淆...');
-
-			try {
-				const obfuscated = await obfuscateWorkerSourceWithJShaman(source);
-				versionCopyRequestInFlight = false;
-				versionCopyEasterEggDone = true;
-				stopVersionCopyEasterEggShake();
-				playVersionCopyRelease(button);
-				console.log('[Version] JShaman 混淆成功，已复制混淆源码');
-
-				const copied = await copyTextToClipboard(obfuscated);
-				if (copied) {
-					showToast('🎉 已复制混淆后的 Worker.js 源码到剪贴板', 'success');
-				} else {
-					showToast('混淆成功，但复制失败，请手动复制源码', 'error');
-				}
-			} catch (error) {
-				versionCopyRequestInFlight = false;
-				versionCopyEasterEggDone = true;
-				stopVersionCopyEasterEggShake();
-				if (versionCopyUserReleased) return; // 用户中途放手已回退，无需重复处理
-
-				console.error('[Version] JShaman 混淆失败:', error);
-				const copied = await copyTextToClipboard(source);
-				showToast(copied ? '混淆失败，已复制原始源码' : '混淆失败，复制原始源码也失败', 'error');
-			}
-		}
-
-		// pointerdown：启动 618ms 长按定时器（触发前按钮保持静止，618ms 到点后由 startVersionCopyEasterEgg 开始颤抖）
-		function onVersionCopyPointerDown(event) {
-			// 仅响应主按键（左键/触摸/笔），避免右键等干扰
-			if (event && event.button !== undefined && event.button !== 0) return;
-			if (versionCopyRequestInFlight) return; // 混淆请求进行中，忽略新的按压
-
-			versionCopyPressActive = true;
-			versionCopyEasterEggActive = false;
-			versionCopyEasterEggDone = false;
-			versionCopyUserReleased = false;
-			clearTimeout(versionCopyPressTimer);
-			versionCopyPressTimer = setTimeout(() => {
-				startVersionCopyEasterEgg();
-			}, VERSION_COPY_LONG_PRESS_MS);
-		}
-
-		// pointerup / pointerleave / pointercancel：结束按压
-		function onVersionCopyPointerEnd(event) {
-			if (!versionCopyPressActive) return;
-			versionCopyPressActive = false;
-			clearTimeout(versionCopyPressTimer);
-			versionCopyPressTimer = null;
-			stopVersionCopyEasterEggShake(); // 清理颤抖阶段类（彩蛋未触发/已完成/已回退时均幂等安全）
-
-			if (versionCopyEasterEggActive && versionCopyRequestInFlight) {
-				// 彩蛋已触发但仍在等待后端：三种结束事件均视为放弃
-				// 中止请求、停止抖动、复制原始源码
-				versionCopyUserReleased = true;
-				if (versionCopyAbortController) versionCopyAbortController.abort();
-				versionCopyRequestInFlight = false;
-				stopVersionCopyEasterEggShake();
-				versionCopyLastPointerHandledAt = Date.now();
-				copyOriginalWorkerSourceWithToast();
-				return;
-			}
-
-			if (versionCopyEasterEggActive && versionCopyEasterEggDone) {
-				// 彩蛋已完成：混淆结果已复制（或已回退），无需重复操作
-				versionCopyLastPointerHandledAt = Date.now();
-				return;
-			}
-
-			// 彩蛋未触发（618ms 内结束按压）
-			const eventType = event && event.type ? event.type : '';
-			if (eventType === 'pointerleave' || eventType === 'pointercancel') {
-				// 拖出按钮 / 手势取消 = 放弃操作：仅清除定时器，不复制、不弹 toast
-				return;
-			}
-
-			// pointerup（正常点击）：保持原有行为，复制未混淆源码
-			versionCopyLastPointerHandledAt = Date.now();
-			copyOriginalWorkerSourceWithToast();
-		}
-
-		// 初始化：绑定长按彩蛋事件（不影响原有 onclick）
-		function initVersionCopyEasterEgg() {
-			const button = document.getElementById('versionCopyBtn') || document.querySelector('.btn-version-copy');
-			if (!button) return;
-
-			button.addEventListener('pointerdown', onVersionCopyPointerDown);
-			button.addEventListener('pointerup', onVersionCopyPointerEnd);
-			button.addEventListener('pointerleave', onVersionCopyPointerEnd);
-			button.addEventListener('pointercancel', onVersionCopyPointerEnd);
 		}
 
 		function escapeMarkdownHtml(text) {
@@ -19142,10 +17155,13 @@
 			}
 
 			// 检查Fingerprint字段是否存在
-			syncFingerprintSelectFromConfig();
-
-			// 检查ALPN字段是否存在并回显
-			syncALPNSelectFromConfig();
+			const fingerprintGroup = document.getElementById('fingerprintGroup');
+			const fingerprintSelect = document.getElementById('fingerprint');
+			if (currentConfig['Fingerprint'] == undefined) {
+				fingerprintGroup.style.setProperty('display', 'none', 'important');
+			} else {
+				fingerprintSelect.value = currentConfig['Fingerprint'] || 'chrome';
+			}
 
 			// 检查随机路径字段是否存在
 			const randomPathGroup = document.getElementById('randomPathGroup');
@@ -19757,15 +17773,6 @@
 		// 处理浏览器指纹变化，联动ECH选项
 		function handleFingerprintChange() {
 			updateECHOptionState();
-
-			const enableECHCheckbox = document.getElementById('enableECH');
-			const fingerprintSelect = document.getElementById('fingerprint');
-			const currentFingerprint = fingerprintSelect?.value;
-
-			// 路径A：已开启ECH，但新指纹不支持ECH → 弹窗由用户决定处理方式
-			if (enableECHCheckbox?.checked && currentFingerprint && !ECH_SUPPORTED_FINGERPRINTS.includes(currentFingerprint)) {
-				openECHConflictModal(currentFingerprint);
-			}
 		}
 
 		// 处理ECH启用状态变化
@@ -19773,80 +17780,44 @@
 			const enableECHCheckbox = document.getElementById('enableECH');
 			const fingerprintSelect = document.getElementById('fingerprint');
 
-			// 路径B：用户开启ECH，但当前指纹不支持ECH → 先回退勾选，弹窗由用户决定处理方式
+			// 支持ECH的指纹类型
+			const supportECH = ['chrome', 'firefox'];
+
+			// 如果用户开启ECH，但当前指纹不支持ECH，自动切换到chrome
 			if (enableECHCheckbox && enableECHCheckbox.checked) {
 				const currentFingerprint = fingerprintSelect?.value;
-				if (currentFingerprint && !ECH_SUPPORTED_FINGERPRINTS.includes(currentFingerprint)) {
-					enableECHCheckbox.checked = false;
-					openECHConflictModal(currentFingerprint);
-					return;
+				if (currentFingerprint && !supportECH.includes(currentFingerprint)) {
+					fingerprintSelect.value = 'chrome';
+					// 同时标记详细配置模块为已修改
+					markModified('config');
 				}
 			}
 
 			markModified('ech');
 		}
 
-		// 隐藏 ECH×指纹 冲突弹窗（仅负责收起弹窗，不触发任何业务逻辑）
-		function hideECHConflictModal() {
-			document.getElementById('echConflictModal').classList.remove('show');
-		}
-
-		// 打开 ECH×指纹 冲突弹窗（路径A/B共用）
-		function openECHConflictModal(unsupportedFingerprint) {
-			const labelEl = document.getElementById('echConflictFingerprint');
-			if (labelEl) labelEl.textContent = unsupportedFingerprint || '';
-			document.getElementById('echConflictModal').classList.add('show');
-		}
-
-		// 三选一解决冲突（action: 'chrome' | 'firefox' | 'disable'）
-		function resolveECHConflict(action) {
-			const enableECHCheckbox = document.getElementById('enableECH');
-			const fingerprintSelect = document.getElementById('fingerprint');
-
-			if (action === 'chrome' || action === 'firefox') {
-				fingerprintSelect.value = action;
-				enableECHCheckbox.checked = true;
-			} else {
-				// 关闭ECH：保留用户当前所选（不支持ECH的）指纹
-				enableECHCheckbox.checked = false;
-			}
-
-			// 联动变更同时涉及两个模块：按与 currentConfig 的差异精确标记
-			if (fingerprintSelect.value !== currentConfig['Fingerprint']) {
-				markModified('config');
-			}
-			if (enableECHCheckbox.checked !== (currentConfig['ECH'] || false)) {
-				markModified('ech');
-			}
-
-			hideECHConflictModal();
-		}
-
-		// 关闭弹窗入口：未通过按钮确认前关闭（×/遮罩）视为选择「关闭ECH」
-		function closeECHConflictModal(event) {
-			if (!event || event.target.id === 'echConflictModal') {
-				hideECHConflictModal();
-				resolveECHConflict('disable');
-			}
-		}
-
-		// 更新ECH选项的状态（禁用/启用）——仅 SS+TLS关闭 时禁用；与指纹的冲突改由弹窗解决
+		// 更新ECH选项的状态（禁用/启用）
 		function updateECHOptionState() {
+			const fingerprint = document.getElementById('fingerprint')?.value;
+			const enableECHCheckbox = document.getElementById('enableECH');
 			const protocol = document.getElementById('protocol')?.value;
 			const ssTLS = document.getElementById('ssTLS')?.value;
-			const enableECHCheckbox = document.getElementById('enableECH');
 
+			// 支持ECH的指纹类型
+			const supportECH = ['chrome', 'firefox'];
+			const isFingerprintSupported = supportECH.includes(fingerprint);
 			const isSSWithoutTLS = protocol === 'ss' && ssTLS === 'false';
+			const shouldDisableECH = !isFingerprintSupported || isSSWithoutTLS;
 
 			if (enableECHCheckbox) {
-				// SS + TLS关闭时不满足条件，自动取消勾选
-				if (isSSWithoutTLS && enableECHCheckbox.checked) {
+				// 当不满足条件时，自动取消勾选
+				if (shouldDisableECH && enableECHCheckbox.checked) {
 					enableECHCheckbox.checked = false;
 					markModified('ech');
 				}
 
-				// SS + TLS关闭时，ECH启用不可编辑
-				enableECHCheckbox.disabled = isSSWithoutTLS;
+				// SS + TLS关闭 或 指纹不支持时，ECH启用不可编辑
+				enableECHCheckbox.disabled = shouldDisableECH;
 			}
 		}
 
@@ -20548,95 +18519,6 @@
 			closeSkipVerifyWarning();
 		}
 
-		// ALPN 下拉框与警告弹窗相关状态及处理函数
-		let loadedALPNValue = '';
-		let pendingALPNValue = '';
-
-		function handleALPNChange(event) {
-			const select = event.target;
-			const newValue = select.value;
-			if (!newValue) {
-				// 手动切回客户端自动协商：不弹窗
-				if (loadedALPNValue !== '') markModified('config');
-				return;
-			}
-			// 暂存所选值，先回退为自动协商，待用户确认后再应用
-			pendingALPNValue = newValue;
-			select.value = '';
-			document.getElementById('alpnPendingLabel').textContent = pendingALPNValue;
-			document.getElementById('alpnWarningModal').classList.add('show');
-		}
-
-		function confirmALPNSelection() {
-			const select = document.getElementById('alpn');
-			if (pendingALPNValue) select.value = pendingALPNValue;
-			pendingALPNValue = '';
-			if (select.value !== loadedALPNValue) markModified('config');
-			closeALPNWarningModal();
-		}
-
-		function keepAutoALPN() {
-			pendingALPNValue = '';
-			const select = document.getElementById('alpn');
-			select.value = '';
-			if (loadedALPNValue !== '') markModified('config');
-			closeALPNWarningModal();
-		}
-
-		function closeALPNWarningModal(event) {
-			if (!event || event.target.id === 'alpnWarningModal') {
-				document.getElementById('alpnWarningModal').classList.remove('show');
-				// 未确认前关闭（×/遮罩）视为放弃高危选择，回退为自动协商
-				if (pendingALPNValue) {
-					pendingALPNValue = '';
-					const select = document.getElementById('alpn');
-					select.value = '';
-					if (loadedALPNValue !== '') markModified('config');
-				}
-			}
-		}
-
-		function updateALPNGroupVisibility() {
-			const alpnGroup = document.getElementById('alpnGroup');
-			if (!alpnGroup) return;
-			const hasField = typeof currentConfig === 'object' && currentConfig !== null && currentConfig['ALPN'] !== undefined;
-			alpnGroup.style.setProperty('display', (alpnFeatureEnabled && hasField) ? '' : 'none', 'important');
-		}
-
-		// 从 currentConfig 同步指纹伪装下拉框回显（renderUI 与 cancelEdit 共用）
-		function syncFingerprintSelectFromConfig() {
-			const fingerprintGroup = document.getElementById('fingerprintGroup');
-			const fingerprintSelect = document.getElementById('fingerprint');
-			if (currentConfig['Fingerprint'] == undefined) {
-				fingerprintGroup.style.setProperty('display', 'none', 'important');
-			} else {
-				fingerprintSelect.value = currentConfig['Fingerprint'] || 'chrome';
-			}
-		}
-
-		// 从 currentConfig 同步 ALPN 下拉框回显（renderUI 与 cancelEdit 共用）
-		function syncALPNSelectFromConfig() {
-			// 检查ALPN字段是否存在并回显
-			const alpnSelect = document.getElementById('alpn');
-			if (currentConfig['ALPN'] !== undefined) {
-				const alpnValue = String(currentConfig['ALPN'] || '');
-				// 非预设值时动态追加option，避免丢失用户已有配置（遍历比对，避免特殊字符导致选择器异常）
-				const hasOption = Array.from(alpnSelect.options).some(opt => opt.value === alpnValue);
-				if (alpnValue && !hasOption) {
-					const customOption = document.createElement('option');
-					customOption.value = alpnValue;
-					customOption.textContent = `${alpnValue}（当前配置）`;
-					alpnSelect.appendChild(customOption);
-				}
-				alpnSelect.value = alpnValue;
-			} else {
-				alpnSelect.value = '';
-			}
-			loadedALPNValue = alpnSelect.value;
-			pendingALPNValue = ''; // 同步后未决的弹窗选择视为过期，避免状态悬挂
-			updateALPNGroupVisibility();
-		}
-
 		// HOSTS 编辑模态框相关函数
 		function openHostsEditModal(event) {
 			if (event) event.stopPropagation();
@@ -20801,28 +18683,6 @@
 				currentConfig['Fingerprint'] = document.getElementById('fingerprint').value;
 			}
 
-			// 联动保存ECH（指纹与ECH联动，保存任一模块时同时保存两者的变更）
-			if (currentConfig['ECH'] !== undefined) {
-				currentConfig['ECH'] = document.getElementById('enableECH').checked;
-
-				if (currentConfig.ECHConfig?.DNS !== undefined) {
-					const dnsValue = document.getElementById('echDNSValue').value;
-					if (dnsValue) {
-						currentConfig.ECHConfig.DNS = dnsValue;
-					}
-				}
-
-				if (currentConfig.ECHConfig?.SNI !== undefined) {
-					const sniValue = document.getElementById('echSNIValue').value;
-					currentConfig.ECHConfig.SNI = sniValue === '' ? null : sniValue;
-				}
-			}
-
-			// 保存ALPN（仅当版本支持且字段存在时写入，避免低版本后端覆盖已有值）
-			if (currentConfig['ALPN'] !== undefined && alpnFeatureEnabled) {
-				currentConfig['ALPN'] = document.getElementById('alpn').value || '';
-			}
-
 			// 保存随机路径（如果字段存在）
 			if (currentConfig['随机路径'] !== undefined) {
 				currentConfig['随机路径'] = document.getElementById('randomPath').checked;
@@ -20853,11 +18713,6 @@
 		}
 
 		async function saveEch() {
-			// 联动保存指纹（指纹与ECH联动，保存任一模块时同时保存两者的变更）
-			if (currentConfig['Fingerprint'] !== undefined) {
-				currentConfig['Fingerprint'] = document.getElementById('fingerprint').value;
-			}
-
 			// 保存ECH（如果字段存在）
 			if (currentConfig['ECH'] !== undefined) {
 				currentConfig['ECH'] = document.getElementById('enableECH').checked;
@@ -21075,58 +18930,10 @@
 			document.getElementById('subList').checked = hasSubList
 				? currentConfig.订阅转换配置?.SUBLIST || false
 				: false;
-
-			const udpGroup = document.getElementById('udpGroup');
-			const hasUDP = currentConfig.订阅转换配置?.UDP !== undefined;
-			udpGroup.style.display = hasUDP ? '' : 'none';
-			document.getElementById('udp').checked = hasUDP
-				? currentConfig.订阅转换配置?.UDP || false
-				: false;
-
-			const xudpGroup = document.getElementById('xudpGroup');
-			const hasXUDP = currentConfig.订阅转换配置?.XUDP !== undefined;
-			xudpGroup.style.display = hasXUDP ? '' : 'none';
-			document.getElementById('xudp').checked = hasXUDP
-				? currentConfig.订阅转换配置?.XUDP || false
-				: false;
-
-			const tls13Group = document.getElementById('tls13Group');
-			const hasTLS13 = currentConfig.订阅转换配置?.TLS13 !== undefined;
-			tls13Group.style.display = hasTLS13 ? '' : 'none';
-			document.getElementById('tls13').checked = hasTLS13
-				? currentConfig.订阅转换配置?.TLS13 || false
-				: false;
-
-			const appendTypeGroup = document.getElementById('appendTypeGroup');
-			const hasAppendType = currentConfig.订阅转换配置?.APPEND_TYPE !== undefined;
-			appendTypeGroup.style.display = hasAppendType ? '' : 'none';
-			document.getElementById('appendType').checked = hasAppendType
-				? currentConfig.订阅转换配置?.APPEND_TYPE || false
-				: false;
-
-			const sortGroup = document.getElementById('sortGroup');
-			const hasSORT = currentConfig.订阅转换配置?.SORT !== undefined;
-			sortGroup.style.display = hasSORT ? '' : 'none';
-			document.getElementById('sort').checked = hasSORT
-				? currentConfig.订阅转换配置?.SORT || false
-				: false;
-
-			const expandGroup = document.getElementById('expandGroup');
-			const hasEXPAND = currentConfig.订阅转换配置?.EXPAND !== undefined;
-			expandGroup.style.display = hasEXPAND ? '' : 'none';
-			document.getElementById('expand').checked = hasEXPAND
-				? currentConfig.订阅转换配置?.EXPAND || false
-				: false;
 		}
 
 		async function saveConvert() {
 			const hasSubList = currentConfig.订阅转换配置?.SUBLIST !== undefined;
-			const hasUDP = currentConfig.订阅转换配置?.UDP !== undefined;
-			const hasXUDP = currentConfig.订阅转换配置?.XUDP !== undefined;
-			const hasTLS13 = currentConfig.订阅转换配置?.TLS13 !== undefined;
-			const hasAppendType = currentConfig.订阅转换配置?.APPEND_TYPE !== undefined;
-			const hasSORT = currentConfig.订阅转换配置?.SORT !== undefined;
-			const hasEXPAND = currentConfig.订阅转换配置?.EXPAND !== undefined;
 			currentConfig.订阅转换配置 = {
 				SUBAPI: document.getElementById('subAPI').value,
 				SUBCONFIG: document.getElementById('subConfig').value,
@@ -21134,24 +18941,6 @@
 			};
 			if (hasSubList) {
 				currentConfig.订阅转换配置.SUBLIST = document.getElementById('subList').checked;
-			}
-			if (hasUDP) {
-				currentConfig.订阅转换配置.UDP = document.getElementById('udp').checked;
-			}
-			if (hasXUDP) {
-				currentConfig.订阅转换配置.XUDP = document.getElementById('xudp').checked;
-			}
-			if (hasTLS13) {
-				currentConfig.订阅转换配置.TLS13 = document.getElementById('tls13').checked;
-			}
-			if (hasAppendType) {
-				currentConfig.订阅转换配置.APPEND_TYPE = document.getElementById('appendType').checked;
-			}
-			if (hasSORT) {
-				currentConfig.订阅转换配置.SORT = document.getElementById('sort').checked;
-			}
-			if (hasEXPAND) {
-				currentConfig.订阅转换配置.EXPAND = document.getElementById('expand').checked;
 			}
 
 			await saveConfigToServer('convert');
@@ -23007,12 +20796,10 @@
 				const timeoutId = setTimeout(() => controller.abort(), 5000); // 5秒超时
 
 				let response;
-				let fromPrimary = false;
 				try {
 					response = await fetch(`https://api.ipapi.is/?q=${cleanIp}`, { signal: controller.signal });
 					clearTimeout(timeoutId);
 					if (!response.ok) throw new Error('Primary API failed');
-					fromPrimary = true;
 				} catch (e) {
 					console.warn('Primary IP API failed, trying fallback...', e);
 					response = await fetch(`https://api.090227.xyz/api/ipapi?ip=${cleanIp}`);
@@ -23021,11 +20808,8 @@
 
 				const data = await response.json();
 
-				// 主 API(ipapi.is) 返回新版扁平结构，归一化为旧版嵌套结构供弹窗展示；fallback 数据保持原样透传
-				const modalData = fromPrimary ? normalizeIpapiData(data) : data;
-
 				// 显示详情弹窗
-				showIpDetailModal(modalData);
+				showIpDetailModal(data);
 			} catch (error) {
 				showToast('❌ 查询IP详细信息失败');
 				console.error('IP查询错误:', error);
@@ -24904,8 +22688,6 @@
 					syncTransportSettingsFromConfig();
 					document.getElementById('skipVerify').checked = currentConfig.跳过证书验证 || false;
 					updateProtocol();
-					syncFingerprintSelectFromConfig();
-					syncALPNSelectFromConfig();
 				} else if (section === 'proxy') {
 					applyProxyConfigToForm();
 				} else if (section === 'convert') {
@@ -25009,198 +22791,6 @@
 			}
 		}
 
-		// ==================== 开始优选 - 方式选择 ====================
-
-		const CF_TOOLS_RAW_URL = 'https://raw.githubusercontent.com/cmliu/cmliu/refs/heads/main/json/best-cf-tools.json';
-		let localOptimizeProjects = [];
-		let localUiFilter = 'all';
-
-		// GitHub Star 图标（octicon star）
-		const STAR_SVG = '<svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path></svg>';
-
-		// 打开"开始优选"方式选择弹窗
-		function openOptimizeStartModal() {
-			const modal = document.getElementById('optimizeStartModal');
-			if (!modal) return;
-			modal.classList.add('show');
-		}
-
-		// 关闭"开始优选"方式选择弹窗
-		function closeOptimizeStartModal(event) {
-			if (event && event.target !== event.currentTarget) return;
-			const modal = document.getElementById('optimizeStartModal');
-			if (modal) modal.classList.remove('show');
-		}
-
-		// 选择"在线优选"：关闭选择弹窗并打开在线优选全屏模块
-		function chooseOnlineOptimize() {
-			closeOptimizeStartModal();
-			openOnlineOptimizeModal();
-		}
-
-		// 选择"本地优选"：关闭选择弹窗并打开本地优选工具目录弹窗
-		function chooseLocalOptimize() {
-			closeOptimizeStartModal();
-			openLocalOptimizeModal();
-		}
-
-		// ==================== 本地优选 - CF 优选工具目录 ====================
-
-		// 打开本地优选工具目录弹窗（请求RAW拉取工具清单）
-		async function openLocalOptimizeModal() {
-			const modal = document.getElementById('localOptimizeModal');
-			const list = document.getElementById('localOptimizeToolList');
-			if (!modal || !list) return;
-
-			modal.classList.add('show');
-
-			// 已加载过则直接显示，避免重复请求
-			if (list.dataset.loaded === 'true') return;
-
-			list.innerHTML = '<div class="local-tools-loading">⏳ 正在拉取 CF 优选工具目录…</div>';
-
-			try {
-				const jsonText = await fetchWithAutoMirror(CF_TOOLS_RAW_URL + '?_t=' + Date.now(), 'CF优选工具目录');
-				const data = JSON.parse(jsonText);
-				const projects = Array.isArray(data && data.projects) ? data.projects : [];
-				renderLocalOptimizeTools(list, projects);
-				list.dataset.loaded = 'true';
-			} catch (error) {
-				console.error('[请求RAW] CF优选工具目录拉取失败:', error);
-				list.innerHTML = `
-					<div class="local-tools-error">
-						❌ 工具目录拉取失败，请检查网络后重试<br>
-						<button type="button" class="local-tools-retry" onclick="openLocalOptimizeModal()">重试</button>
-					</div>`;
-			}
-		}
-
-		// 渲染本地优选工具卡片
-		function renderLocalOptimizeTools(list, projects) {
-			localOptimizeProjects = projects;
-
-			// 同步类型筛选按钮高亮态，保证弹窗重开时高亮一致
-			const filterButtons = document.querySelectorAll('#localUiFilter .local-ui-filter-btn');
-			filterButtons.forEach(btn => {
-				btn.classList.toggle('is-active', btn.dataset.ui === localUiFilter);
-			});
-
-			if (!projects.length) {
-				list.innerHTML = '<div class="local-tools-error">😕 暂无可用的本地优选工具</div>';
-				return;
-			}
-
-			const uiLabels = {
-				webui: { emoji: '🌐', label: '网页界面' },
-				gui: { emoji: '🖥️', label: '图形界面' },
-				cli: { emoji: '⌨️', label: '命令行CLI' }
-			};
-
-			// 按 stars 数由高到低排序，携带原始索引（openLocalToolGitHub 依赖 localOptimizeProjects 索引）
-			const ranked = projects
-				.map((project, index) => ({ project, index }))
-				.sort((a, b) => (Number(b.project.stars) || 0) - (Number(a.project.stars) || 0));
-
-			// 按类型筛选
-			const filtered = ranked.filter(({ project }) => {
-				if (localUiFilter === 'all') return true;
-				const uiValues = Array.isArray(project.ui)
-					? project.ui.map(u => String(u).trim().toLowerCase())
-					: [];
-				return uiValues.includes(localUiFilter);
-			});
-
-			if (!filtered.length) {
-				const currentLabel = (uiLabels[localUiFilter] && uiLabels[localUiFilter].label) || '该';
-				list.innerHTML = `<div class="local-tools-error">😕 没有「${currentLabel}」类型的工具</div>`;
-				return;
-			}
-
-			list.innerHTML = filtered.map(({ project, index }, i) => {
-				const name = escapeHtml(String(project.name || '未命名工具'));
-				const author = project.author ? escapeHtml(String(project.author)) : '';
-				const description = project.description ? escapeHtml(String(project.description)) : '';
-				const platforms = Array.isArray(project.platforms) ? project.platforms : [];
-				const platformBadges = platforms
-					.map(p => `<span class="local-tool-platform">${escapeHtml(String(p))}</span>`)
-					.join('');
-				const uiList = Array.isArray(project.ui) ? project.ui : [];
-				const uiBadges = uiList
-					.filter(u => u !== null && u !== undefined && String(u).trim() !== '')
-					.map(u => {
-						const key = String(u).trim().toLowerCase();
-						const meta = uiLabels[key];
-						if (!meta) {
-							return `<span class="local-tool-ui">${escapeHtml(String(u))}</span>`;
-						}
-						return `<span class="local-tool-ui local-tool-ui-${key}">${meta.emoji} ${meta.label}</span>`;
-					})
-					.join('');
-
-				// GitHub Stars 徽章（无有效数据时不显示）
-				const starsNum = Number(project.stars);
-				const starsBadge = Number.isFinite(starsNum) && starsNum > 0
-					? `<span class="local-tool-stars" title="GitHub Stars">${STAR_SVG}${starsNum.toLocaleString('en-US')}</span>`
-					: '';
-
-				return `
-					<div class="local-tool-card" style="animation-delay: ${Math.min(i, 8) * 40}ms">
-						<div class="local-tool-head">
-							<span class="local-tool-name">${name}</span>
-							${author ? `<span class="local-tool-author">@${author}</span>` : ''}
-							${starsBadge}
-						</div>
-						<div class="local-tool-desc">${description}</div>
-						${(uiBadges || platformBadges) ? `<div class="local-tool-platforms">${uiBadges}${platformBadges}</div>` : ''}
-						<div class="local-tool-actions">
-							<button type="button" class="local-tool-github" onclick="openLocalToolGitHub(${index})">
-								🔗 前往 GitHub
-							</button>
-						</div>
-					</div>`;
-			}).join('');
-		}
-
-		// 设置本地优选工具类型筛选（白名单：all/webui/gui/cli）
-		function setLocalUiFilter(type) {
-			if (type !== 'all' && type !== 'webui' && type !== 'gui' && type !== 'cli') return;
-			localUiFilter = type;
-
-			const filterButtons = document.querySelectorAll('#localUiFilter .local-ui-filter-btn');
-			filterButtons.forEach(btn => {
-				btn.classList.toggle('is-active', btn.dataset.ui === localUiFilter);
-			});
-
-			const list = document.getElementById('localOptimizeToolList');
-			if (list) renderLocalOptimizeTools(list, localOptimizeProjects);
-		}
-
-		// 关闭本地优选工具目录弹窗
-		function closeLocalOptimizeModal(event) {
-			if (event && event.target !== event.currentTarget) return;
-			const modal = document.getElementById('localOptimizeModal');
-			if (modal) modal.classList.remove('show');
-		}
-
-		// 在新窗口打开所选工具的 GitHub 仓库
-		function openLocalToolGitHub(index) {
-			const project = localOptimizeProjects[index];
-			if (!project || !project.url) {
-				showToast('未找到该工具的 GitHub 地址', 'error');
-				return;
-			}
-			window.open(project.url, '_blank', 'noopener');
-		}
-
-		function escapeHtml(value) {
-			return String(value)
-				.replace(/&/g, '&amp;')
-				.replace(/</g, '&lt;')
-				.replace(/>/g, '&gt;')
-				.replace(/"/g, '&quot;')
-				.replace(/'/g, '&#039;');
-		}
-
 		function appendOnlineOptimizeSelections(lines) {
 			if (!Array.isArray(lines) || lines.length === 0) {
 				showToast('请先勾选需要保存的优选结果', 'warning');
@@ -25231,12 +22821,6 @@
 			return true;
 		}
 
-		// 从在线优选警告弹窗切换到本地优选（关闭在线全屏并打开本地优选工具目录）
-		function switchToLocalOptimizeFromOnline() {
-			closeOnlineOptimizeModal();
-			openLocalOptimizeModal();
-		}
-
 		window.addEventListener('message', (event) => {
 			const frame = document.getElementById('onlineOptimizeFrame');
 			if (!frame || event.source !== frame.contentWindow) return;
@@ -25248,8 +22832,6 @@
 				closeOnlineOptimizeModal();
 			} else if (data.type === 'bestcf-force-reload') {
 				window.location.reload();
-			} else if (data.type === 'bestcf-open-local-optimize') {
-				switchToLocalOptimizeFromOnline();
 			}
 		});
 
@@ -25639,7 +23221,6 @@
 			initUserMode();
 			initLineEditor('customIPs');
 			initNodeUUIDEasterEgg();
-			initVersionCopyEasterEgg();
 			// 独立预加载 SubConfig 数据，不阻塞主流程
 			loadSubConfigData().catch(err => console.error('SubConfig预加载失败:', err));
 		});
@@ -26308,7 +23889,7 @@
 			const apis = [
 				{
 					url: `https://api.ipapi.is`,
-					parse: d => ({ ip: d.ip, loc: `${d.cc || '未知'} AS${d.asn_num || ''} ${d.asn_org || ''}`.trim() })
+					parse: d => ({ ip: d.ip, loc: `${d.location?.country_code || '未知'} AS${d.asn?.asn || ''} ${d.asn?.org || ''}`.trim() })
 				},
 				{
 					url: `https://api.cmliussss.net/api/ipinfo`,
@@ -27013,45 +24594,6 @@
 			tooltip.style.position = 'fixed';
 			tooltip.style.left = left + 'px';
 			tooltip.style.top = top + 'px';
-		}
-
-		// 将 ipapi.is 新版扁平响应归一化为旧版嵌套结构（幂等：已含 location 子对象的旧格式/fallback 数据原样返回）
-		function normalizeIpapiData(data) {
-			if (!data || typeof data !== 'object') return data || {};
-
-			// 幂等保护：已有 location 子对象说明是旧格式或 fallback 数据，无需二次处理
-			if (data.location && typeof data.location === 'object') return data;
-
-			// 复制原对象并保留扁平字段（cc/lat/lon/company_name/asn_num/asn_org 等仍可访问）
-			const normalized = Object.assign({}, data);
-
-			// 构造 location 子对象（新版缺少 country/state/city/timezone，缺省为 undefined）
-			normalized.location = {
-				country: data.country,
-				country_code: data.cc,
-				state: data.state,
-				city: data.city,
-				latitude: data.lat,
-				longitude: data.lon,
-				timezone: data.timezone
-			};
-
-			// 构造 company 子对象（新版仅有 company_name，无 type/abuser_score，缺省为 undefined）
-			normalized.company = {
-				name: data.company_name,
-				type: data.company_type,
-				abuser_score: data.company_abuser_score
-			};
-
-			// 构造 asn 子对象（新版仅有 asn_num/asn_org，无 type/abuser_score，缺省为 undefined）
-			normalized.asn = {
-				asn: data.asn_num,
-				org: data.asn_org,
-				type: data.asn_type,
-				abuser_score: data.asn_abuser_score
-			};
-
-			return normalized;
 		}
 
 		// 显示 IP 详情弹窗
